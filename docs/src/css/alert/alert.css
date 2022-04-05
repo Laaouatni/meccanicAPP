@@ -1,0 +1,48 @@
+* {
+    --alert-red: rgba(255, 0, 50, 1);
+}
+
+#alert #alert-bg {
+    background: rgba(255, 0, 50, 1);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem var(--alert-red);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#testo-errore {
+    color: white;
+    font-weight: normal;
+}
+
+#alert {
+    position: fixed;
+    width: 90vw;
+    transform: translateX(50%);
+    right: 50%;
+    bottom: -10rem;
+}
+
+.alert-visible {
+    animation: alert-show 2s forwards cubic-bezier(0, .5, .5, 1.2);
+}
+
+@keyframes alert-show {
+    0% {
+        bottom: -10rem;
+        opacity: 0.2;
+    }
+    10% {
+        bottom: 2rem;
+        opacity: 1;
+    }
+    90% {
+        bottom: 2rem;
+        opacity: 0.9;
+    }
+    100% {
+        bottom: -10rem;
+    }
+}
