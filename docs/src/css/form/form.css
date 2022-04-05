@@ -50,8 +50,18 @@ body {
     gap: 1rem;
 }
 
-@media(min-width: 800px) {
+@media(min-width: 700px) {
     #all-forms {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+#btn-form {
+    margin-top: 2rem;
+    display: grid;
+    width: 100%;
+    height: 3rem;
+    place-content: center;
+    font-size: 1.5rem;
+    font-family: poppins;
 }

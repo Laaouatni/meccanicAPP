@@ -33,13 +33,13 @@
                     <!-- 1 -->
                     <label for="max-foro">
                         <span style="font-weight: bold;">MAX FORO</span>
-                        <input id="max-foro" inputmode="numeric" type="number" name="max_foro" placeholder="MAX FORO (MECHTAB)">
+                        <input required id="max-foro" inputmode="numeric" type="number" name="max_foro" placeholder="MAX FORO (MECHTAB)">
                     </label>
 
                     <!-- 2 -->
                     <label for="min-foro">
                         <span style="font-weight: bold;">MIN FORO</span>
-                        <input id="min-foro" inputmode="numeric" type="number" name="min_foro" placeholder="MIN FORO (MECHTAB)">
+                        <input required id="min-foro" inputmode="numeric" type="number" name="min_foro" placeholder="MIN FORO (MECHTAB)">
                     </label>
                 </form>
             </div>
@@ -51,22 +51,28 @@
                     <!-- 1 -->
                     <label for="max-albero">
                         <span style="font-weight: bold;">max albero</span>
-                        <input id="max-albero" inputmode="numeric" type="number" name="max_albero" placeholder="max albero (mechtab)">
+                        <input required id="max-albero" inputmode="numeric" type="number" name="max_albero" placeholder="max albero (mechtab)">
                     </label>
 
                     <!-- 2 -->
                     <label for="min-albero">
-                        <span style="font-weight: bold;">MIN FORO</span>
-                        <input id="min-albero" inputmode="numeric" type="number" name="min_albero" placeholder="min albero (mechtab)">
+                        <span style="font-weight: bold;">min albero</span>
+                        <input required id="min-albero" inputmode="numeric" type="number" name="min_albero" placeholder="min albero (mechtab)">
                     </label>
                 </form>
             </div>
         </div>
 
+        <button id="btn-form">
+            calcola
+        </button>
+
         <div class="outputs">
 
         </div>
     </div>
+
+    <script src="./src/javascript/script.js"></script>
 </body>
 
 </html>
