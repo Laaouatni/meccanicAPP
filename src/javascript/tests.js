@@ -94,3 +94,39 @@ let eighth_test = {
     },
     "risultato": "incerto"
 }
+
+let ninth_test = {
+    "FORO": {
+        "max_foro": "0.054",
+        "min_foro": "0"
+    },
+    "albero": {
+        "max_albero": "-0.036",
+        "min_albero": "-0.09"
+    },
+    "risultato": "gioco"
+}
+
+let tenth_test = {
+    "FORO": {
+        "max_foro": "0.006",
+        "min_foro": "0"
+    },
+    "albero": {
+        "max_albero": "0",
+        "min_albero": "-0.004"
+    },
+    "risultato": "incerto"
+}
+
+let eleventh_test = {
+    "FORO": {
+        "max_foro": "0.018",
+        "min_foro": "0"
+    },
+    "albero": {
+        "max_albero": "-0.006",
+        "min_albero": "-0.017"
+    },
+    "risultato": "gioco"
+}

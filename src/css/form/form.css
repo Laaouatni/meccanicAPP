@@ -70,4 +70,10 @@ body {
 #outputs-container {
     border: 2px solid white;
     background: rgba(255, 255, 255, 0.144);
+    padding: 0.5rem;
+}
+
+#output {
+    font-size: 2rem;
+    color: rgb(55, 0, 255);
 }
