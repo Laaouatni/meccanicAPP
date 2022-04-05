@@ -34,3 +34,63 @@ let third_test = {
     },
     "risultato": "incerto"
 }
+
+let fourth_test = {
+    "FORO": {
+        "max_foro": "0.0180",
+        "min_foro": "0"
+    },
+    "albero": {
+        "max_albero": "0.0180",
+        "min_albero": "0.007"
+    },
+    "risultato": "incerto"
+}
+
+let fifth_test = {
+    "FORO": {
+        "max_foro": "0",
+        "min_foro": "-0.021"
+    },
+    "albero": {
+        "max_albero": "0",
+        "min_albero": "-0.021"
+    },
+    "risultato": "incerto"
+}
+
+let sixth_test = {
+    "FORO": {
+        "max_foro": "0.021",
+        "min_foro": "0"
+    },
+    "albero": {
+        "max_albero": "0",
+        "min_albero": "-0.021"
+    },
+    "risultato": "incerto"
+}
+
+let seventh_test = {
+    "FORO": {
+        "max_foro": "0.018",
+        "min_foro": "0"
+    },
+    "albero": {
+        "max_albero": "0.023",
+        "min_albero": "0.012"
+    },
+    "risultato": "incerto"
+}
+
+let eighth_test = {
+    "FORO": {
+        "max_foro": "0.035",
+        "min_foro": "0"
+    },
+    "albero": {
+        "max_albero": "0.013",
+        "min_albero": "-0.009"
+    },
+    "risultato": "incerto"
+}
