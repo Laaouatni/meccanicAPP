@@ -1,0 +1,57 @@
+body {
+    font-family: poppins, sans-serif;
+    background-color: rgb(200, 230, 255);
+    padding: 0.5rem;
+}
+
+.form-container {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+    display: grid;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 1rem;
+}
+
+.form-container input {
+    display: grid;
+    height: 2rem;
+    font-family: poppins;
+}
+
+.form-container {
+    display: grid;
+}
+
+.form-container label {
+    display: grid;
+    padding: 1rem 0;
+}
+
+.form-container label:not(:last-of-type) {
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    color: blue;
+    opacity: 0.6;
+}
+
+#all-forms {
+    display: grid;
+    gap: 1rem;
+}
+
+@media(min-width: 800px) {
+    #all-forms {
+        grid-template-columns: 1fr 1fr;
+    }
+}
