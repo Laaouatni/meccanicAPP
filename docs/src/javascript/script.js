@@ -53,11 +53,8 @@ function checkModalita() {
     let max_albero = data['albero']['max_albero'];
 
     let min_FORO = data['FORO']['min_foro'];
-    console.log('min_FORO:', min_FORO)
     let min_albero = data['albero']['min_albero'];
-    console.log('min_albero:', min_albero)
 
-    console.log(max_FORO);
 
     if (min_FORO > max_albero) {
         output.textContent = "gioco";
@@ -69,8 +66,12 @@ function checkModalita() {
         console.log("interferenza");
     }
     /* incerto */
-    else if (min_FORO == max_albero ||
-        max_FORO == min_albero) {
+    else if (
+        min_FORO == min_albero ||
+        min_FORO == max_albero ||
+        max_FORO == min_albero ||
+        max_FORO == max_albero
+    ) {
         output.textContent = "incerto";
         console.log("incerto");
     } else {
