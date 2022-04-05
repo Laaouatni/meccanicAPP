@@ -58,23 +58,14 @@ function checkModalita() {
     /* libero */
     if (min_FORO > max_albero) {
         output.textContent = "libero";
-    }
-    /* interferenza */
-    else if (min_FORO < max_albero) {
+    } else if (min_albero > max_FORO) {
         output.textContent = "interferenza";
-        /* incerto */
-        if (min_FORO > min_albero) {
-            output.textContent = "incerto";
-        }
-    } else if (max_FORO < max_albero) {
-        output.textContent = "interferenza";
-    } else if (min_FORO > min_albero) {
-        output.textContent = "libero";
-        if (min_FORO > max_albero) {
-            output.textContent = "libero";
-        }
+    } else if (min_FORO == max_albero) {
+        output.textContent = "incerto";
+    } else if (max_FORO == min_albero) {
+        output.textContent = "incerto";
     } else {
-        output.textContent = "questa non lo hai programmata";
+        output.textContent = "questa non lo hai programmata hahahah";
     }
 }
 
