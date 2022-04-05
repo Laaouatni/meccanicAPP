@@ -47,25 +47,35 @@ function showAlert() {
 
 function checkModalita() {
     let data = getData();
+    console.log(data);
 
-    let max_FORO = data['FORO']['max_FORO'];
+    let max_FORO = data['FORO']['max_foro'];
     let max_albero = data['albero']['max_albero'];
 
-    let min_FORO = data['FORO']['min_FORO'];
+    let min_FORO = data['FORO']['min_foro'];
+    console.log('min_FORO:', min_FORO)
     let min_albero = data['albero']['min_albero'];
+    console.log('min_albero:', min_albero)
 
+    console.log(max_FORO);
 
-    /* libero */
     if (min_FORO > max_albero) {
-        output.textContent = "libero";
-    } else if (min_albero > max_FORO) {
+        output.textContent = "gioco";
+        console.log("gioco");
+    }
+    /* interferenza */
+    else if (min_albero > max_FORO) {
         output.textContent = "interferenza";
-    } else if (min_FORO == max_albero) {
+        console.log("interferenza");
+    }
+    /* incerto */
+    else if (min_FORO == max_albero ||
+        max_FORO == min_albero) {
         output.textContent = "incerto";
-    } else if (max_FORO == min_albero) {
-        output.textContent = "incerto";
+        console.log("incerto");
     } else {
         output.textContent = "questa non lo hai programmata hahahah";
+        console.log("questa non lo hai programmata hahahah");
     }
 }
 
