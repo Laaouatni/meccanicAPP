@@ -1,0 +1,3 @@
+https://meccanicapp.vercel.app/index.html
+https://meccanicapp.vercel.app/src/pages/interferenza_gioco_albero.html
+https://meccanicapp.vercel.app/src/pages/tolleranze.html
