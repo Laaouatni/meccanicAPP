@@ -47,7 +47,6 @@ function showAlert() {
 
 function checkModalita() {
     let data = getData();
-    console.log(data);
 
     let max_FORO = data['FORO']['max_foro'];
     let max_albero = data['albero']['max_albero'];
@@ -72,12 +71,14 @@ function checkModalita() {
         max_FORO == min_albero ||
         max_FORO == max_albero ||
         min_FORO < min_albero && max_FORO < max_albero ||
-        min_FORO > min_albero && max_FORO > max_albero
+        min_FORO > min_albero && max_FORO > max_albero ||
+        min_FORO < min_albero && max_FORO > max_albero ||
+        min_FORO > min_albero && max_FORO < max_albero
     ) {
         output.textContent = "incerto";
         console.log("incerto");
     } else {
-        output.textContent = "questa non lo hai programmata hahahah";
+        output.textContent = "questa non lo hai programmata, ma potrebbe essere incerto";
         console.log("questa non lo hai programmata hahahah");
     }
 }

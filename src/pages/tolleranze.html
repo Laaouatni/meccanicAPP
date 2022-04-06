@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="con un solo click, questo generator ti dirà se le tue tolleranze dimensionali hanno un gioco, interferenza oppure incerto... creato da Laaouatni">
+
+    <title>transforma le tolleranze albero-foro, in un numero, senza le tabelle! meccanicAPP by Laaouatni</title>
+
+    <!-- poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- styles CSS -->
+    <link rel="stylesheet" href="../../style.css">
+
+    <!-- dependecies -->
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+
+    <!-- TOLLERANZE GENERATOR -->
+    <section id="section-tolleranze">
+
+        <div id="preview-container">
+            <!-- 1 -->
+            <div id="preview-numero-grande">
+                0
+            </div>
+            <!-- 2 -->
+            <div id="min-max-container">
+                <span id="preview-max">+0</span>
+                <span id="preview-min">+0</span>
+            </div>
+        </div>
+
+        <div>
+
+            <form style="padding: 1rem;" class="form-container" id="form-diametro" action="">
+                <!-- 1 -->
+                <label style="padding: 0;" for="input-diametro">
+                    <span style="font-weight: bold;">diametro pezzo</span>
+                    <input required id="input-diametro" inputmode="numeric" type="number" name="max_albero" placeholder="max albero (mechtab)">
+                </label>
+
+            </form>
+        </div>
+
+        <div style="margin-top: 1rem; font-size: 0.6rem;" id="output-json">
+            app ancora da finire
+        </div>
+
+    </section>
+
+
+    <div id="alert">
+        <div id="alert-bg">
+            <div id="alert-content">
+                ERRORE, RIPROVA!!!
+            </div>
+            <div id="testo-errore">
+                devi inserire tutti i dati!
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascript/tolleranze/script.js"></script>
+</body>
+
+</html>

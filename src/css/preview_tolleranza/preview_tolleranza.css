@@ -1,0 +1,29 @@
+* {
+    --big-number: 10rem;
+}
+
+
+/* #section-tolleranze * {
+    outline: 1px solid red;
+} */
+
+#preview-container {
+    display: flex;
+    gap: calc(var(--big-number) / 10);
+    justify-content: center;
+    align-items: center;
+}
+
+#preview-numero-grande {
+    font-size: var(--big-number);
+    font-weight: 500;
+}
+
+#min-max-container {
+    display: grid;
+    place-content: center;
+}
+
+#min-max-container>span {
+    font-size: calc(var(--big-number) / 4);
+}
