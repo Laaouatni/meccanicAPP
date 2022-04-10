@@ -22,6 +22,13 @@ body {
     height: 2rem;
     font-family: poppins;
     padding: 0 0.5rem;
+    border: 1px solid rgb(97, 216, 255);
+}
+
+.form-container input:focus {
+    border: 1px solid lightblue;
+    border-bottom: 3px solid rgb(100, 100, 255);
+    outline: none;
 }
 
 .form-container {
@@ -39,7 +46,16 @@ body {
 
 .card-title {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 0;
+    padding: 0;
+    color: blue;
+    opacity: 0.6;
+    transition: all 0.2s ease-in-out;
+}
+
+.card-container:hover .card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
     padding: 1rem;
     padding-bottom: 0.5rem;
     color: blue;
