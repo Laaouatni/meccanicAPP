@@ -1,0 +1,9 @@
+#h-range {}
+
+#h_range_container,
+#diametro_range_container {
+    display: grid;
+    font-size: 2rem;
+    grid-template-columns: 5rem 1fr;
+    /* border: 1px solid red; */
+}

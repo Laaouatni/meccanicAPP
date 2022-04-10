@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-#preview-numero-grande {
+#preview-diametro {
     font-size: var(--big-number);
     font-weight: 500;
 }
