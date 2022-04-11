@@ -55,6 +55,7 @@
     top: 0;
     left: -100vw;
     background: var(--alert-green);
+    box-shadow: 0 0.5rem 1rem var(--alert-green);
 }
 
 .success-visible {

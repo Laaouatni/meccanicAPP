@@ -1,5 +1,5 @@
 * {
-    --big-number: 10rem;
+    --big-number: clamp(5rem, 30vw, 10rem);
 }
 
 
