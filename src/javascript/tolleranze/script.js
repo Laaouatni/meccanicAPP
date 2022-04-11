@@ -23,14 +23,39 @@ fetch(h_albero_dati_URL)
         jsonData = data;
         document.getElementById("output-json").textContent += JSON.stringify(data);
     }).then(() => {
+
+let diametro_value = diametroRangeInput.value;
+            diametroSpan.textContent = "Ø" + diametro_value;
+
+let h_value = hRangeInput.value;
+            hSpan.textContent = "h" + h_value;
+
+calcolaTolleranza()
+
+
+//pc
         hRangeInput.addEventListener("mousemove", () => {
-            let h_value = hRangeInput.value;
+            h_value = hRangeInput.value;
             hSpan.textContent = "h" + h_value;
             calcolaTolleranza();
         });
 
         diametroRangeInput.addEventListener("mousemove", () => {
-            let diametro_value = diametroRangeInput.value;
+            diametro_value = diametroRangeInput.value;
+            diametroSpan.textContent = "Ø" + diametro_value;
+            calcolaTolleranza();
+        });
+
+//mobile
+
+hRangeInput.addEventListener("touchmove", () => {
+            h_value = hRangeInput.value;
+            hSpan.textContent = "h" + h_value;
+            calcolaTolleranza();
+        });
+
+        diametroRangeInput.addEventListener("touchmove", () => {
+            diametro_value = diametroRangeInput.value;
             diametroSpan.textContent = "Ø" + diametro_value;
             calcolaTolleranza();
         });
