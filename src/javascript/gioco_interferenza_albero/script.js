@@ -18,16 +18,17 @@ function getData() {
     FORO_inputs.forEach((item, index) => {
         if (item.value.length != 0) {
             FORO_data[item.name] = item.value.replace(",", ".");
-        showSuccessAlert()} else {
+            showSuccessAlert();
+        } else {
             showAlert();
-
         }
     });
 
     albero_inputs.forEach((item, index) => {
         if (item.value.length != 0) {
             albero_data[item.name] = item.value.replace(",", ".");
-        showSuccessAlert()} else {
+            showSuccessAlert()
+        } else {
             showAlert();
         }
     });
@@ -50,9 +51,10 @@ function showAlert() {
 function showSuccessAlert() {
     success_alert.classList.add("success-visible");
     /* after 2 seconds remove the alert*/
+    console.log("success");
     setTimeout(() => {
         success_alert.classList.remove("success-visible");
-    }, 1000);
+    }, 2000);
 }
 
 
