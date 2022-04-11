@@ -1,4 +1,6 @@
 let alert = document.querySelector('#alert');
+let success_alert = document.querySelector('#success-alert');
+
 let FORO_Form = document.getElementById('form-foro');
 let albero_Form = document.getElementById('form-albero');
 
@@ -16,7 +18,7 @@ function getData() {
     FORO_inputs.forEach((item, index) => {
         if (item.value.length != 0) {
             FORO_data[item.name] = item.value.replace(",", ".");
-        } else {
+        showSuccessAlert()} else {
             showAlert();
 
         }
@@ -25,7 +27,7 @@ function getData() {
     albero_inputs.forEach((item, index) => {
         if (item.value.length != 0) {
             albero_data[item.name] = item.value.replace(",", ".");
-        } else {
+        showSuccessAlert()} else {
             showAlert();
         }
     });
@@ -44,6 +46,16 @@ function showAlert() {
         alert.classList.remove("alert-visible");
     }, 2000);
 }
+
+function showSuccessAlert() {
+    success_alert.classList.add("success-visible");
+    /* after 2 seconds remove the alert*/
+    setTimeout(() => {
+        success_alert.classList.remove("success-visible");
+    }, 1000);
+}
+
+
 
 function checkModalita() {
     let data = getData();
