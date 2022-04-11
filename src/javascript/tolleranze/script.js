@@ -58,7 +58,17 @@ fetch(h_albero_dati_URL)
             diametroSpan.textContent = "Ø" + diametro_value;
             calcolaTolleranza();
         });
-    })
+    }).catch((error) => {
+        let alert = document.querySelector('#alert');
+        let testoErrore = document.querySelector("#testo-errore");
+        alert.classList.add("alert-visible");
+
+        testoErrore.textContent = error; /* after 2 seconds remove the alert*/
+
+        setTimeout(() => {
+            alert.classList.remove("alert-visible");
+        }, 2000);
+    });
 
 let previewDiametro = document.getElementById("preview-diametro");
 
