@@ -9,7 +9,7 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
    - acc. con Interferenza 
    - acc. con Incerto
 
-2. Trovare le misure delle tolleranze "h"
+2. Trovare le misure delle tolleranze "h":
 - da "h1" a "h12"
 - da "ø3" a "ø50"
 
