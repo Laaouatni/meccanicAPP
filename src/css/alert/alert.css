@@ -1,5 +1,6 @@
 * {
     --alert-red: rgba(255, 0, 50, 1);
+--alert-green: rgb(0,250,155);
 }
 
 #alert #alert-bg {
@@ -44,5 +45,30 @@
     }
     100% {
         bottom: -10rem;
+    }
+}
+
+#success-alert {
+height:0.3rem; width:100vw; position: fixed; top:0; left:-100vw;}
+
+.success-visible {
+animation: alert-success 1s forwards cubic-bezier(0, .5, .5, 1.2);
+}
+
+@keyframes alert-success {
+    0% {
+        left:-100vw;
+        opacity: 0.5;
+    }
+    30% {
+        left: 100vw;
+        opacity: 1;
+    }
+    80% {
+        left: 0;
+        opacity: 0.9;
+    }
+    100% {
+        left: -100vw;
     }
 }
