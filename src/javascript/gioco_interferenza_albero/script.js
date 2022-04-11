@@ -54,7 +54,7 @@ function showSuccessAlert() {
     console.log("success");
     setTimeout(() => {
         success_alert.classList.remove("success-visible");
-    }, 2000);
+    }, 1100);
 }
 
 

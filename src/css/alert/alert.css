@@ -58,7 +58,7 @@
 }
 
 .success-visible {
-    animation: alert-success 1s forwards cubic-bezier(0, .5, .5, 1.2);
+    animation: alert-success 1s forwards ease-in-out;
 }
 
 @keyframes alert-success {
@@ -66,15 +66,11 @@
         left: -100vw;
         opacity: 0.5;
     }
-    30% {
-        left: 100vw;
+    70% {
+        left: 0;
         opacity: 1;
     }
-    80% {
-        left: 0;
-        opacity: 0.9;
-    }
     100% {
-        left: -100vw;
+        left: 100vw;
     }
 }
