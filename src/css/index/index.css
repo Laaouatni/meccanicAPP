@@ -1,0 +1,24 @@
+#section-index-lista {
+    display: grid;
+    gap: 0.5rem;
+}
+
+#section-index-lista a {
+    padding: 1rem 0.5rem;
+    border: 2px solid rgb(0, 110, 255);
+    border-radius: 0.1rem;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 110, 255, 10%);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: blue;
+}
+
+#section-index-lista a:hover {
+    border-radius: 0.2rem;
+    background-color: rgba(0, 110, 255, 30%);
+    transform: translateY(-0.2rem);
+    transition: all 0.3s ease-in-out;
+}
