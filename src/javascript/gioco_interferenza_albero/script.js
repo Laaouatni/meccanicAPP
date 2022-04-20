@@ -57,8 +57,6 @@ function showSuccessAlert() {
     }, 1100);
 }
 
-
-
 function checkModalita() {
     let data = getData();
 
@@ -118,3 +116,13 @@ function checkModalita() {
 function submitForm() {
     checkModalita();
 }
+
+document.querySelector("#btn-form")
+    .addEventListener("click", submitForm);
+
+window
+    .addEventListener("keyup", (e) => {
+        if (e.keyCode == 13) {
+            submitForm();
+        }
+    });
