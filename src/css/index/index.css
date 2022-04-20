@@ -1,6 +1,6 @@
 #section-index-lista {
     display: grid;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 #section-index-lista a {
