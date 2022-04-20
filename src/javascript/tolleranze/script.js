@@ -32,32 +32,44 @@ fetch(h_albero_dati_URL)
 
         calcolaTolleranza()
 
-        //pc
-        hRangeInput.addEventListener("mousemove", () => {
-            h_value = hRangeInput.value;
-            hSpan.textContent = "h" + h_value;
-            calcolaTolleranza();
-        });
 
-        diametroRangeInput.addEventListener("mousemove", () => {
-            diametro_value = diametroRangeInput.value;
-            diametroSpan.textContent = "Ø" + diametro_value;
-            calcolaTolleranza();
+        //pc
+
+        let mouse_events = ["mousemove", "mousedown", "click"];
+
+        mouse_events.forEach((item) => {
+            hRangeInput.addEventListener(item, () => {
+                h_value = hRangeInput.value;
+                hSpan.textContent = "h" + h_value;
+                calcolaTolleranza();
+            });
+
+            diametroRangeInput.addEventListener(item, () => {
+                diametro_value = diametroRangeInput.value;
+                diametroSpan.textContent = "Ø" + diametro_value;
+                calcolaTolleranza();
+            });
         });
 
         //mobile
 
-        hRangeInput.addEventListener("touchmove", () => {
-            h_value = hRangeInput.value;
-            hSpan.textContent = "h" + h_value;
-            calcolaTolleranza();
+        let touch_events = ["touchstart", "touchend", "touchmove"];
+
+        touch_events.forEach((item) => {
+            hRangeInput.addEventListener(item, () => {
+                h_value = hRangeInput.value;
+                hSpan.textContent = "h" + h_value;
+                calcolaTolleranza();
+            });
+
+            diametroRangeInput.addEventListener(item, () => {
+                diametro_value = diametroRangeInput.value;
+                diametroSpan.textContent = "Ø" + diametro_value;
+                calcolaTolleranza();
+            });
         });
 
-        diametroRangeInput.addEventListener("touchmove", () => {
-            diametro_value = diametroRangeInput.value;
-            diametroSpan.textContent = "Ø" + diametro_value;
-            calcolaTolleranza();
-        });
+
     }).catch((error) => {
         let alert = document.querySelector('#alert');
         let testoErrore = document.querySelector("#testo-errore");
