@@ -6,7 +6,7 @@
 #section-index-lista a {
     padding: 1rem 0.5rem;
     border: 2px solid rgb(0, 110, 255);
-    border-radius: 0.1rem;
+    border-radius: 0.3rem;
     display: grid;
     place-items: center;
     background-color: rgba(0, 110, 255, 10%);
@@ -14,11 +14,29 @@
     text-decoration: none;
     font-size: 1.2rem;
     color: blue;
+    transition: all 0.3s ease-in-out;
 }
 
 #section-index-lista a:hover {
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
     background-color: rgba(0, 110, 255, 30%);
     transform: translateY(-0.2rem);
-    transition: all 0.3s ease-in-out;
+}
+
+#footer-made {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+    background-color: rgba(0, 100, 230, 0.5);
+    color: white;
+    font-size: 0.7rem;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100vw;
+}
+
+#footer-made a {
+    color: white;
+    font-weight: bold;
 }
