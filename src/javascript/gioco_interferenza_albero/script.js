@@ -71,11 +71,23 @@ function checkModalita() {
 
     if (min_FORO > max_albero) {
         output.textContent = "gioco";
+
+        output.classList.add("output-animation");
+        setTimeout(() => {
+            output.classList.remove("output-animation");
+        }, 1000);
+
         console.log("gioco");
     }
     /* interferenza */
     else if (max_FORO < min_albero) {
         output.textContent = "interferenza";
+
+        output.classList.add("output-animation");
+        setTimeout(() => {
+            output.classList.remove("output-animation");
+        }, 1000);
+
         console.log("interferenza");
     }
     /* incerto */
@@ -90,6 +102,12 @@ function checkModalita() {
         min_FORO > min_albero && max_FORO < max_albero
     ) {
         output.textContent = "incerto";
+
+        output.classList.add("output-animation");
+        setTimeout(() => {
+            output.classList.remove("output-animation");
+        }, 1000);
+
         console.log("incerto");
     } else {
         output.textContent = "questa non lo hai programmata, ma potrebbe essere incerto";

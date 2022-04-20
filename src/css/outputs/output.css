@@ -1,0 +1,22 @@
+.output-animation {
+    animation: output-animation 1s;
+}
+
+@keyframes output-animation {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    30% {
+        opacity: 0.5;
+        transform: translateX(-100%)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+#outputs-container {
+    overflow: hidden;
+}
