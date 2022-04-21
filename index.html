@@ -68,20 +68,36 @@
 
     <!-- pubblicità -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062" crossorigin="anonymous"></script>
+
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+
+    <!-- pub amp -->
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 </head>
 
 <body>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4336226604922062">
+    </amp-auto-ads>
     <h1 style="margin: 0; padding: 0 0 1rem 0;">meccanicAPP<span style="color: blue; text-shadow: 0 0 0.5rem blue;">.</span></h1>
 
-    <section id="section-index-lista">
-        <a href=".\src\pages\interferenza_gioco_albero.html">
-            <span>Interferenza, Gioco, Incerto?</span>
-        </a>
+    <div id="content-lista">
+        <section id="section-index-lista">
+            <a href=".\src\pages\interferenza_gioco_albero.html">
+                <span>Interferenza, Gioco, Incerto?</span>
+            </a>
 
-        <a href=".\src\pages\tolleranze.html">
-            <span>Tolleranze Generator (h)</span>
-        </a>
-    </section>
+            <a href=".\src\pages\tolleranze.html">
+                <span>Tolleranze Generator (h)</span>
+            </a>
+        </section>
+
+        <div id="ad-container">
+            <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-4336226604922062" data-ad-slot="2161906515" data-auto-format="rspv" data-full-width="">
+                <div overflow=""></div>
+            </amp-ad>
+        </div>
+    </div>
 
     <div id="alert">
         <div id="alert-bg">
@@ -93,6 +109,7 @@
             </div>
         </div>
     </div>
+
 
     <footer id="footer-made">
         <span>Made by</span>
