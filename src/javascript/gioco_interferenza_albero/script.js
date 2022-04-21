@@ -115,6 +115,10 @@ function checkModalita() {
 
 function submitForm() {
     checkModalita();
+    /* SCROLL TO id="outputs-container" */
+    document.querySelector("#outputs-container").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
 document.querySelector("#btn-form")
