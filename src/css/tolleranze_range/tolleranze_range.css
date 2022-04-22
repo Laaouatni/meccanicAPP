@@ -18,8 +18,6 @@
     box-shadow: inset 0 -0.2rem 0.5rem rgba(82, 203, 255, 0.287), 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
-
-
 @media (min-width: 800px) {
     #form-tolleranze-range {
         display: grid;
