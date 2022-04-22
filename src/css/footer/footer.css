@@ -1,0 +1,41 @@
+#footer-made {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+    background-color: rgba(0, 100, 230, 0.8);
+    color: white;
+    font-size: 0.8rem;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100vw;
+}
+
+#footer-made a {
+    color: white;
+    font-weight: bold;
+}
+
+.btn-homepage svg {
+    height: 1rem;
+    width: 1rem;
+    fill: white;
+}
+
+.btn-homepage {
+    background: rgba(0, 100, 230, 0.8);
+    padding: 0.5rem;
+    position: absolute;
+    /*   top: calc((1rem*2 + 1rem*2)*-1); */
+    top: calc((1rem*2)*-1);
+    /* right: 0; */
+    right: 1rem;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem 0 0 0;
+    cursor: pointer;
+}
+
+.btn-homepage:hover {
+    background: rgba(0, 100, 230, 0.9);
+}

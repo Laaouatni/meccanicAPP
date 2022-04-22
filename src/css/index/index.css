@@ -1,6 +1,14 @@
-#section-index-lista {
+#section-index-lista,
+#section-index-lista .section-list-child-container {
     display: grid;
     gap: 1rem;
+}
+
+#content-lista h2 {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    font-weight: 500;
+    color: blue;
 }
 
 #section-index-lista a {
@@ -23,20 +31,8 @@
     transform: translateY(-0.2rem);
 }
 
-#footer-made {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 0.5rem;
-    background-color: rgba(0, 100, 230, 0.8);
-    color: white;
-    font-size: 0.8rem;
-    display: grid;
-    grid-auto-flow: column;
-    width: 100vw;
-}
-
-#footer-made a {
-    color: white;
-    font-weight: bold;
+@media (min-width: 800px) {
+    #section-index-lista .section-list-child-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
