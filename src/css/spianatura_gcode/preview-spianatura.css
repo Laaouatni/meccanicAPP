@@ -34,6 +34,17 @@
     border-radius: 0.5rem;
     transform: scale(1);
     transition: all 0.2s ease-in-out;
+    animation: pezzoStart 2.5s ease-in-out;
+}
+
+@keyframes pezzoStart {
+    0% {
+        opacity: 0.5;
+        background-image: url("./../../../utilities/images/texture/metal/0metal.jpg");
+    }
+    100% {
+        background-image: url("./../../../utilities/images/texture/metal/0cube.png");
+    }
 }
 
 #pezzo-grezzo:hover {

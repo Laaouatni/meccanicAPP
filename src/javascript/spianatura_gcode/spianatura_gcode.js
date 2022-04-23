@@ -1,16 +1,7 @@
-/* get #pezzo-grezzo */
-let pezzoGrezzo = document.getElementById("pezzo-grezzo");
+let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
+let larghezzaInput = document.getElementById("larghezza-pezzo-input");
 
-let altezzaInput = document.getElementById("altezza-pezzo-range");
-let lunghezzaInput = document.getElementById("lunghezza-pezzo-range");
-
-let altezzaRangeValue = altezzaInput.value;
-let lunghezzaRangeValue = lunghezzaInput.value;
-
-let pezzoInputJSON = {
-    "altezza": altezzaRangeValue,
-    "lunghezza": lunghezzaRangeValue
-};
-
-let mouse_events = ["mousemove", "mousedown", "click"];
-let touch_events = ["touchstart", "touchend", "touchmove"];
+let pezzoGrezzo = {
+    "X0": lunghezzaInput.value,
+    "Y0": larghezzaInput.value
+}
