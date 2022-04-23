@@ -39,20 +39,28 @@
 
                 <form id="form-spianatura">
                     <label id="altezza-container" for="altezza-pezzo-input">
-                        <span>altezza</span>
+                        <div>
+                            <div id="freccie-altezza-container">
+                                <i class="fa-solid fa-up-long"></i>
+                                <span>altezza</span>
+                                <i class="fa-solid fa-down-long"></i>
+                            </div>
+                        </div>
+                    
                         <input form="form-spianatura" type="number" min="5" max="500" value="50" id="altezza-pezzo-input">
                     </label>
                 </form>
             </div>
 
             <label id="lunghezza-container" for="lunghezza-pezzo-input">
-                <div style="display: grid;">
+                <div>
                     <div id="freccie-lunghezza-container">
                         <i class="fa-solid fa-left-long"></i>
                         <span>lunghezza</span>
                         <i class="fa-solid fa-right-long"></i>
                     </div>
                 </div>
+
                 <input form="form-spianatura" type="number" min="5" max="500" orient="vertical" value="50" id="lunghezza-pezzo-input">        
             </label>
         </div>

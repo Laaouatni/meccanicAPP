@@ -9,6 +9,7 @@
 
 #preview-spianatura-container input {
     width: 5rem;
+    height: 2rem;
     font-size: 1.5rem;
     font-family: poppins;
 }
@@ -31,11 +32,13 @@
     background-size: cover;
     width: 100%;
     aspect-ratio: 1;
+    border-radius: 0.5rem;
 }
 
 #preview-spianatura-container {
     width: 95vw;
     max-width: 70vh;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 #form-spianatura {
@@ -47,7 +50,7 @@
     outline: 1px solid red;
     display: grid;
     place-items: center;
-    width: calc(100% - 6rem)
+    width: calc(100% - 7.5rem)
 }
 
 #freccie-lunghezza-container {
@@ -55,14 +58,38 @@
     justify-content: space-between;
     gap: 1rem;
     width: 60vw;
-    max-width: 600px;
+    max-width: 550px;
     font-weight: bold;
     color: blue;
     font-size: 1rem
 }
 
-#freccie-lunghezza-container i {
-    position: relative;
+#freccie-lunghezza-container i,
+#freccie-altezza-container i {
+    font-size: 1.3rem;
+}
+
+#freccie-altezza-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 60vw;
+    max-height: 550px;
+    font-weight: bold;
+    color: blue;
+    font-size: 1rem;
+}
+
+#freccie-altezza-container span {
+    writing-mode: vertical-lr;
+    width: min-content;
+}
+
+#altezza-container {
+    display: flex !important;
+    align-items: center;
 }
 
 
