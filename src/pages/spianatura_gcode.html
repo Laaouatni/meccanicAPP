@@ -30,30 +30,28 @@
 </head>
 
 <body>
-    <!--     <style>
-        * {
-            outline: 1px solid red;
-        }
-    </style> -->
-
-
     <section id="section-spianatura">
+        <div id="preview-spianatura-container" style="outline: 2px solid red;">
+            <div id="spianatura-preview-first-container">
+                <div id="pezzo-grezzo">
 
-        <div id="preview-spianatura-container">
-            <div id="pezzo-grezzo">
+                </div>
 
+                <form id="form-spianatura">
+                    <label id="altezza-container" for="altezza-pezzo-input">
+                        <span>altezza</span>
+                        <input form="form-spianatura" type="number" min="5" max="500" value="100" id="altezza-pezzo-input">
+                    </label>
+                </form>
             </div>
 
-            <form id="form-spianatura-range">
-                <label id="altezza_range_container" for="altezza-pezzo-range">
-                    <span>altezza</span><input type="range" min="5" max="500" value="100" id="altezza-pezzo-range">
-                </label>
-
-                <label id="lunghezza_range_container" for="lunghezza-pezzo-range">
-                    <span>lunghezza</span><input type="range" min="5" max="500" orient="vertical" value="100" id="lunghezza-pezzo-range">        
-                </label>
-            </form>
+            <label id="lunghezza-container" for="lunghezza-pezzo-input">
+                <span>lunghezza</span>
+                <input form="form-spianatura" type="number" min="5" max="500" orient="vertical" value="100" id="lunghezza-pezzo-input">        
+            </label>
         </div>
+
+
     </section>
 
     <h3>ancora da sviluppare... </h3>

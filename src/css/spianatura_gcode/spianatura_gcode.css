@@ -1,24 +1,47 @@
-#form-spianatura-range label {
-    display: grid;
-    background: white;
-    padding: 1rem;
-    margin: 0.5rem;
-    box-sizing: border-box;
-    border-radius: 0.5rem;
-    box-shadow: inset 0 -0.2rem 0.5rem rgba(82, 203, 255, 0.287), 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+* {
+    --width-preview: 40vw;
 }
 
-#form-spianatura-range input {
+#preview-spianatura-container label {
+    display: grid;
+    font-size: 1rem;
+}
+
+#preview-spianatura-container input {
+    width: 5rem;
     font-size: 1.5rem;
     font-family: poppins;
 }
 
-* {
-    --width-pezzo: 40vh;
+#preview-spianatura-container {
+    display: grid;
+}
+
+#spianatura-preview-first-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
 }
 
 #pezzo-grezzo {
     background: red;
-    height: var(--width-pezzo);
+    width: 100%;
     aspect-ratio: 1;
+}
+
+#preview-spianatura-container {
+    width: 60vw;
+    max-width: 70vh;
+}
+
+#form-spianatura {
+    display: grid;
+    place-items: center;
+}
+
+#lunghezza-container {
+    outline: 1px solid red;
+    display: grid;
+    place-items: center;
+    width: calc(100% - 6rem)
 }
