@@ -15,15 +15,24 @@ let options = {
     "speed": "3000",
     "X0": pezzoGrezzo.X0,
     "Y0": pezzoGrezzo.Y0,
-    "nameGprogram": `%O0${10000 + Math.floor(Math.random() * 99999)}`
+    "nameGprogram": 12345,
 };
 
-function init(options) {
-    G90orG91();
-    G54();
+let gcode = [];
+
+function initGcode(options) {
+    addGnameProgram(options); // %O012345
+    G90orG91(options); // G90
+    ZeroPosition(); //G54
 
     function addGnameProgram(options) {
-        if (options.nameGprogram != null) {}
+        if (options.nameGprogram != null &&
+            options.nameGprogram != "" &&
+            options.nameGprogram != undefined) {
+            gcode.push(`%O0${options.nameGprogram}`);
+        } else {
+            gcode.push(`%O0${10000 + Math.floor(Math.random() * 99999)}`);
+        }
     }
 
     function G90orG91(options) {
@@ -34,16 +43,32 @@ function init(options) {
         }
     }
 
-    function G54() {
-        gcode.push(`
-G54 `);
+    function ZeroPosition() {
+        gcode.push(`G54`);
+    }
+}
+
+function setGargoments(options) {
+    setUtensile(options); // T1
+
+    function setUtensile(options) {
+        if (options.tool != null &&
+            options.tool != "" &&
+            options.tool != undefined) {
+            gcode.push(`M06 T${options.tool}`);
+        } else {
+            gcode.push(`M06 ${Math.floor(Math.random() * 10)}`);
+        }
     }
 }
 
 function createGcodeProgram(pezzoGrezzo, options) {
-    let gcode = [];
+    gcode = [];
 
-    gcode.push("errore codice non giusto, sto ancora programmando l'app, non utilizzare!!! ")
+    gcode.push("errore codice non giusto, sto ancora programmando l'app, non utilizzare!!! <br> ")
+
+    initGcode(options);
+    setGargoments(options);
 
     // now create a var with the gcode program
     let gcodeProgram = gcode.join("<br>");
