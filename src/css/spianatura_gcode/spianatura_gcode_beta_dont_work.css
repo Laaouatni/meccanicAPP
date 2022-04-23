@@ -1,0 +1,24 @@
+#form-spianatura-range label {
+    display: grid;
+    background: white;
+    padding: 1rem;
+    margin: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    box-shadow: inset 0 -0.2rem 0.5rem rgba(82, 203, 255, 0.287), 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+#form-spianatura-range input {
+    font-size: 1.5rem;
+    font-family: poppins;
+}
+
+* {
+    --width-pezzo: 40vh;
+}
+
+#pezzo-grezzo {
+    background: red;
+    height: var(--width-pezzo);
+    aspect-ratio: 1;
+}

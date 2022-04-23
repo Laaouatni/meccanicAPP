@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="genera il codice GCODE per eseguire una SPIANATURA! creato da Laaouatni">
+
+    <title>Generator di GCODE per SPIANATURA, meccanicAPP by Laaouatni.</title>
+
+    <!-- app icon -->
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87947051?v=4">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/87947051?v=4" type="image/jpg">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/87947051?v=4">
+    <meta property="twitter:card" content="summary_large_image">
+
+    <!-- poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- styles CSS -->
+    <link rel="stylesheet" href="../../style.css">
+
+    <!-- dependecies -->
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <!--     <style>
+        * {
+            outline: 1px solid red;
+        }
+    </style> -->
+
+
+    <section id="section-spianatura">
+
+        <div id="preview-spianatura-container">
+            <div id="pezzo-grezzo">
+
+            </div>
+
+            <form id="form-spianatura-range">
+                <label id="altezza_range_container" for="altezza-pezzo-range">
+                    <span>altezza</span><input type="range" min="5" max="500" value="100" id="altezza-pezzo-range">
+                </label>
+
+                <label id="lunghezza_range_container" for="lunghezza-pezzo-range">
+                    <span>lunghezza</span><input type="range" min="5" max="500" orient="vertical" value="100" id="lunghezza-pezzo-range">        
+                </label>
+            </form>
+        </div>
+    </section>
+
+    <h3>ancora da sviluppare... </h3>
+    <div id="alert">
+        <div id="alert-bg">
+            <div id="alert-content">
+                ERRORE, RIPROVA!!!
+            </div>
+            <div id="testo-errore">
+                devi inserire tutti i dati!
+            </div>
+        </div>
+    </div>
+
+    <script src="./../javascript/spianatura_gcode/spianatura_gcode.js"></script>
+</body>
+
+</html>
