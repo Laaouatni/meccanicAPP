@@ -22,89 +22,47 @@ let vw = window.innerWidth / 100;
 
 function calcolaAspectRatio(height, width) {
     let aspectRatio = height / width;
+    console.log({ height, width })
     return aspectRatio;
+}
+
+function setAspectRatioPezzo() {
+    altezzaInput = document.getElementById("altezza-pezzo-range");
+    lunghezzaInput = document.getElementById("lunghezza-pezzo-range");
+
+    altezzaRangeValue = altezzaInput.value;
+    lunghezzaRangeValue = lunghezzaInput.value;
+
+    pezzoInputJSON = {
+        "altezza": altezzaRangeValue,
+        "lunghezza": lunghezzaRangeValue
+    };
+
+    pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
+
+    if (pezzoGrezzo.offsetWidth > vw * 80) {
+        pezzoGrezzo.style.width = pezzoGrezzo.offsetWidth - vw / 2 + 'px';
+    }
 }
 
 //pc
 mouse_events.forEach((item) => {
     altezzaInput.addEventListener(item, () => {
-        altezzaInput = document.getElementById("altezza-pezzo-range");
-        lunghezzaInput = document.getElementById("lunghezza-pezzo-range");
-
-        altezzaRangeValue = altezzaInput.value;
-        lunghezzaRangeValue = lunghezzaInput.value;
-
-        pezzoInputJSON = {
-            "altezza": altezzaRangeValue,
-            "lunghezza": lunghezzaRangeValue
-        };
-
-        pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
-
-        if (pezzoGrezzo.offsetHeight > vh * 80) {
-            pezzoGrezzo.style.width = 100 + "px";
-        }
+        setAspectRatioPezzo();
     });
 
     lunghezzaInput.addEventListener(item, () => {
-
-        altezzaInput = document.getElementById("altezza-pezzo-range");
-        lunghezzaInput = document.getElementById("lunghezza-pezzo-range");
-
-        altezzaRangeValue = altezzaInput.value;
-        lunghezzaRangeValue = lunghezzaInput.value;
-
-        pezzoInputJSON = {
-            "altezza": altezzaRangeValue,
-            "lunghezza": lunghezzaRangeValue
-        };
-
-        pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
-
-        if (pezzoGrezzo.offsetHeight > vh * 80) {
-            pezzoGrezzo.style.width = 100 + "px";
-        }
+        setAspectRatioPezzo();
     });
 });
 
 //mobile
 touch_events.forEach((item) => {
     altezzaInput.addEventListener(item, () => {
-
-        altezzaInput = document.getElementById("altezza-pezzo-range");
-        lunghezzaInput = document.getElementById("lunghezza-pezzo-range");
-
-        altezzaRangeValue = altezzaInput.value;
-        lunghezzaRangeValue = lunghezzaInput.value;
-
-        pezzoInputJSON = {
-            "altezza": altezzaRangeValue,
-            "lunghezza": lunghezzaRangeValue
-        };
-
-        pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
-
-        if (pezzoGrezzo.offsetHeight > vh * 80) {
-            pezzoGrezzo.style.width = 100 + "px";
-        }
+        setAspectRatioPezzo();
     });
 
     lunghezzaInput.addEventListener(item, () => {
-
-        altezzaInput = document.getElementById("altezza-pezzo-range");
-        lunghezzaInput = document.getElementById("lunghezza-pezzo-range");
-
-        altezzaRangeValue = altezzaInput.value;
-        lunghezzaRangeValue = lunghezzaInput.value;
-
-        pezzoInputJSON = {
-            "altezza": altezzaRangeValue,
-            "lunghezza": lunghezzaRangeValue
-        };
-
-        pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
-        if (pezzoGrezzo.offsetHeight > vh * 80) {
-            pezzoGrezzo.style.width = 100 + "px";
-        }
+        setAspectRatioPezzo();
     });
 });

@@ -14,11 +14,11 @@
 }
 
 * {
-    --width-pezzo: 80vw;
+    --width-pezzo: 40vh;
 }
 
 #pezzo-grezzo {
     background: red;
-    width: var(--width-pezzo);
+    height: var(--width-pezzo);
     aspect-ratio: 1;
 }
