@@ -14,73 +14,91 @@ let preview_max = document.getElementById("preview-max");
 let preview_min = document.getElementById("preview-min");
 /* console.log(h_albero_dati_URL); */
 
+let loading = document.getElementById("loading-container");
 
-fetch(h_albero_dati_URL)
-    .then((response) => {
-        return response.json();
-    })
-    .then((data) => {
-        jsonData = data;
-        /* document.getElementById("output-json").textContent += JSON.stringify(data); */
-    })
-    .then(() => {
-        let diametro_value = diametroRangeInput.value;
-        diametroSpan.textContent = "Ø" + diametro_value;
+function addLoading() {
+    loading.style.display = "grid";
+}
 
-        let h_value = hRangeInput.value;
-        hSpan.textContent = "h" + h_value;
+function removeLoading() {
+    loading.style.display = "none";
+}
 
-        calcolaTolleranza()
+function fetchAndDisplay() {
+    addLoading();
 
+    fetch(h_albero_dati_URL)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            jsonData = data;
+            /* document.getElementById("output-json").textContent += JSON.stringify(data); */
+        })
+        .then(() => {
+            let diametro_value = diametroRangeInput.value;
+            diametroSpan.textContent = "Ø" + diametro_value;
 
-        //pc
+            let h_value = hRangeInput.value;
+            hSpan.textContent = "h" + h_value;
 
-        let mouse_events = ["mousemove", "mousedown", "click"];
+            calcolaTolleranza()
 
-        mouse_events.forEach((item) => {
-            hRangeInput.addEventListener(item, () => {
-                h_value = hRangeInput.value;
-                hSpan.textContent = "h" + h_value;
-                calcolaTolleranza();
+            //pc
+
+            let mouse_events = ["mousemove", "mousedown", "click"];
+
+            mouse_events.forEach((item) => {
+                hRangeInput.addEventListener(item, () => {
+                    h_value = hRangeInput.value;
+                    hSpan.textContent = "h" + h_value;
+                    calcolaTolleranza();
+                });
+
+                diametroRangeInput.addEventListener(item, () => {
+                    diametro_value = diametroRangeInput.value;
+                    diametroSpan.textContent = "Ø" + diametro_value;
+                    calcolaTolleranza();
+                });
             });
 
-            diametroRangeInput.addEventListener(item, () => {
-                diametro_value = diametroRangeInput.value;
-                diametroSpan.textContent = "Ø" + diametro_value;
-                calcolaTolleranza();
+            //mobile
+
+            let touch_events = ["touchstart", "touchend", "touchmove"];
+
+            touch_events.forEach((item) => {
+                hRangeInput.addEventListener(item, () => {
+                    h_value = hRangeInput.value;
+                    hSpan.textContent = "h" + h_value;
+                    calcolaTolleranza();
+                });
+
+                diametroRangeInput.addEventListener(item, () => {
+                    diametro_value = diametroRangeInput.value;
+                    diametroSpan.textContent = "Ø" + diametro_value;
+                    calcolaTolleranza();
+                });
             });
+
+
+        }).catch((error) => {
+            let alert = document.querySelector('#alert');
+            let testoErrore = document.querySelector("#testo-errore");
+            alert.classList.add("alert-visible");
+
+            testoErrore.textContent = error; /* after 2 seconds remove the alert*/
+
+            setTimeout(() => {
+                alert.classList.remove("alert-visible");
+            }, 2000);
+        }).finally(() => {
+            removeLoading();
         });
+}
 
-        //mobile
-
-        let touch_events = ["touchstart", "touchend", "touchmove"];
-
-        touch_events.forEach((item) => {
-            hRangeInput.addEventListener(item, () => {
-                h_value = hRangeInput.value;
-                hSpan.textContent = "h" + h_value;
-                calcolaTolleranza();
-            });
-
-            diametroRangeInput.addEventListener(item, () => {
-                diametro_value = diametroRangeInput.value;
-                diametroSpan.textContent = "Ø" + diametro_value;
-                calcolaTolleranza();
-            });
-        });
+fetchAndDisplay()
 
 
-    }).catch((error) => {
-        let alert = document.querySelector('#alert');
-        let testoErrore = document.querySelector("#testo-errore");
-        alert.classList.add("alert-visible");
-
-        testoErrore.textContent = error; /* after 2 seconds remove the alert*/
-
-        setTimeout(() => {
-            alert.classList.remove("alert-visible");
-        }, 2000);
-    });
 
 let previewDiametro = document.getElementById("preview-diametro");
 

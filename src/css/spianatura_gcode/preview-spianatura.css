@@ -34,7 +34,7 @@
     border-radius: 0.5rem;
     transform: scale(1);
     transition: all 0.2s ease-in-out;
-    animation: pezzoStart 2.5s ease-in-out;
+    animation: pezzoStart 2s ease-in-out;
 }
 
 @keyframes pezzoStart {

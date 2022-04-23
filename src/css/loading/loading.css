@@ -1,0 +1,23 @@
+#loading-container {
+    background: rgba(0, 0, 20, 0.5);
+    display: none;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#loading-container span {
+    color: blue;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 0 2rem white;
+}
+
+#loading-container img {
+    filter: drop-shadow(0 0 1rem white);
+}
