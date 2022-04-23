@@ -16,6 +16,7 @@ let options = {
     "X0": pezzoGrezzo.X0,
     "Y0": pezzoGrezzo.Y0,
     "nameGprogram": 12345,
+    "diametro": 20
 };
 
 let gcode = [];
@@ -50,16 +51,54 @@ function initGcode(options) {
 
 function setGargoments(options) {
     setUtensile(options); // T1
+    setSpeed(options); // S3000
 
     function setUtensile(options) {
         if (options.tool != null &&
             options.tool != "" &&
             options.tool != undefined) {
             gcode.push(`M06 T${options.tool}`);
+            gcode.push(`G43 H${options.tool}`);
         } else {
-            gcode.push(`M06 ${Math.floor(Math.random() * 10)}`);
+            let randomUtensile = Math.floor(Math.random() * 10);
+            gcode.push(`M06 ${randomUtensile}`);
+            gcode.push(`G43 H${randomUtensile}`);
         }
     }
+
+    function setSpeed(options) {
+        if (options.speed != null &&
+            options.speed != "" &&
+            options.speed != undefined) {
+            gcode.push(`S${options.speed} M3`);
+        } else {
+            gcode.push(`S1000 M3`);
+        }
+    }
+}
+
+function G1(x, y, z) {
+    gcode.push(`G1 X${x} Y${y} Z${z}`);
+}
+
+function G0(x, y, z) {
+    // if x or y o z is null or undefined then set it to 0
+    if (x == null || x == undefined) {
+        x = 0;
+    }
+    if (y == null || y == undefined) {
+        y = 0;
+    }
+    if (z == null || z == undefined) {
+        z = 0;
+    }
+    gcode.push(`G0 X${x} Y${y} Z${z}`);
+}
+
+function startGsicurezza() {
+    let startPoint = 0 - options.diametro / 2 - 2;
+    G0(startPoint);
+    G1(pezzoGrezzo.X0);
 }
 
 function createGcodeProgram(pezzoGrezzo, options) {
@@ -69,6 +108,7 @@ function createGcodeProgram(pezzoGrezzo, options) {
 
     initGcode(options);
     setGargoments(options);
+    startGsicurezza();
 
     // now create a var with the gcode program
     let gcodeProgram = gcode.join("<br>");
