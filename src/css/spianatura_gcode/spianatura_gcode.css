@@ -24,13 +24,16 @@
 }
 
 #pezzo-grezzo {
-    background: red;
+    background-image: url("./../../../utilities/images/texture/metal/0metal.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     aspect-ratio: 1;
 }
 
 #preview-spianatura-container {
-    width: 60vw;
+    width: 80vw;
     max-width: 70vh;
 }
 
@@ -45,3 +48,41 @@
     place-items: center;
     width: calc(100% - 6rem)
 }
+
+#freccie-lunghezza-container {
+    outline: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 60vw;
+    max-width: 600px;
+}
+
+#freccie-lunghezza-container i {
+    font-size: 1.5rem;
+    color: blue;
+    position: relative;
+}
+
+
+/* #freccie-lunghezza-container i:nth-of-type(1):after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 80%;
+    width: 10vw;
+    height: 0.2rem;
+    background-color: blue;
+}
+
+#freccie-lunghezza-container i:nth-of-type(2)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 80%;
+    width: 10vw;
+    height: 0.2rem;
+    background-color: blue;
+} */
