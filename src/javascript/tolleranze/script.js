@@ -96,9 +96,7 @@ function fetchAndDisplay() {
         });
 }
 
-fetchAndDisplay()
-
-
+fetchAndDisplay();
 
 let previewDiametro = document.getElementById("preview-diametro");
 
