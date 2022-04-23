@@ -15,6 +15,7 @@
 
 #preview-spianatura-container {
     display: grid;
+    gap: 0.5rem;
 }
 
 #spianatura-preview-first-container {
@@ -33,7 +34,7 @@
 }
 
 #preview-spianatura-container {
-    width: 80vw;
+    width: 95vw;
     max-width: 70vh;
 }
 
@@ -50,17 +51,17 @@
 }
 
 #freccie-lunghezza-container {
-    outline: 2px solid red;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     width: 60vw;
     max-width: 600px;
+    font-weight: bold;
+    color: blue;
+    font-size: 1rem
 }
 
 #freccie-lunghezza-container i {
-    font-size: 1.5rem;
-    color: blue;
     position: relative;
 }
 
