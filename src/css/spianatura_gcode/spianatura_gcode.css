@@ -1,5 +1,5 @@
 * {
-    --width-preview: 40vw;
+    --max-width-preview: 70vh;
 }
 
 #preview-spianatura-container label {
@@ -8,7 +8,7 @@
 }
 
 #preview-spianatura-container input {
-    width: 5rem;
+    width: 4rem;
     height: 2rem;
     font-size: 1.5rem;
     font-family: poppins;
@@ -28,17 +28,32 @@
 #pezzo-grezzo {
     background-image: url("./../../../utilities/images/texture/metal/0metal.jpg");
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     aspect-ratio: 1;
     border-radius: 0.5rem;
+    transform: scale(0.98);
+    transition: all 0.2s ease-in-out;
+}
+
+#pezzo-grezzo:hover {
+    background-image: url("./../../../utilities/images/texture/metal/0cube.png");
+    transform: scale(1);
 }
 
 #preview-spianatura-container {
-    width: 95vw;
-    max-width: 70vh;
-    background: rgba(255, 255, 255, 0.3);
+    width: 90vw;
+    max-width: var(--max-width-preview);
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(0, 195, 255, 0.644);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    transition: all 0.5s ease-in-out;
+}
+
+#preview-spianatura-container:hover {
+    transform: translateY(0.2rem);
+    box-shadow: 0 0.5rem 2rem rgba(0, 99, 165, 0.334);
 }
 
 #form-spianatura {
@@ -47,7 +62,7 @@
 }
 
 #lunghezza-container {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     display: grid;
     place-items: center;
     width: calc(100% - 7.5rem)
@@ -59,37 +74,43 @@
     gap: 1rem;
     width: 60vw;
     max-width: 550px;
-    font-weight: bold;
+    font-weight: 500;
     color: blue;
     font-size: 1rem
 }
 
 #freccie-lunghezza-container i,
-#freccie-altezza-container i {
+#freccie-larghezza-container i {
     font-size: 1.3rem;
 }
 
-#freccie-altezza-container {
+#freccie-larghezza-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     height: 60vw;
-    max-height: 550px;
-    font-weight: bold;
+    max-height: 570px;
+    font-weight: 500;
     color: blue;
     font-size: 1rem;
 }
 
-#freccie-altezza-container span {
+#freccie-larghezza-container span {
     writing-mode: vertical-lr;
     width: min-content;
 }
 
-#altezza-container {
+#larghezza-container {
     display: flex !important;
     align-items: center;
+    /* outline: 1px solid red; */
+}
+
+#larghezza-container,
+#lunghezza-container {
+    gap: 0.2rem;
 }
 
 
