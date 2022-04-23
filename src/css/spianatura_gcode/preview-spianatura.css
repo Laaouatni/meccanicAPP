@@ -26,19 +26,19 @@
 }
 
 #pezzo-grezzo {
-    background-image: url("./../../../utilities/images/texture/metal/0metal.jpg");
+    background-image: url("./../../../utilities/images/texture/metal/0cube.png");
     background-position: center;
     background-size: cover;
     width: 100%;
     aspect-ratio: 1;
     border-radius: 0.5rem;
-    transform: scale(0.98);
+    transform: scale(1);
     transition: all 0.2s ease-in-out;
 }
 
 #pezzo-grezzo:hover {
-    background-image: url("./../../../utilities/images/texture/metal/0cube.png");
-    transform: scale(1);
+    background-image: url("./../../../utilities/images/texture/metal/0metal.jpg");
+    transform: scale(0.98);
 }
 
 #preview-spianatura-container {
