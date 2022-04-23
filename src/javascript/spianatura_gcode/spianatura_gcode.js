@@ -41,10 +41,8 @@ mouse_events.forEach((item) => {
 
         pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
 
-        if (pezzoGrezzo.offsetHeight > vh * 40) {
-            pezzoGrezzo.style.width -= 1 + "px";
-        } else {
-            pezzoGrezzo.style.width += 1 + "px";
+        if (pezzoGrezzo.offsetHeight > vh * 80) {
+            pezzoGrezzo.style.width = 100 + "px";
         }
     });
 
@@ -63,10 +61,8 @@ mouse_events.forEach((item) => {
 
         pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
 
-        if (pezzoGrezzo.offsetHeight > vh * 40) {
-            pezzoGrezzo.style.width -= 1 + "px";
-        } else {
-            pezzoGrezzo.style.width += 1 + "px";
+        if (pezzoGrezzo.offsetHeight > vh * 80) {
+            pezzoGrezzo.style.width = 100 + "px";
         }
     });
 });
@@ -88,10 +84,8 @@ touch_events.forEach((item) => {
 
         pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
 
-        if (pezzoGrezzo.offsetHeight > vh * 40) {
-            pezzoGrezzo.style.width -= 1 + "px";
-        } else {
-            pezzoGrezzo.style.width += 1 + "px";
+        if (pezzoGrezzo.offsetHeight > vh * 80) {
+            pezzoGrezzo.style.width = 100 + "px";
         }
     });
 
@@ -109,10 +103,8 @@ touch_events.forEach((item) => {
         };
 
         pezzoGrezzo.style.aspectRatio = calcolaAspectRatio(pezzoInputJSON.altezza, pezzoInputJSON.lunghezza);
-        if (pezzoGrezzo.offsetHeight > vh * 40) {
-            pezzoGrezzo.style.width -= 1 + "px";
-        } else {
-            pezzoGrezzo.style.width += 1 + "px";
+        if (pezzoGrezzo.offsetHeight > vh * 80) {
+            pezzoGrezzo.style.width = 100 + "px";
         }
     });
 });

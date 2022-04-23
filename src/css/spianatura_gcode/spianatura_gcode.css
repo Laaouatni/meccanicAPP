@@ -20,4 +20,5 @@
 #pezzo-grezzo {
     background: red;
     width: var(--width-pezzo);
+    aspect-ratio: 1;
 }
