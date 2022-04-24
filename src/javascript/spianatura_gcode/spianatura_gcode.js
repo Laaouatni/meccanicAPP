@@ -83,13 +83,18 @@ function G1(x, y, z) {
 
 function G0(x, y, z) {
     // if x or y o z is null or undefined then set it to 0
-    if (x == null || x == undefined) {
+    if (x == null ||
+        x == undefined) {
         x = 0;
+
     }
-    if (y == null || y == undefined) {
+    if (y == null ||
+        y == undefined) {
         y = 0;
     }
-    if (z == null || z == undefined) {
+    if (z == null ||
+        z == undefined ||
+        z == "") {
         z = 0;
     }
     gcode.push(`G0 X${x} Y${y} Z${z}`);

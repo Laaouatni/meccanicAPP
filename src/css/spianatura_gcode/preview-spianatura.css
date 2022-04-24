@@ -33,7 +33,7 @@
     aspect-ratio: 1;
     border-radius: 0.5rem;
     transform: scale(1.3);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out, background-image 0.3s ease-in-out 0ms;
     animation: pezzoStart 2s ease-in-out;
 }
 
@@ -52,6 +52,7 @@
 #pezzo-grezzo:hover {
     background-image: url("./../../../utilities/images/texture/metal/0metal.jpg");
     transform: scale(0.98);
+    transition: all 0.2s ease-in-out, background-image 0.5s ease-in-out 500ms;
 }
 
 #preview-spianatura-container {
