@@ -15,5 +15,9 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
 
 > Tutto ciò, in modo semplice (tramite slider, senza dover digitare con la tastiera)
 
-3. L'app deve essere ancora completata... per avere più funzionalità!
+3. Generare GCODE automaticamente:
+- spianatura FRESA.
+
+> codice generato funzionante su controllo siemens
+4. L'app deve essere ancora completata... per avere più funzionalità!
 
