@@ -209,6 +209,32 @@ function createGcodeProgram(options, pezzoGrezzo) {
 }
 
 calcolaBtn.addEventListener("click", () => {
+    pezzoGrezzo = {
+        "X0": parseInt(lunghezzaInput.value),
+        "Y0": parseInt(larghezzaInput.value),
+        "Z0": 10
+    }
+
+    console.log(pezzoGrezzo.Z0)
+
+    utensile = {
+        "feed": 1000,
+        "speed": 3000,
+        "diametro": 20,
+        "diametroPercentLavorazione": 60
+    }
+
+    options = {
+        "absolute": true,
+        "feed": utensile.feed,
+        "speed": utensile.speed,
+        "diametro": utensile.diametro,
+        "diamPercentLavorazione": utensile.diametroPercentLavorazione,
+        "diamPercMisura": "",
+        "X0": pezzoGrezzo.X0,
+        "Y0": pezzoGrezzo.Y0,
+        "nameGprogram": "",
+    };
     displayGcode(options, pezzoGrezzo);
 });
 
