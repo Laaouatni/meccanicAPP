@@ -178,6 +178,14 @@ function spianaturaGenerator(options) {
             GtoDestra(options);
             GtoDown();
         }
+
+        if (lineeY_completed = lineeY_totali) {
+            if (isDestra) {
+                GtoSinistra();
+            } else {
+                GtoDestra(options);
+            }
+        }
     }
 
     function GtoDestra(options) {
