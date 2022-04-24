@@ -106,11 +106,13 @@ function setGargoments(options) {
 function G0(x, y, z) {
     let XYZ = checkSolveXYZ(x, y, z);
     gcode.push(`G0 X${XYZ.x} Y${XYZ.y} Z${XYZ.z}`);
+    setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
 }
 
 function G1(x, y, z) {
     let XYZ = checkSolveXYZ(x, y, z);
     gcode.push(`G1 X${XYZ.x} Y${XYZ.y} Z${XYZ.z}`);
+    setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
 }
 
 function checkSolveXYZ(x, y, z) {
@@ -156,9 +158,15 @@ function startGsicurezza(options) {
     G0(startPointX, startPointY, 0);
 }
 
+function setLastPosVar(x, y, z) {
+    previusX = x;
+    previusY = y;
+    previusZ = z;
+}
+
 function spianaturaGenerator(options) {
 
-    console.log("spianatura")
+    let goDown = previusY - diamPercMisura;
 
 }
 
@@ -166,6 +174,7 @@ function createGcodeProgram(options) {
     initGcode(options);
     setGargoments(options);
     startGsicurezza(options);
+    spianaturaGenerator(options);
 
     // now create a var with the gcode program
     let gcodeProgram = gcode.join("<br>");
