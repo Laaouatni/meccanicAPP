@@ -170,13 +170,14 @@ function spianaturaGenerator(options) {
             GtoDown();
         }
 
-        if (lineeY_completed = lineeY_totali) {
+        if (lineeY_completed == lineeY_totali) {
             if (isDestra) {
                 GtoSinistra();
             } else {
                 GtoDestra(options);
             }
         }
+        console.log("completed line " + lineeY_completed)
     }
 
     function GtoDestra(options) {
