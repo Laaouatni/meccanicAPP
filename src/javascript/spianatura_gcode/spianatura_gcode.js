@@ -9,7 +9,6 @@ let pezzoGrezzo = {
     "Z0": 10
 }
 
-console.log(pezzoGrezzo.Z0)
 
 let utensile = {
     "feed": 1000,
@@ -107,7 +106,6 @@ function G1(x, y, z) {
 
 function checkSolveXYZ(x, y, z) {
     if (x == null || x == undefined || x == "") {
-        console.log(x)
         if (previusX != null || previusX != undefined || previusX != "") {
             x = previusX;
         } else {
@@ -157,15 +155,15 @@ function setLastPosVar(x, y, z) {
 
 function spianaturaGenerator(options) {
     let isDestra = false;
-    let lineeY_totali = options.Y0 / options.diamPercMisura;
+    let lineeY_totali = Math.floor(options.Y0 / options.diamPercMisura);
 
     for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
         if (isDestra) {
-            console.log("Destra" + " " + lineeY_completed);
+
             GtoSinistra();
             GtoDown();
         } else {
-            console.log("Sinistra" + " " + lineeY_completed)
+
             GtoDestra(options);
             GtoDown();
         }
@@ -173,11 +171,13 @@ function spianaturaGenerator(options) {
         if (lineeY_completed == lineeY_totali) {
             if (isDestra) {
                 GtoSinistra();
+                console.log("GtoSinistra completed successfully")
             } else {
                 GtoDestra(options);
+                console.log("GtoDestra completed successfully")
             }
         }
-        console.log("completed line " + lineeY_completed)
+        console.log("completed line " + lineeY_completed + " of " + lineeY_totali)
     }
 
     function GtoDestra(options) {
@@ -215,7 +215,6 @@ calcolaBtn.addEventListener("click", () => {
         "Z0": 10
     }
 
-    console.log(pezzoGrezzo.Z0)
 
     utensile = {
         "feed": 1000,
@@ -240,4 +239,5 @@ calcolaBtn.addEventListener("click", () => {
 
 function displayGcode(options, pezzoGrezzo) {
     outputGcode.innerHTML = createGcodeProgram(options, pezzoGrezzo);
+
 }
