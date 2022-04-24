@@ -96,32 +96,20 @@ function setGargoments(options) {
 }
 
 function G1(x, y, z) {
-    if (x == null && x == undefined && x == "") {
+    [x, y, z].forEach((pos, index) => {
+        if (pos == null && pos == undefined && pos == "") {
 
-        if (previusX != null && previusX != undefined && previusX != "") {
-            x = previusX;
-        } else {
-            x = 0;
+            if (previusX != null && previusX != undefined && previusX != "") {
+                pos = [previusX, previusY, previusZ][index];
+            } else {
+                pos = 0;
+            }
         }
-    }
-    if (y == null && y == undefined && y == "") {
+    });
 
-        if (previusY != null && previusY != undefined && previusY != "") {
-            y = previusY;
-        } else {
-            y = 0;
-        }
-    }
-    if (z == null && z == undefined && z == "") {
-        if (previusZ != null && previusZ != undefined && previusZ != "") {
-            z = previusZ;
-        } else {
-            z = 0;
-        }
-
-        gcode.push(`G1 X${x} Y${y} Z${z}`);
-    }
+    gcode.push(`G1 X${x} Y${y} Z${z}`);
 }
+
 
 function G0(x, y, z) {
     if (x == null ||
