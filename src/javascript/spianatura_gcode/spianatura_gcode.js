@@ -43,12 +43,12 @@ let calcolaBtn = document.querySelector("#btn-form");
 function initGcode(options, pezzoGrezzo) {
     resetGcode();
     resetXYZ();
-    setWorkspace(pezzoGrezzo);
+    setWorkpiece(pezzoGrezzo);
     G90orG91(options); // G90
     ZeroPosition(); //G54
 
-    function setWorkspace(pezzoGrezzo) {
-        gcode.push(`WORKSPACE(,"",, "BOX",64, 1, -${pezzoGrezzo.Z0}, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
+    function setWorkpiece(pezzoGrezzo) {
+        gcode.push(`WORKPIECE(,"",, "BOX",64, 1, -${pezzoGrezzo.Z0}, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
     }
 
     function G90orG91(options) {
@@ -208,11 +208,9 @@ function createGcodeProgram(options, pezzoGrezzo) {
     return gcodeProgram;
 }
 
-/* calcolaBtn.addEventListener("click", () => {
-    displayGcode(options);
-}); */
-
-displayGcode(options, pezzoGrezzo);
+calcolaBtn.addEventListener("click", () => {
+    displayGcode(options, pezzoGrezzo);
+});
 
 function displayGcode(options, pezzoGrezzo) {
     outputGcode.innerHTML = createGcodeProgram(options, pezzoGrezzo);
