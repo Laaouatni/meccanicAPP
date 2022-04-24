@@ -1,4 +1,3 @@
-"use strict";
 let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
 let larghezzaInput = document.getElementById("larghezza-pezzo-input");
 
@@ -96,36 +95,58 @@ function setGargoments(options) {
 }
 
 function G1(x, y, z) {
-    [x, y, z].forEach((pos, index) => {
-        if (pos == null && pos == undefined && pos == "") {
+    if (x == null || x == undefined || x == "") {
 
-            if (previusX != null && previusX != undefined && previusX != "") {
-                pos = [previusX, previusY, previusZ][index];
-            } else {
-                pos = 0;
-            }
+        if (previusX != null && previusX != undefined && previusX != "") {
+            x = previusX;
+        } else {
+            x = 0;
         }
-    });
+    }
+    if (y == null || y == undefined || y == "") {
 
+        if (previusY != null && previusY != undefined && previusY != "") {
+            y = previusY;
+        } else {
+            y = 0;
+        }
+    }
+    if (z == null || z == undefined || z == "") {
+        if (previusZ != null && previusZ != undefined && previusZ != "") {
+            z = previusZ;
+        } else {
+            z = 0;
+        }
+
+    }
     gcode.push(`G1 X${x} Y${y} Z${z}`);
 }
 
-
 function G0(x, y, z) {
-    if (x == null ||
-        x == undefined ||
-        x == "") {
-        x = 0; // ricordati di cambiare to previusX
+
+
+    if (x == null && x == undefined && x == "") {
+
+        if (previusX != null && previusX != undefined && previusX != "") {
+            x = previusX;
+        } else {
+            x = 0;
+        }
     }
-    if (y == null ||
-        y == undefined ||
-        y == "") {
-        y = 0; // previusY
+    if (y == null && y == undefined && y == "") {
+
+        if (previusY != null && previusY != undefined && previusY != "") {
+            y = previusY;
+        } else {
+            y = 0;
+        }
     }
-    if (z == null ||
-        z == undefined ||
-        z == "") {
-        z = 0; // previusZ
+    if (z == null && z == undefined && z == "") {
+        if (previusZ != null && previusZ != undefined && previusZ != "") {
+            z = previusZ;
+        } else {
+            z = 0;
+        }
     }
     gcode.push(`G0 X${x} Y${y} Z${z}`);
 }
