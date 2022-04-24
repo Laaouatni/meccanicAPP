@@ -1,3 +1,4 @@
 https://meccanicapp.vercel.app/
 https://meccanicapp.vercel.app/src/pages/interferenza_gioco_albero.html
 https://meccanicapp.vercel.app/src/pages/tolleranze.html
+https://meccanicapp.vercel.app/src/pages/spianatura_gcode.html

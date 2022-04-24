@@ -82,20 +82,20 @@ function G1(x, y, z) {
 }
 
 function G0(x, y, z) {
-    // if x or y o z is null or undefined then set it to 0
     if (x == null ||
-        x == undefined) {
-        x = 0;
-
+        x == undefined ||
+        x == "") {
+        x = 0; // ricordati di cambiare to previusX
     }
     if (y == null ||
-        y == undefined) {
-        y = 0;
+        y == undefined ||
+        y == "") {
+        y = 0; // previusY
     }
     if (z == null ||
         z == undefined ||
         z == "") {
-        z = 0;
+        z = 0; // previusZ
     }
     gcode.push(`G0 X${x} Y${y} Z${z}`);
 }
