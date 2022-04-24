@@ -165,8 +165,32 @@ function setLastPosVar(x, y, z) {
 }
 
 function spianaturaGenerator(options) {
+    let isDestra = false;
+    let lineeY_totali = options.Y0 / options.diamPercMisura;
 
-    let goDown = previusY - diamPercMisura;
+    for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
+        if (isDestra) {
+            console.log("Destra" + " " + lineeY_completed);
+            GtoSinistra();
+        } else {
+            console.log("Sinistra" + " " + lineeY_completed)
+            GtoDestra(options);
+        }
+    }
+
+    function GtoDestra(options) {
+        G1(options.X0 + 2, "", "");
+        isDestra = true;
+    }
+
+    function GtoSinistra() {
+        G1(0 - 2, "", "");
+        isDestra = false;
+    }
+
+    function GtoDown() {
+        G1("", previusY - diamPercMisura, "");
+    }
 
 }
 
