@@ -249,6 +249,6 @@ function displayGcode(options, pezzoGrezzo) {
             newGcodeLine.textContent = Gline;
             newGcodeLine.classList.add("gcode-line");
             newGcodeLine.scrollIntoView({});
-        }, index * 10);
+        }, index * 1000 / 30);
     });
 }
