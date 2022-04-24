@@ -1,3 +1,4 @@
+"use strict";
 let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
 let larghezzaInput = document.getElementById("larghezza-pezzo-input");
 
@@ -20,8 +21,15 @@ let options = {
 };
 
 let gcode = [];
+let previusX = 0;
+let previusY = 0;
+let previusZ = 0;
+
+
 
 function initGcode(options) {
+    resetGcode();
+    resetXYZ();
     addGnameProgram(options); // %O012345
     G90orG91(options); // G90
     ZeroPosition(); //G54
@@ -46,6 +54,16 @@ function initGcode(options) {
 
     function ZeroPosition() {
         gcode.push(`G54`);
+    }
+
+    function resetGcode() {
+        gcode = [];
+    }
+
+    function resetXYZ() {
+        previusX = 0;
+        previusY = 0;
+        previusZ = 0;
     }
 }
 
@@ -78,7 +96,31 @@ function setGargoments(options) {
 }
 
 function G1(x, y, z) {
-    gcode.push(`G1 X${x} Y${y} Z${z}`);
+    if (x == null && x == undefined && x == "") {
+
+        if (previusX != null && previusX != undefined && previusX != "") {
+            x = previusX;
+        } else {
+            x = 0;
+        }
+    }
+    if (y == null && y == undefined && y == "") {
+
+        if (previusY != null && previusY != undefined && previusY != "") {
+            y = previusY;
+        } else {
+            y = 0;
+        }
+    }
+    if (z == null && z == undefined && z == "") {
+        if (previusZ != null && previusZ != undefined && previusZ != "") {
+            z = previusZ;
+        } else {
+            z = 0;
+        }
+
+        gcode.push(`G1 X${x} Y${y} Z${z}`);
+    }
 }
 
 function G0(x, y, z) {
@@ -107,17 +149,17 @@ function startGsicurezza() {
 }
 
 function createGcodeProgram(pezzoGrezzo, options) {
-    gcode = [];
-
     gcode.push("errore codice non giusto, sto ancora programmando l'app, non utilizzare!!! <br> ")
 
     initGcode(options);
     setGargoments(options);
     startGsicurezza();
 
+
     // now create a var with the gcode program
     let gcodeProgram = gcode.join("<br>");
     return gcodeProgram;
 }
+
 
 outputGcode.innerHTML = createGcodeProgram(pezzoGrezzo, options);
