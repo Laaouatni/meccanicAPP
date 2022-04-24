@@ -20,11 +20,10 @@ let options = {
 };
 
 let gcode = [];
-let previusX = 0;
-let previusY = 10;
-let previusZ = 0;
 
-
+let previusX;
+let previusY;
+let previusZ;
 
 function initGcode(options) {
     resetGcode();
@@ -34,9 +33,7 @@ function initGcode(options) {
     ZeroPosition(); //G54
 
     function addGnameProgram(options) {
-        if (options.nameGprogram != null &&
-            options.nameGprogram != "" &&
-            options.nameGprogram != undefined) {
+        if (options.nameGprogram != null && options.nameGprogram != "" && options.nameGprogram != undefined) {
             gcode.push(`%O0${options.nameGprogram}`);
         } else {
             gcode.push(`%O0${10000 + Math.floor(Math.random() * 99999)}`);
@@ -71,9 +68,7 @@ function setGargoments(options) {
     setSpeed(options); // S3000
 
     function setUtensile(options) {
-        if (options.tool != null &&
-            options.tool != "" &&
-            options.tool != undefined) {
+        if (options.tool != null && options.tool != "" && options.tool != undefined) {
             gcode.push(`M06 T${options.tool}`);
             gcode.push(`G43 H${options.tool}`);
         } else {
@@ -84,9 +79,7 @@ function setGargoments(options) {
     }
 
     function setSpeed(options) {
-        if (options.speed != null &&
-            options.speed != "" &&
-            options.speed != undefined) {
+        if (options.speed != null && options.speed != "" && options.speed != undefined) {
             gcode.push(`S${options.speed} M3`);
         } else {
             gcode.push(`S1000 M3`);
@@ -117,10 +110,8 @@ function checkSolveXYZ(x, y, z) {
 
         if (previusY != null || previusY != undefined || previusY != "") {
             y = previusY;
-            console.log("hello i am previus")
         } else {
             y = 0;
-            console.log("i am 0")
         }
     }
     if (z == null || z == undefined || z == "") {
@@ -138,17 +129,13 @@ function checkSolveXYZ(x, y, z) {
 
 function startGsicurezza() {
     let startPoint = 0 - options.diametro / 2 - 2;
-    G0(startPoint);
-    G1(pezzoGrezzo.X0);
+    G0(startPoint, 0, 0);
 }
 
 function createGcodeProgram(pezzoGrezzo, options) {
-    gcode.push("errore codice non giusto, sto ancora programmando l'app, non utilizzare!!! <br> ")
-
     initGcode(options);
     setGargoments(options);
     startGsicurezza();
-
 
     // now create a var with the gcode program
     let gcodeProgram = gcode.join("<br>");
