@@ -1,12 +1,16 @@
 .gcode-line {
-    animation: gcode-line 0.5s ease-in;
+    animation: gcode-line 0.5s ease-out forwards;
 }
 
 @keyframes gcode-line {
     0% {
         transform: translateX(-50%);
+color: black;
+font-weight: normal;
     }
     100% {
         transform: translateX(0);
+color: blue;
+font-weight: bold;
     }
 }
