@@ -1,5 +1,5 @@
 .gcode-line {
-    animation: gcode-line 0.2s ease-in-out;
+    animation: gcode-line 0.5s ease-in;
 }
 
 @keyframes gcode-line {
