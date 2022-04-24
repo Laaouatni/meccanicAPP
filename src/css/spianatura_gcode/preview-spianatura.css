@@ -35,7 +35,6 @@
     transform: scale(1);
     transition: all 0.2s ease-in-out, background-image 0.3s ease-in-out 0ms;
     animation: pezzoStart 2s ease-in-out;
-    outline: 1px solid red;
 }
 
 @keyframes pezzoStart {
@@ -81,7 +80,6 @@
     display: grid;
     place-items: center;
     width: calc(100% - 6.8rem);
-    outline: 1px solid red;
 }
 
 #freccie-lunghezza-container {

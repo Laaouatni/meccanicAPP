@@ -8,15 +8,25 @@ let pezzoGrezzo = {
     "Y0": larghezzaInput.value
 }
 
+let utensile = {
+    "num": "1",
+    "feed": 1000,
+    "speed": 3000,
+    "diametro": 20,
+    "diametroPercentLavorazione": 60
+}
+
 let options = {
     "absolute": true,
-    "tool": "1",
-    "feed": "1000",
-    "speed": "3000",
+    "tool": utensile.num,
+    "feed": utensile.feed,
+    "speed": utensile.speed,
+    "diametro": utensile.diametro,
+    "diamPercentLavorazione": utensile.diametroPercentLavorazione,
+    "diamPercMisura": "",
     "X0": pezzoGrezzo.X0,
     "Y0": pezzoGrezzo.Y0,
-    "nameGprogram": 12345,
-    "diametro": 20
+    "nameGprogram": "",
 };
 
 let gcode = [];
@@ -24,6 +34,10 @@ let gcode = [];
 let previusX;
 let previusY;
 let previusZ;
+
+let diamPercMisura;
+
+let calcolaBtn = document.querySelector("#btn-form");
 
 function initGcode(options) {
     resetGcode();
@@ -68,6 +82,8 @@ function setGargoments(options) {
     setSpeed(options); // S3000
 
     function setUtensile(options) {
+        countDiamPercentuale(options);
+        console.log(options)
         if (options.tool != null && options.tool != "" && options.tool != undefined) {
             gcode.push(`M06 T${options.tool}`);
             gcode.push(`G43 H${options.tool}`);
@@ -115,8 +131,6 @@ function checkSolveXYZ(x, y, z) {
         }
     }
     if (z == null || z == undefined || z == "") {
-
-        console.log(z)
         if (previusZ != null || previusZ != undefined || previusZ != "") {
             z = previusZ;
         } else {
@@ -127,20 +141,43 @@ function checkSolveXYZ(x, y, z) {
     return { x, y, z };
 }
 
-function startGsicurezza() {
-    let startPoint = 0 - options.diametro / 2 - 2;
-    G0(startPoint, 0, 0);
+
+function countDiamPercentuale(options) {
+    diamPercMisura = options.diametro / 100 * options.diamPercentLavorazione;
+    // add this to json string
+    options.diamPercMisura = diamPercMisura;
+    return diamPercMisura;
 }
 
-function createGcodeProgram(pezzoGrezzo, options) {
+function startGsicurezza(options) {
+    let startPointX = 0 - (options.diametro / 2) - 2;
+    let startPointY = (options.diametro / 2) - options.diamPercMisura;
+
+    G0(startPointX, startPointY, 0);
+}
+
+function spianaturaGenerator(options) {
+
+    console.log("spianatura")
+
+}
+
+function createGcodeProgram(options) {
     initGcode(options);
     setGargoments(options);
-    startGsicurezza();
+    startGsicurezza(options);
 
     // now create a var with the gcode program
     let gcodeProgram = gcode.join("<br>");
     return gcodeProgram;
 }
 
+/* calcolaBtn.addEventListener("click", () => {
+    displayGcode(options);
+}); */
 
-outputGcode.innerHTML = createGcodeProgram(pezzoGrezzo, options);
+displayGcode(options);
+
+function displayGcode(options) {
+    outputGcode.innerHTML = createGcodeProgram(options);
+}
