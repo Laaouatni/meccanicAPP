@@ -4,12 +4,12 @@ let larghezzaInput = document.getElementById("larghezza-pezzo-input");
 let outputGcode = document.getElementById("output-gcode");
 
 let pezzoGrezzo = {
-    "X0": lunghezzaInput.value,
-    "Y0": larghezzaInput.value
+    "X0": parseInt(lunghezzaInput.value),
+    "Y0": parseInt(larghezzaInput.value)
 }
 
 let utensile = {
-    "num": "1",
+    "num": 1,
     "feed": 1000,
     "speed": 3000,
     "diametro": 20,
@@ -172,9 +172,11 @@ function spianaturaGenerator(options) {
         if (isDestra) {
             console.log("Destra" + " " + lineeY_completed);
             GtoSinistra();
+            GtoDown();
         } else {
             console.log("Sinistra" + " " + lineeY_completed)
             GtoDestra(options);
+            GtoDown();
         }
     }
 
@@ -199,6 +201,7 @@ function createGcodeProgram(options) {
     setGargoments(options);
     startGsicurezza(options);
     spianaturaGenerator(options);
+    gcode.push("M30");
 
     // now create a var with the gcode program
     let gcodeProgram = gcode.join("<br>");
