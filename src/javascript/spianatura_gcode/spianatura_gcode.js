@@ -5,11 +5,13 @@ let outputGcode = document.getElementById("output-gcode");
 
 let pezzoGrezzo = {
     "X0": parseInt(lunghezzaInput.value),
-    "Y0": parseInt(larghezzaInput.value)
+    "Y0": parseInt(larghezzaInput.value),
+    "Z0": 10
 }
 
+console.log(pezzoGrezzo.Z0)
+
 let utensile = {
-    "num": 1,
     "feed": 1000,
     "speed": 3000,
     "diametro": 20,
@@ -18,7 +20,6 @@ let utensile = {
 
 let options = {
     "absolute": true,
-    "tool": utensile.num,
     "feed": utensile.feed,
     "speed": utensile.speed,
     "diametro": utensile.diametro,
@@ -39,19 +40,15 @@ let diamPercMisura;
 
 let calcolaBtn = document.querySelector("#btn-form");
 
-function initGcode(options) {
+function initGcode(options, pezzoGrezzo) {
     resetGcode();
     resetXYZ();
-    addGnameProgram(options); // %O012345
+    setWorkspace(pezzoGrezzo);
     G90orG91(options); // G90
     ZeroPosition(); //G54
 
-    function addGnameProgram(options) {
-        if (options.nameGprogram != null && options.nameGprogram != "" && options.nameGprogram != undefined) {
-            gcode.push(`%O0${options.nameGprogram}`);
-        } else {
-            gcode.push(`%O0${10000 + Math.floor(Math.random() * 99999)}`);
-        }
+    function setWorkspace(pezzoGrezzo) {
+        gcode.push(`WORKSPACE(,"",, "BOX",64, 1, -${pezzoGrezzo.Z0}, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
     }
 
     function G90orG91(options) {
@@ -83,15 +80,8 @@ function setGargoments(options) {
 
     function setUtensile(options) {
         countDiamPercentuale(options);
-        console.log(options)
-        if (options.tool != null && options.tool != "" && options.tool != undefined) {
-            gcode.push(`M06 T${options.tool}`);
-            gcode.push(`G43 H${options.tool}`);
-        } else {
-            let randomUtensile = Math.floor(Math.random() * 10);
-            gcode.push(`M06 ${randomUtensile}`);
-            gcode.push(`G43 H${randomUtensile}`);
-        }
+        gcode.push(`T="CUTTER ${options.diametro}"`);
+        gcode.push(`M6`);
     }
 
     function setSpeed(options) {
@@ -142,6 +132,7 @@ function checkSolveXYZ(x, y, z) {
 
     return { x, y, z };
 }
+
 
 
 function countDiamPercentuale(options) {
@@ -204,8 +195,8 @@ function spianaturaGenerator(options) {
 
 }
 
-function createGcodeProgram(options) {
-    initGcode(options);
+function createGcodeProgram(options, pezzoGrezzo) {
+    initGcode(options, pezzoGrezzo);
     setGargoments(options);
     startGsicurezza(options);
     spianaturaGenerator(options);
@@ -220,8 +211,8 @@ function createGcodeProgram(options) {
     displayGcode(options);
 }); */
 
-displayGcode(options);
+displayGcode(options, pezzoGrezzo);
 
-function displayGcode(options) {
-    outputGcode.innerHTML = createGcodeProgram(options);
+function displayGcode(options, pezzoGrezzo) {
+    outputGcode.innerHTML = createGcodeProgram(options, pezzoGrezzo);
 }
