@@ -1,0 +1,12 @@
+.gcode-line {
+    animation: gcode-line 1s ease-in-out;
+}
+
+@keyframes gcode-line {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

@@ -204,7 +204,7 @@ function createGcodeProgram(options, pezzoGrezzo) {
     gcode.push("M30");
 
     // now create a var with the gcode program
-    let gcodeProgram = gcode.join("<br>");
+    let gcodeProgram = gcode;
     return gcodeProgram;
 }
 
@@ -238,6 +238,19 @@ calcolaBtn.addEventListener("click", () => {
 });
 
 function displayGcode(options, pezzoGrezzo) {
-    outputGcode.innerHTML = createGcodeProgram(options, pezzoGrezzo);
+    document.querySelector("#output-gcode").innerHTML = "";
+    let gcodeArray = createGcodeProgram(options, pezzoGrezzo);
+    gcodeArray.forEach((Gline, index) => {;
+        // make a pause of 1 second every element
 
+        setTimeout(() => {
+            let newGcodeLine = document.createElement("div");
+            document.querySelector("#output-gcode").appendChild(newGcodeLine);
+            newGcodeLine.textContent = Gline;
+            newGcodeLine.classList.add("gcode-line");
+            newGcodeLine.scrollIntoView({
+                behavior: "smooth"
+            });
+        }, index * 50);
+    });
 }

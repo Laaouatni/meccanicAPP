@@ -1,4 +1,3 @@
-@import url("./nav/nav.css");
 @import url("./form/form.css");
 @import url("./outputs/output.css");
 @import url("./alert/alert.css");
@@ -7,4 +6,5 @@
 @import url("./index/index.css");
 @import url("./footer/footer.css");
 @import url("./spianatura_gcode/preview-spianatura.css");
-@import url("./loading/loading.css")
+@import url("./loading/loading.css");
+@import url("./spianatura_gcode/spianatura_output.css");
