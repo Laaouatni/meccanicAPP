@@ -15,9 +15,4 @@
     color: blue;
     font-weight: 600;
     text-align: center;
-    text-shadow: 0 0 2rem white;
-}
-
-#loading-container img {
-    filter: drop-shadow(0 0 1rem white);
 }
