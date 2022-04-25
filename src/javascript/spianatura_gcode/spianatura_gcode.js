@@ -1,6 +1,5 @@
 let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
 let larghezzaInput = document.getElementById("larghezza-pezzo-input");
-let altezzaInput = document.getElementById("altezza-pezzo-input");
 
 let diametroInput = document.getElementById("diametro-utensile-input");
 
@@ -33,9 +32,14 @@ diametroInput.addEventListener("input", (e) => {
 // when we write in the input if the number get bigger so make the width of the input bigger
 let outputGcode = document.getElementById("output-gcode");
 
-let pezzoGrezzo = {};
+let pezzoGrezzo = {
+    "X0": parseInt(lunghezzaInput.value),
+    "Y0": parseInt(larghezzaInput.value),
+    "Z0": 10
+}
 
-let utensile = {};
+
+let utensile = {}
 let options = {};
 let gcode = [];
 
@@ -55,7 +59,7 @@ function initGcode(options, pezzoGrezzo) {
     ZeroPosition(); //G54
 
     function setWorkpiece(pezzoGrezzo) {
-        gcode.push(`WORKPIECE(,"",, "BOX",64, ${pezzoGrezzo.Z0}, 0, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
+        gcode.push(`WORKPIECE(,"",, "BOX",64, 1, -${pezzoGrezzo.Z0}, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
     }
 
     function G90orG91(options) {
@@ -88,8 +92,10 @@ function setGargoments(options, utensile) {
     function setUtensile(options) {
         if (options.diametro == null || options.diametro == undefined || options.diametro == "" || options.diametro == 0 || isNaN(options.diametro)) {
             options.diametro = 20;
+            console.log("diametro non settato" + options.diametro);
             utensileFunctions(options);
         } else {
+            console.log("else utensile")
             utensileFunctions(options);
         }
 
@@ -98,6 +104,10 @@ function setGargoments(options, utensile) {
             gcode.push(`T="CUTTER ${options.diametro}"`);
             gcode.push(`M6`);
         }
+
+
+
+
     }
 
     function setSpeed(options) {
@@ -149,6 +159,8 @@ function checkSolveXYZ(x, y, z) {
     return { x, y, z };
 }
 
+
+
 function countDiamPercentuale(options) {
     diamPercMisura = options.diametro / 100 * options.diamPercentLavorazione;
     // add this to json string
@@ -172,27 +184,20 @@ function setLastPosVar(x, y, z) {
 function spianaturaGenerator(options) {
     let isDestra = false;
     let lineeY_totali = Math.floor(options.Y0 / options.diamPercMisura);
-    let lineeZ_totali = options.Z0;
-
-    /*     for (let lineeZ_completed = lineeZ_totali; lineeZ_completed >= 0; lineeZ_completed--) {
-            console.log("for lineeZ_completed", lineeZ_completed);
-
-            let zAttuale = lineeZ_completed;
-            options.zAttuale = zAttuale; */
 
     for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
         if (isDestra) {
             GtoSinistra();
             GtoDown();
+            console.log("not fffff")
             isDestra = false;
         } else {
             if (lineeY_completed == 1) {
-                /*                 previusX = 0;
-                                previusY = 0; */
                 let XYZ = checkSolveXYZ(options.X0, "", "");
                 gcode.push(`G1 X${XYZ.x} Y${XYZ.y} Z${XYZ.z} F${options.feed}`);
                 setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
                 isDestra = true;
+                console.log("fffff")
             } else {
                 GtoDestra(options);
                 GtoDown();
@@ -203,20 +208,19 @@ function spianaturaGenerator(options) {
             lastGspianatura(options, isDestra);
         }
     }
-    /*  } */
 
     function GtoDestra(options) {
-        G1(options.X0 + 2, "", /* options.zAttuale */ );
+        G1(options.X0 + 2, "", "");
         isDestra = true;
     }
 
     function GtoSinistra() {
-        G1(0 - 2, "", /* options.zAttuale */ );
+        G1(0 - 2, "", "");
         isDestra = false;
     }
 
     function GtoDown() {
-        G1("", previusY - diamPercMisura, /* options.zAttuale */ );
+        G1("", previusY - diamPercMisura, "");
     }
 
     function lastGspianatura(options, isDestra) {
@@ -233,8 +237,8 @@ function spianaturaGenerator(options) {
         }
 
         function Zsicurezza() {
-            G1("", "", options.Z0 + 2);
-            G0("", "", options.Z0 + 10);
+            G1("", "", 0 + 2);
+            G0("", "", 0 + 20);
         }
     }
 }
@@ -280,8 +284,9 @@ calcolaBtn.addEventListener("click", () => {
     pezzoGrezzo = {
         "X0": parseInt(lunghezzaInput.value),
         "Y0": parseInt(larghezzaInput.value),
-        "Z0": parseInt(altezzaInput.value),
+        "Z0": 10
     }
+
 
     utensile = {
         "vc": 100,
@@ -302,7 +307,6 @@ calcolaBtn.addEventListener("click", () => {
         "diamPercMisura": "",
         "X0": pezzoGrezzo.X0,
         "Y0": pezzoGrezzo.Y0,
-        "Z0": pezzoGrezzo.Z0,
         "nameGprogram": "",
     };
     displayGcode(options, pezzoGrezzo);
