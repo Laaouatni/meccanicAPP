@@ -181,15 +181,17 @@ function spianaturaGenerator(options) {
     let lineeY_totali = Math.floor(options.Y0 / options.diamPercMisura);
 
     for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
+        if (lineeY_completed == 1) {
+            gcode.push(`F${options.feed}`);
+        }
         if (isDestra) {
-
             GtoSinistra();
             GtoDown();
         } else {
-
             GtoDestra(options);
             GtoDown();
         }
+
 
         if (lineeY_completed == lineeY_totali) {
             lastGspianatura(options, isDestra);
@@ -256,16 +258,19 @@ calcolaBtn.addEventListener("click", () => {
 
 
     utensile = {
-        "feed": 1000,
-        "speed": 3000,
+        "vc": 100,
+        "Fz": 0.1,
+        "n_denti": 4,
+        "feed": "",
+        "speed": "",
         "diametro": parseInt(diametroInput.value),
         "diametroPercentLavorazione": 60
     }
 
     options = {
         "absolute": true,
-        "feed": utensile.feed,
-        "speed": utensile.speed,
+        "feed": parseInt(calcolateFeed(utensile)),
+        "speed": parseInt(calcolateSpeed(utensile)),
         "diametro": utensile.diametro,
         "diamPercentLavorazione": utensile.diametroPercentLavorazione,
         "diamPercMisura": "",
@@ -301,6 +306,26 @@ function displayGcode(options, pezzoGrezzo) {
             }
         }, index * 50);
     });
+}
+
+function calcolateSpeed(utensile) {
+    let vc = utensile.vc; // velocita di taglio
+
+    let SpeedFormula = Math.round((vc * 1000) / (utensile.diametro * Math.PI));
+    utensile.speed = SpeedFormula;
+
+    return SpeedFormula;
+}
+
+function calcolateFeed(utensile) {
+    let speed = calcolateSpeed(utensile);
+    let n_denti = utensile.n_denti;
+    let Fz = utensile.Fz;
+
+    let FeedFormula = Math.round((Fz * n_denti) * speed);
+    utensile.feed = FeedFormula;
+
+    return FeedFormula;
 }
 
 function showAlert(text) {
