@@ -77,3 +77,8 @@
     font-size: 2rem;
     color: rgb(55, 0, 255);
 }
+
+#section-gioco-interferenza-incerto {
+    display: grid;
+    gap: 1rem;
+}
