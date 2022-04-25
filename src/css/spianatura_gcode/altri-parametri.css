@@ -1,0 +1,27 @@
+#preview-spianatura-container:hover #dettagli-parametri-container,
+#preview-spianatura-container:focus-within #dettagli-parametri-container {
+    display: grid;
+}
+
+#dettagli-parametri-container {
+    margin: 1rem 1rem 0 1rem;
+    display: none;
+}
+
+#dettagli-parametri-container summary {
+    font-weight: bold;
+    color: blue;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+#altri-parametri-form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgb(216, 216, 255);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}

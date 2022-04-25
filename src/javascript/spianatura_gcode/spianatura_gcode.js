@@ -1,6 +1,8 @@
 let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
 let larghezzaInput = document.getElementById("larghezza-pezzo-input");
 
+let diametroInput = document.getElementById("diametro-utensile-input");
+
 let success_alert = document.querySelector('#success-alert');
 
 [larghezzaInput, lunghezzaInput].forEach((input) => {
@@ -17,6 +19,16 @@ let success_alert = document.querySelector('#success-alert');
     });
 });
 
+diametroInput.addEventListener("input", (e) => {
+    console.log("test input jidbbcc")
+    let inputValue = e.target.value;
+    let inputLength = inputValue.length;
+    if (inputLength > 3) {
+        showAlert("Errore: numero troppo grande.")
+        e.target.value = inputValue.slice(0, -1);
+    }
+});
+
 // when we write in the input if the number get bigger so make the width of the input bigger
 let outputGcode = document.getElementById("output-gcode");
 
@@ -27,25 +39,8 @@ let pezzoGrezzo = {
 }
 
 
-let utensile = {
-    "feed": 1000,
-    "speed": 3000,
-    "diametro": 20,
-    "diametroPercentLavorazione": 60
-}
-
-let options = {
-    "absolute": true,
-    "feed": utensile.feed,
-    "speed": utensile.speed,
-    "diametro": utensile.diametro,
-    "diamPercentLavorazione": utensile.diametroPercentLavorazione,
-    "diamPercMisura": "",
-    "X0": pezzoGrezzo.X0,
-    "Y0": pezzoGrezzo.Y0,
-    "nameGprogram": "",
-};
-
+let utensile = {}
+let options = {};
 let gcode = [];
 
 let previusX;
@@ -95,9 +90,20 @@ function setGargoments(options) {
     setSpeed(options); // S3000
 
     function setUtensile(options) {
-        countDiamPercentuale(options);
-        gcode.push(`T="CUTTER ${options.diametro}"`);
-        gcode.push(`M6`);
+        if (options.diametro == null || options.diametro == undefined || options.diametro == "" || options.diametro == 0 || isNaN(options.diametro)) {
+            options.diametro = 20;
+            console.log("diametro non settato" + options.diametro);
+            utensileFunctions(options);
+        } else {
+            console.log("else utensile")
+            utensileFunctions(options);
+        }
+
+        function utensileFunctions(options) {
+            countDiamPercentuale(options);
+            gcode.push(`T="CUTTER ${options.diametro}"`);
+            gcode.push(`M6`);
+        }
     }
 
     function setSpeed(options) {
@@ -252,7 +258,7 @@ calcolaBtn.addEventListener("click", () => {
     utensile = {
         "feed": 1000,
         "speed": 3000,
-        "diametro": 20,
+        "diametro": parseInt(diametroInput.value),
         "diametroPercentLavorazione": 60
     }
 
@@ -277,17 +283,6 @@ function displayGcode(options, pezzoGrezzo) {
     showSuccessAlert();
 
     gcodeArray.forEach((Gline, index) => {;
-        /*         setTimeout(() => {
-                    let newGcodeLine = document.createElement("div");
-                    document.querySelector("#output-gcode").appendChild(newGcodeLine);
-                    newGcodeLine.textContent = Gline;
-                    newGcodeLine.classList.add("gcode-line");
-                    newGcodeLine.scrollIntoView({});
-                    if (index + 1 == gcodeArray.length) {
-                        success_alert.classList.remove("success-alltime");
-                    }
-                }, index * 50); */
-
         setTimeout(() => {
             let newGcodeLine = document.createElement("div");
             let GcopyTemplate = document.querySelector("#template-g-line").content.cloneNode(true);
@@ -296,14 +291,13 @@ function displayGcode(options, pezzoGrezzo) {
             document.querySelector("#output-gcode").appendChild(newGcodeLine);
 
             newGcodeLine.querySelector(".gcode-line").textContent = Gline;
-            newGcodeLine.querySelector(".gnum-line").textContent = index;
+            newGcodeLine.querySelector(".gnum-line").textContent = `N${index + 1}`;
 
             newGcodeLine.classList.add("gcode-line");
             newGcodeLine.scrollIntoView({});
 
             if (index + 1 == gcodeArray.length) {
                 success_alert.classList.remove("success-alltime");
-                console.log("finito dbdhucdhc");
             }
         }, index * 50);
     });
