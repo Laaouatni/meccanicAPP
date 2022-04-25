@@ -7,10 +7,10 @@ let success_alert = document.querySelector('#success-alert');
     input.addEventListener("input", (e) => {
         let inputValue = e.target.value;
         let inputLength = inputValue.length;
-        if (inputLength > 3 && inputLength < 7) {
+        if (inputLength > 3 && inputLength < 6) {
             input.style.width = inputLength + 0.5 + "rem";
         }
-        if (inputLength > 6) {
+        if (inputLength > 5) {
             showAlert("Errore: numero troppo grande.")
             input.value = inputValue.slice(0, -1);
         }

@@ -1,5 +1,6 @@
 #btn-form {
-    width: calc(100% - 1.5rem);
+    width: calc(100% - 2rem);
+    max-width: 725px;
     height: 4rem;
     font-size: 1.5rem;
     font-family: poppins;
@@ -11,7 +12,7 @@
     border-radius: 0.3rem;
     display: grid;
     place-items: center;
-    background-color: rgba(0, 110, 255, 40%);
+    background-color: rgba(0, 110, 255, 20%);
     font-weight: bold;
     color: blue;
     transition: all 0.3s ease-in-out;
@@ -19,7 +20,7 @@
 
 #btn-form:hover {
     border-radius: 0.5rem;
-    background-color: rgba(0, 110, 255, 60%);
+    background-color: rgba(0, 110, 255, 50%);
     transform: translateY(-0.2rem);
 }
 
