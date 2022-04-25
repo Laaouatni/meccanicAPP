@@ -174,52 +174,49 @@ function spianaturaGenerator(options) {
     let lineeY_totali = Math.floor(options.Y0 / options.diamPercMisura);
     let lineeZ_totali = options.Z0;
 
-    for (let lineeZ_completed = lineeZ_totali; lineeZ_completed >= 0; lineeZ_completed--) {
-        console.log("for lineeZ_completed", lineeZ_completed);
+    /*     for (let lineeZ_completed = lineeZ_totali; lineeZ_completed >= 0; lineeZ_completed--) {
+            console.log("for lineeZ_completed", lineeZ_completed);
 
+            let zAttuale = lineeZ_completed;
+            options.zAttuale = zAttuale; */
 
-
-        let zAttuale = lineeZ_completed;
-        options.zAttuale = zAttuale;
-
-        for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
-            if (isDestra) {
-                GtoSinistra();
-                GtoDown();
-                isDestra = false;
-            } else {
-                if (lineeY_completed == 1) {
-                    previusX = 0;
-                    previusY = 0;
-                    let XYZ = checkSolveXYZ(options.X0, "", "");
-                    gcode.push(`G1 X${XYZ.x} Y${XYZ.y} Z${XYZ.z} F${options.feed}`);
-                    setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
-                    isDestra = true;
-
-                } else {
-                    GtoDestra(options);
-                    GtoDown();
-                }
+    for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
+        if (isDestra) {
+            GtoSinistra();
+            GtoDown();
+            isDestra = false;
+        } else {
+            if (lineeY_completed == 1) {
+                /*                 previusX = 0;
+                                previusY = 0; */
+                let XYZ = checkSolveXYZ(options.X0, "", "");
+                gcode.push(`G1 X${XYZ.x} Y${XYZ.y} Z${XYZ.z} F${options.feed}`);
+                setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
                 isDestra = true;
+            } else {
+                GtoDestra(options);
+                GtoDown();
             }
-            if (lineeY_completed == lineeY_totali) {
-                lastGspianatura(options, isDestra);
-            }
+            isDestra = true;
+        }
+        if (lineeY_completed == lineeY_totali) {
+            lastGspianatura(options, isDestra);
         }
     }
+    /*  } */
 
     function GtoDestra(options) {
-        G1(options.X0 + 2, "", options.zAttuale);
+        G1(options.X0 + 2, "", /* options.zAttuale */ );
         isDestra = true;
     }
 
     function GtoSinistra() {
-        G1(0 - 2, "", options.zAttuale);
+        G1(0 - 2, "", /* options.zAttuale */ );
         isDestra = false;
     }
 
     function GtoDown() {
-        G1("", previusY - diamPercMisura, options.zAttuale);
+        G1("", previusY - diamPercMisura, /* options.zAttuale */ );
     }
 
     function lastGspianatura(options, isDestra) {
