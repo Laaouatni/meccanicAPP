@@ -1,6 +1,23 @@
 let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
 let larghezzaInput = document.getElementById("larghezza-pezzo-input");
 
+let success_alert = document.querySelector('#success-alert');
+
+[larghezzaInput, lunghezzaInput].forEach((input) => {
+    input.addEventListener("input", (e) => {
+        let inputValue = e.target.value;
+        let inputLength = inputValue.length;
+        if (inputLength > 3 && inputLength < 7) {
+            input.style.width = inputLength + 0.5 + "rem";
+        }
+        if (inputLength > 6) {
+            showAlert("Errore: numero troppo grande.")
+            input.value = inputValue.slice(0, -1);
+        }
+    });
+});
+
+// when we write in the input if the number get bigger so make the width of the input bigger
 let outputGcode = document.getElementById("output-gcode");
 
 let pezzoGrezzo = {
@@ -169,15 +186,8 @@ function spianaturaGenerator(options) {
         }
 
         if (lineeY_completed == lineeY_totali) {
-            if (isDestra) {
-                GtoSinistra();
-                console.log("GtoSinistra completed successfully")
-            } else {
-                GtoDestra(options);
-                console.log("GtoDestra completed successfully")
-            }
+            lastGspianatura(options, isDestra);
         }
-        console.log("completed line " + lineeY_completed + " of " + lineeY_totali)
     }
 
     function GtoDestra(options) {
@@ -194,6 +204,30 @@ function spianaturaGenerator(options) {
         G1("", previusY - diamPercMisura, "");
     }
 
+    function lastGspianatura(options, isDestra) {
+        // VAI A SINISTRA
+        if (isDestra) {
+            G1(0 - (options.diametro / 2) - 2, "", "");
+            isDestra = false;
+            Zsicurezza();
+
+        } else {
+            // VAI A DESTRA
+            G1(options.X0 + (options.diametro / 2) + 2, "", "");
+            isDestra = true;
+            Zsicurezza();
+        }
+
+        function Zsicurezza() {
+            G1("", "", 0 + 2);
+            G0("", "", 0 + 20);
+        }
+    }
+
+}
+
+function stopGprogram() {
+    gcode.push(`M30`);
 }
 
 function createGcodeProgram(options, pezzoGrezzo) {
@@ -201,7 +235,7 @@ function createGcodeProgram(options, pezzoGrezzo) {
     setGargoments(options);
     startGsicurezza(options);
     spianaturaGenerator(options);
-    gcode.push("M30");
+    stopGprogram();
 
     // now create a var with the gcode program
     let gcodeProgram = gcode;
@@ -240,8 +274,10 @@ calcolaBtn.addEventListener("click", () => {
 function displayGcode(options, pezzoGrezzo) {
     document.querySelector("#output-gcode").innerHTML = "";
     let gcodeArray = createGcodeProgram(options, pezzoGrezzo);
+
+    showSuccessAlert();
+
     gcodeArray.forEach((Gline, index) => {;
-        // make a pause of 1 second every element
 
         setTimeout(() => {
             let newGcodeLine = document.createElement("div");
@@ -249,6 +285,26 @@ function displayGcode(options, pezzoGrezzo) {
             newGcodeLine.textContent = Gline;
             newGcodeLine.classList.add("gcode-line");
             newGcodeLine.scrollIntoView({});
-        }, index * 1000 / 30);
+            if (index + 1 == gcodeArray.length) {
+                success_alert.classList.remove("success-alltime");
+            }
+        }, index * 50);
     });
+}
+
+function showAlert(text) {
+    let alert = document.querySelector('#alert');
+
+    alert.classList.add("alert-visible");
+    alert.querySelector("#testo-errore").textContent = text;
+
+    setTimeout(() => {
+        alert.classList.remove("alert-visible");
+    }, 2000);
+}
+
+function showSuccessAlert() {
+    success_alert.classList.remove("success-visible");
+    success_alert.classList.add("success-alltime");
+    console.log("success")
 }

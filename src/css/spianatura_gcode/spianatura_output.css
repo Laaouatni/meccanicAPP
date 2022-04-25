@@ -1,16 +1,24 @@
+#spianatura-output {
+    max-width: 90vw;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
 .gcode-line {
-    animation: gcode-line 0.5s ease-out forwards;
+    animation: gcode-line 0.5s cubic-bezier(0, 0, 0, 1.5) forwards;
+    font-family: monospace;
+    color: blue;
+    font-size: 1.2rem;
 }
 
 @keyframes gcode-line {
     0% {
-        transform: translateX(-50%);
-color: black;
-font-weight: normal;
+        transform: translateX(-5rem);
     }
     100% {
         transform: translateX(0);
-color: blue;
-font-weight: bold;
     }
 }

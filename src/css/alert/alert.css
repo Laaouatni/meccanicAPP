@@ -28,6 +28,7 @@
 
 .alert-visible {
     animation: alert-show 2s forwards cubic-bezier(0, .5, .5, 1.2);
+    z-index: 9999;
 }
 
 @keyframes alert-show {
@@ -36,11 +37,11 @@
         opacity: 0.2;
     }
     10% {
-        bottom: 2rem;
+        bottom: calc(2rem + 1rem);
         opacity: 1;
     }
     90% {
-        bottom: 2rem;
+        bottom: calc(2rem + 1rem);
         opacity: 0.9;
     }
     100% {
@@ -74,4 +75,17 @@
     100% {
         left: 100vw;
     }
+}
+
+@keyframes alert-green-simple {
+    0% {
+        left: -50vw;
+    }
+    100% {
+        left: 50vw;
+    }
+}
+
+.success-alltime {
+    animation: alert-green-simple 0.5s forwards linear infinite reverse;
 }
