@@ -47,6 +47,7 @@
 
     <section id="section-spianatura">
         <div id="preview-spianatura-container">
+
             <div id="spianatura-preview-first-container">
                 <div id="pezzo-grezzo">
                     <!-- qui ci sono dei background-image (NON cancellare, NON aggiungere all'interno dei elementi) -->
@@ -54,16 +55,16 @@
 
                 <form id="form-spianatura">
                     <label id="larghezza-container" for="larghezza-pezzo-input">
-                        <div>
-                            <div id="freccie-larghezza-container">
-                                <i class="fa-solid fa-up-long"></i>
-                                <span>larghezza <strong>Y</strong></span>
-                                <i class="fa-solid fa-down-long"></i>
+                            <div>
+                                <div id="freccie-larghezza-container">
+                                    <i class="fa-solid fa-up-long"></i>
+                                    <span>larghezza <strong>Y</strong></span>
+                                    <i class="fa-solid fa-down-long"></i>
+                                </div>
                             </div>
-                        </div>
-                    
-                        <input form="form-spianatura" type="number" value="100" id="larghezza-pezzo-input">
-                    </label>
+                        
+                            <input form="form-spianatura" type="number" value="100" id="larghezza-pezzo-input">
+                        </label>
                 </form>
             </div>
 
@@ -80,9 +81,13 @@
             </label>
         </div>
 
-        <button id="btn-form">
-            calcola
-        </button>
+
+        <div id="btn-container-bottom">
+            <button id="btn-form">
+                calcola
+            </button>
+        </div>
+
 
         <div id="spianatura-output">
             <output id="output-gcode">

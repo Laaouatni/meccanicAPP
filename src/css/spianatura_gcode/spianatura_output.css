@@ -1,10 +1,18 @@
 #spianatura-output {
-    max-width: 90vw;
+    max-width: 95vw;
+    width: 95%;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     border: 2px solid white;
     background: rgba(255, 255, 255, 0.2);
     overflow: hidden;
+}
+
+@media (max-width: 729px) {
+    #spianatura-output {
+        max-width: 90vw;
+        width: 90%;
+    }
 }
 
 .g-line-container {

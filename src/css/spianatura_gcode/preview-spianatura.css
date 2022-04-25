@@ -149,3 +149,9 @@
     height: 0.2rem;
     background-color: blue;
 } */
+
+#section-spianatura {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+}
