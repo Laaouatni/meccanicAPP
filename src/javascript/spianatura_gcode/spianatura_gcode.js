@@ -172,8 +172,11 @@ function startGsicurezza(options) {
 
 function setLastPosVar(x, y, z) {
     previusX = x;
+    options.previusX = previusX;
     previusY = y;
+    options.previusY = previusY;
     previusZ = z;
+    options.previusZ = previusZ;
 }
 
 function spianaturaGenerator(options) {
@@ -226,8 +229,8 @@ function spianaturaGenerator(options) {
             Zsicurezza();
         }
 
-        function Zsicurezza() {
-            G1("", "", 0 + 2);
+        function Zsicurezza(options) {
+            G1("", "", previusZ + 2);
             G0("", "", 0 + 20);
         }
     }
