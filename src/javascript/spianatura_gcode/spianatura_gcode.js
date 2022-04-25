@@ -223,7 +223,6 @@ function spianaturaGenerator(options) {
             G0("", "", 0 + 20);
         }
     }
-
 }
 
 function stopGprogram() {
@@ -278,15 +277,33 @@ function displayGcode(options, pezzoGrezzo) {
     showSuccessAlert();
 
     gcodeArray.forEach((Gline, index) => {;
+        /*         setTimeout(() => {
+                    let newGcodeLine = document.createElement("div");
+                    document.querySelector("#output-gcode").appendChild(newGcodeLine);
+                    newGcodeLine.textContent = Gline;
+                    newGcodeLine.classList.add("gcode-line");
+                    newGcodeLine.scrollIntoView({});
+                    if (index + 1 == gcodeArray.length) {
+                        success_alert.classList.remove("success-alltime");
+                    }
+                }, index * 50); */
 
         setTimeout(() => {
             let newGcodeLine = document.createElement("div");
+            let GcopyTemplate = document.querySelector("#template-g-line").content.cloneNode(true);
+
+            newGcodeLine.appendChild(GcopyTemplate);
             document.querySelector("#output-gcode").appendChild(newGcodeLine);
-            newGcodeLine.textContent = Gline;
+
+            newGcodeLine.querySelector(".gcode-line").textContent = Gline;
+            newGcodeLine.querySelector(".gnum-line").textContent = index;
+
             newGcodeLine.classList.add("gcode-line");
             newGcodeLine.scrollIntoView({});
+
             if (index + 1 == gcodeArray.length) {
                 success_alert.classList.remove("success-alltime");
+                console.log("finito dbdhucdhc");
             }
         }, index * 50);
     });

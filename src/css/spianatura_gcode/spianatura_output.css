@@ -1,10 +1,24 @@
 #spianatura-output {
     max-width: 90vw;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     border: 2px solid white;
     background: rgba(255, 255, 255, 0.2);
     overflow: hidden;
+}
+
+.g-line-container {
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    padding: 0.2rem 0;
+    gap: 1.5rem;
+}
+
+.gnum-line {
+    font-weight: bold;
+    color: rgba(0, 0, 255, 0.9);
+    font-size: 1.2rem;
 }
 
 .gcode-line {
