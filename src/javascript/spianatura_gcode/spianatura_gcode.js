@@ -181,13 +181,13 @@ function spianaturaGenerator(options) {
     let lineeZ_totali = options.Z0 - 1;
 
     for (let lineeZ_completed = lineeZ_totali; lineeZ_completed >= 0; lineeZ_completed--) {
-        previusX = 0;
-        previusY = 0;
+        startGsicurezza(options);
         previusZ = lineeZ_completed;
 
         for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
             if (lineeY_completed == 1) {
                 gcode.push(`F${options.feed}`);
+                console.log({ isDestra });
             }
 
             if (isDestra) {
@@ -226,13 +226,13 @@ function spianaturaGenerator(options) {
         if (isDestra) {
             G1(formulaSinistra, "", "");
             Zsicurezza();
-            G0(formulaDestra, "", 0 + 20);
+            G0(formulaSinistra, "", 0 + 20);
             isDestra = false;
         } else {
             // VAI A DESTRA
             G1(formulaDestra, "", "");
             Zsicurezza();
-            G0(formulaSinistra, "", 0 + 20);
+            G0(formulaDestra, "", 0 + 20);
             isDestra = true;
         }
 
