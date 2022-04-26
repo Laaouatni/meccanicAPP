@@ -1,5 +1,6 @@
 let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
 let larghezzaInput = document.getElementById("larghezza-pezzo-input");
+let altezzaInput = document.getElementById("altezza-pezzo-input");
 
 let diametroInput = document.getElementById("diametro-utensile-input");
 
@@ -32,14 +33,9 @@ diametroInput.addEventListener("input", (e) => {
 // when we write in the input if the number get bigger so make the width of the input bigger
 let outputGcode = document.getElementById("output-gcode");
 
-let pezzoGrezzo = {
-    "X0": parseInt(lunghezzaInput.value),
-    "Y0": parseInt(larghezzaInput.value),
-    "Z0": 10
-}
+let pezzoGrezzo = {};
+let utensile = {};
 
-
-let utensile = {}
 let options = {};
 let gcode = [];
 
@@ -59,7 +55,7 @@ function initGcode(options, pezzoGrezzo) {
     ZeroPosition(); //G54
 
     function setWorkpiece(pezzoGrezzo) {
-        gcode.push(`WORKPIECE(,"",, "BOX",64, 1, -${pezzoGrezzo.Z0}, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
+        gcode.push(`WORKPIECE(,"",, "BOX",64, ${pezzoGrezzo.Z0}, -${pezzoGrezzo.Z0 - 1}, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
     }
 
     function G90orG91(options) {
@@ -256,7 +252,7 @@ calcolaBtn.addEventListener("click", () => {
     pezzoGrezzo = {
         "X0": parseInt(lunghezzaInput.value),
         "Y0": parseInt(larghezzaInput.value),
-        "Z0": 10
+        "Z0": parseInt(altezzaInput.value),
     }
 
 
