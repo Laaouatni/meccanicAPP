@@ -26,7 +26,7 @@
 }
 
 #pezzo-grezzo {
-    background-image: url("./../../../utilities/images/texture/metal/0cube.png");
+    background-image: url("./../../../utilities/images/texture/metal/0cube.webp");
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -41,11 +41,11 @@
     0% {
         opacity: 0;
         transform: scale(0.3);
-        background-image: url("./../../../utilities/images/texture/metal/0metal.jpg");
+        background-image: url("./../../../utilities/images/texture/metal/0metal.webp");
     }
     100% {
         transform: scale(1);
-        background-image: url("./../../../utilities/images/texture/metal/0cube.png");
+        background-image: url("./../../../utilities/images/texture/metal/0cube.webp");
     }
 }
 
