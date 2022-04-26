@@ -219,20 +219,24 @@ function spianaturaGenerator(options) {
     }
 
     function lastGspianatura(options, isDestra) {
+
+        let formulaDestra = options.X0 + (options.diametro / 2) + 2;
+        let formulaSinistra = 0 - (options.diametro / 2) - 2;
         // VAI A SINISTRA
         if (isDestra) {
-            G1(0 - (options.diametro / 2) - 2, "", "");
-            isDestra = false;
+            G1(formulaSinistra, "", "");
             Zsicurezza();
-
+            G0(formulaDestra, "", 0 + 20);
+            isDestra = false;
         } else {
             // VAI A DESTRA
-            G1(options.X0 + (options.diametro / 2) + 2, "", "");
-            isDestra = true;
+            G1(formulaDestra, "", "");
             Zsicurezza();
+            G0(formulaSinistra, "", 0 + 20);
+            isDestra = true;
         }
 
-        function Zsicurezza(options) {
+        function Zsicurezza(isDestra) {
             G1("", "", previusZ + 2);
             G0("", "", 0 + 20);
         }
