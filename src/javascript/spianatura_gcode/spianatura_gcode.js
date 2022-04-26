@@ -55,7 +55,7 @@ function initGcode(options, pezzoGrezzo) {
     ZeroPosition(); //G54
 
     function setWorkpiece(pezzoGrezzo) {
-        gcode.push(`WORKPIECE(,"",, "BOX",64, ${pezzoGrezzo.Z0}, -${pezzoGrezzo.Z0 - 1}, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
+        gcode.push(`WORKPIECE(,"",, "BOX",64, ${pezzoGrezzo.Z0}, -${(pezzoGrezzo.Z0 - 1) - (pezzoGrezzo.Z0 - 1)}, -80, 0, -${pezzoGrezzo.Y0}, ${pezzoGrezzo.X0}, ${pezzoGrezzo.Y0})`)
     }
 
     function G90orG91(options) {
@@ -88,7 +88,6 @@ function setGargoments(options) {
     function setUtensile(options) {
         if (options.diametro == null || options.diametro == undefined || options.diametro == "" || options.diametro == 0 || isNaN(options.diametro)) {
             options.diametro = 20;
-            console.log("diametro non settato" + options.diametro);
             utensileFunctions(options);
         } else {
             console.log("else utensile")
@@ -163,7 +162,7 @@ function startGsicurezza(options) {
     let startPointX = 0 - (options.diametro / 2) - 2;
     let startPointY = (options.diametro / 2) - options.diamPercMisura;
 
-    G0(startPointX, startPointY, 0);
+    G0(startPointX, startPointY, options.Z0 - 1);
 }
 
 function setLastPosVar(x, y, z) {
@@ -179,21 +178,29 @@ function spianaturaGenerator(options) {
     let isDestra = false;
     let lineeY_totali = Math.floor(options.Y0 / options.diamPercMisura);
 
-    for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
-        if (lineeY_completed == 1) {
-            gcode.push(`F${options.feed}`);
-        }
-        if (isDestra) {
-            GtoSinistra();
-            GtoDown();
-        } else {
-            GtoDestra(options);
-            GtoDown();
-        }
+    let lineeZ_totali = options.Z0 - 1;
 
+    for (let lineeZ_completed = lineeZ_totali; lineeZ_completed >= 0; lineeZ_completed--) {
+        previusX = 0;
+        previusY = 0;
+        previusZ = lineeZ_completed;
 
-        if (lineeY_completed == lineeY_totali) {
-            lastGspianatura(options, isDestra);
+        for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
+            if (lineeY_completed == 1) {
+                gcode.push(`F${options.feed}`);
+            }
+
+            if (isDestra) {
+                GtoSinistra();
+                GtoDown();
+            } else {
+                GtoDestra(options);
+                GtoDown();
+            }
+
+            if (lineeY_completed == lineeY_totali) {
+                lastGspianatura(options, isDestra);
+            }
         }
     }
 
@@ -255,7 +262,6 @@ calcolaBtn.addEventListener("click", () => {
         "Z0": parseInt(altezzaInput.value),
     }
 
-
     utensile = {
         "vc": 100,
         "Fz": 0.1,
@@ -275,6 +281,7 @@ calcolaBtn.addEventListener("click", () => {
         "diamPercMisura": "",
         "X0": pezzoGrezzo.X0,
         "Y0": pezzoGrezzo.Y0,
+        "Z0": pezzoGrezzo.Z0,
         "nameGprogram": "",
     };
     displayGcode(options, pezzoGrezzo);
