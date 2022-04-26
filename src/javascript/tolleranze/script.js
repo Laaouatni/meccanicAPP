@@ -71,13 +71,13 @@ function fetchAndDisplay() {
                     h_value = hRangeInput.value;
                     hSpan.textContent = "h" + h_value;
                     calcolaTolleranza();
-                });
+                }, { passive: true });
 
                 diametroRangeInput.addEventListener(item, () => {
                     diametro_value = diametroRangeInput.value;
                     diametroSpan.textContent = "Ø" + diametro_value;
                     calcolaTolleranza();
-                });
+                }, { passive: true });
             });
 
 
