@@ -181,8 +181,12 @@ function spianaturaGenerator(options) {
     let lineeZ_totali = options.Z0 - 1;
 
     for (let lineeZ_completed = lineeZ_totali; lineeZ_completed >= 0; lineeZ_completed--) {
-        startGsicurezza(options);
+        let startPointX = 0 - (options.diametro / 2) - 2;
+        let startPointY = (options.diametro / 2) - options.diamPercMisura;
+
+
         previusZ = lineeZ_completed;
+        G0(startPointX, startPointY, previusZ);
 
         for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
             if (lineeY_completed == 1) {
@@ -226,13 +230,11 @@ function spianaturaGenerator(options) {
         if (isDestra) {
             G1(formulaSinistra, "", "");
             Zsicurezza();
-            G0(formulaSinistra, "", 0 + 20);
             isDestra = false;
         } else {
             // VAI A DESTRA
             G1(formulaDestra, "", "");
             Zsicurezza();
-            G0(formulaDestra, "", 0 + 20);
             isDestra = true;
         }
 
