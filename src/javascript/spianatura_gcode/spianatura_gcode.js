@@ -306,7 +306,22 @@ function displayGcode(options, pezzoGrezzo) {
                 addLine(Gline, index, gcodeArray)
             }, index * 1000 / 30);
         } else {
-            addLine(Gline, index, gcodeArray);
+            addLineSmooth(Gline, index, gcodeArray);
+        }
+
+function addLineSmooth(Gline, index, gcodeArray) {
+            let newGcodeLine = document.createElement("div");
+            let GcopyTemplate = document.querySelector("#template-g-line").content.cloneNode(true);
+
+            newGcodeLine.appendChild(GcopyTemplate);
+            document.querySelector("#output-gcode").appendChild(newGcodeLine);
+
+            newGcodeLine.querySelector(".gcode-line").textContent = Gline;
+            newGcodeLine.querySelector(".gnum-line").textContent = `N${index + 1}`;
+
+            newGcodeLine.classList.add("gcode-line");
+            newGcodeLine.scrollIntoView({behaviour: "smooth"});
+            showSuccessAlert(gcodeArray, index);
         }
 
         function addLine(Gline, index, gcodeArray) {
