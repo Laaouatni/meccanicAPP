@@ -2,6 +2,7 @@ let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
 let larghezzaInput = document.getElementById("larghezza-pezzo-input");
 let altezzaInput = document.getElementById("altezza-pezzo-input");
 
+let isAnimatoInput = document.getElementById("isAnimato-input");
 let diametroInput = document.getElementById("diametro-utensile-input");
 
 let success_alert = document.querySelector('#success-alert');
@@ -13,7 +14,7 @@ let success_alert = document.querySelector('#success-alert');
         if (inputLength > 3 && inputLength < 6) {
             input.style.width = inputLength + 0.5 + "rem";
         }
-        if (inputLength > 5) {
+        if (inputLength > 4) {
             showAlert("Errore: numero troppo grande.")
             input.value = inputValue.slice(0, -1);
         }
@@ -296,11 +297,19 @@ calcolaBtn.addEventListener("click", () => {
 function displayGcode(options, pezzoGrezzo) {
     document.querySelector("#output-gcode").innerHTML = "";
     let gcodeArray = createGcodeProgram(options, pezzoGrezzo);
+    console.log("gcodeArray: ", gcodeArray);
 
-    showSuccessAlert();
+    gcodeArray.forEach((Gline, index) => {
 
-    gcodeArray.forEach((Gline, index) => {;
-        setTimeout(() => {
+        if (isAnimatoInput.checked) {
+            setTimeout(() => {
+                addLine(Gline, index, gcodeArray)
+            }, index * 1000 / 30);
+        } else {
+            addLine(Gline, index, gcodeArray);
+        }
+
+        function addLine(Gline, index, gcodeArray) {
             let newGcodeLine = document.createElement("div");
             let GcopyTemplate = document.querySelector("#template-g-line").content.cloneNode(true);
 
@@ -312,11 +321,8 @@ function displayGcode(options, pezzoGrezzo) {
 
             newGcodeLine.classList.add("gcode-line");
             newGcodeLine.scrollIntoView({});
-
-            if (index + 1 == gcodeArray.length) {
-                success_alert.classList.remove("success-alltime");
-            }
-        }, index * 50);
+            showSuccessAlert(gcodeArray, index);
+        }
     });
 }
 
@@ -351,8 +357,16 @@ function showAlert(text) {
     }, 2000);
 }
 
-function showSuccessAlert() {
+function showSuccessAlert(gcodeArray, index) {
     success_alert.classList.remove("success-visible");
     success_alert.classList.add("success-alltime");
-    console.log("success")
+
+    let onePercLoading = Math.floor(gcodeArray.length / 100);
+
+
+    console.log(onePercLoading);
+
+    if (index + 1 == gcodeArray.length) {
+        success_alert.classList.remove("success-alltime");
+    }
 }
