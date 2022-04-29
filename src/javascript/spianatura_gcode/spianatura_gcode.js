@@ -22,7 +22,7 @@ let success_alert = document.querySelector('#success-alert');
 });
 
 diametroInput.addEventListener("input", (e) => {
-    console.log("test input jidbbcc")
+   
     let inputValue = e.target.value;
     let inputLength = inputValue.length;
     if (inputLength > 3) {
@@ -91,7 +91,6 @@ function setGargoments(options) {
             options.diametro = 20;
             utensileFunctions(options);
         } else {
-            console.log("else utensile")
             utensileFunctions(options);
         }
 
@@ -191,8 +190,9 @@ function spianaturaGenerator(options) {
 
         for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
             if (lineeY_completed == 1) {
-                gcode.push(`F${options.feed}`);
-                console.log({ isDestra });
+                if (lineeZ_completed == 1) {
+                    gcode.push(`F${options.feed}`);
+                }
             }
 
             if (isDestra) {
