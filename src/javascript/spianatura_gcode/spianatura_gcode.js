@@ -11,7 +11,8 @@ let success_alert = document.querySelector('#success-alert');
     input.addEventListener("input", (e) => {
         let inputValue = e.target.value;
         let inputLength = inputValue.length;
-        if (inputLength > 3 && inputLength < 6) {
+        
+        if (inputLength > 2) {
             input.style.width = inputLength + 0.5 + "rem";
         }
         if (inputLength > 4) {
@@ -190,7 +191,7 @@ function spianaturaGenerator(options) {
 
         for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
             if (lineeY_completed == 1) {
-                if (lineeZ_completed == 1) {
+                if (lineeZ_completed == 0) {
                     gcode.push(`F${options.feed}`);
                 }
             }
