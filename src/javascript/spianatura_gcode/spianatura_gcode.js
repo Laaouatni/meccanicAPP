@@ -299,6 +299,7 @@ calcolaBtn.addEventListener("click", () => {
     displayGcode(options, pezzoGrezzo);
 
     document.querySelector("#copia-buttone").style.display = "grid";
+    document.querySelector("#bottom-footer-info").style.display = "flex";
 });
 
 function displayGcode(options, pezzoGrezzo) {
