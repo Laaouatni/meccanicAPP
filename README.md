@@ -4,6 +4,8 @@ L'App che ti aiuta se sei un Disegnatore Tecnico, oppure operatore CNC!
 
 Questa App è attualmente in versione "Web-Edition", così più persone avranno la possibilità di utilizzarla!
 
+https://meccanicapp.vercel.app 
+
 ## Funzionalità
 
 1. Trovare da delle Tolleranze, se "albero-foro" è:
@@ -21,7 +23,3 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
 3. Generare GCODE automaticamente:
 
 - spianatura FRESA.
-
-> codice generato funzionante su controllo siemens
-
-4. L'app deve essere ancora completata... per avere più funzionalità!
