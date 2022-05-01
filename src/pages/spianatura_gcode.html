@@ -187,6 +187,8 @@
                 </style>
             </button>
 
+
+
             <template id="template-g-line">
                 <div class="g-line-container">
                     <div class="gnum-line">1</div>
@@ -217,6 +219,32 @@
         <span>il tuo codice Gcode!</span>
         <img style="min-width: 2rem; width: 10vw; max-width: 5rem; filter: invert(7%) sepia(92%) saturate(7190%) hue-rotate(244deg) brightness(116%) contrast(148%); transform: rotate(-90deg)" src="./../../utilities/images/arrow/0arrow.png" alt="arrow">
     </div>
+
+    <button id="go-to-top">
+        <!-- up arrow fontawesome -->
+        <i class="fa-solid fa-arrow-up"></i>    
+
+        <style>
+
+
+        #go-to-top {
+            display: grid;
+            font-size: 2rem;
+            position: fixed;
+            bottom: 6rem;
+            right: 1rem;
+            z-index: 100;
+            color: blue;
+            cursor: pointer;
+            transform: translateY(1rem);
+            opacity: 0.8;
+            width: 4rem;
+            height: 4rem;
+            place-items: center;
+            border-radius: 50%;
+        }
+        </style>
+    </button>
 
     <div id="alert">
         <div id="alert-bg">

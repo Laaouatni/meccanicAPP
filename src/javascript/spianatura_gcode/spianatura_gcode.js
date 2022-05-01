@@ -413,3 +413,21 @@ document.querySelector("#copia-buttone").addEventListener("click", () => {
             showAlert(err);
         });
 });
+
+// create a button that go up to the top of the page
+const goToTopBtn = document.querySelector("#go-to-top");
+
+goToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+        goToTopBtn.style.display = "grid";
+    } else {
+        goToTopBtn.style.display = "none";
+    }
+});
