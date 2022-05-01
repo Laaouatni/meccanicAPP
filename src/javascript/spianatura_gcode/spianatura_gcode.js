@@ -7,6 +7,8 @@ let diametroInput = document.getElementById("diametro-utensile-input");
 
 let success_alert = document.querySelector('#success-alert');
 
+document.querySelector("#copia-buttone").style.display = "none";
+
 [larghezzaInput, lunghezzaInput].forEach((input) => {
     input.addEventListener("input", (e) => {
         let inputValue = e.target.value;
@@ -295,6 +297,8 @@ calcolaBtn.addEventListener("click", () => {
         "nameGprogram": "",
     };
     displayGcode(options, pezzoGrezzo);
+
+    document.querySelector("#copia-buttone").style.display = "grid";
 });
 
 function displayGcode(options, pezzoGrezzo) {
@@ -389,16 +393,22 @@ function showSuccessAlert(gcodeArray, index) {
 }
 
 document.querySelector("#copia-buttone").addEventListener("click", () => {
-
     let textToCopy = gcode.join("\n");
-    // put in clipboard "hello world" using Asynchronous Clipboard API
+
     navigator.clipboard
         .writeText(textToCopy)
         .then(() => {
-            console.log('copied');
+            if (textToCopy.length > 0) {
+                document.querySelector("#copia-buttone").classList.add("copia-success");
+                setTimeout(() => {
+                    document.querySelector("#copia-buttone").classList.remove("copia-success");
+                }, 1000);
+            } else {
+                showAlert("il testo è vuoto, prova a generare il gcode prima di copiarlo");
+            }
         })
         .catch((err) => {
             console.error(err);
             showAlert(err);
-        })
+        });
 });

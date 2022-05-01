@@ -117,7 +117,10 @@
         <div id="spianatura-output">
             <output id="output-gcode">
                 <!-- qui vengono generati i codici gcode -->
-                clicca calcola per calcolare, ricordati di cambiare l'altezza e la larghezza se vuoi
+                <!-- e cancellati automaticamente ciò che scritto qua sotto -->
+                clicca <code style="font-size:1.3rem;">`calcola`</code> per far partire il generatore <br> 
+                ricordati di modificare la <em>lunghezza</em> e la <em>larghezza</em> se vuoi 
+                <br> puoi anche aumentare <em>l'altezza</em> nella sezione <em>"Altri Parametri"</em> 
             </output>
 
             <button id="copia-buttone">
@@ -141,8 +144,46 @@
                     padding: 0;
                     margin: 0;
                     min-height: 0;
+                    position: relative;
 
                 }
+
+                #copia-buttone.copia-success::after {
+                    content: "complimenti! è stato copiato! correttamente";
+                    position: absolute;
+                    left: 100%;
+                    top: 0;
+                    font-size: 0.8rem;
+                    width: max-content;
+                    padding: 0.5rem;
+                    background: rgb(0, 255, 100);
+                    border-radius: 0.5rem;
+                    box-shadow: 0 0 1rem rgb(0,255,100);
+                    margin: 4% 5%;
+                    color: rgb(219, 255, 233);
+                    text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.5);
+                    pointer-events: none;
+                    animation: copyAlertButton 1s ease-in-out forwards;
+                }
+
+                @keyframes copyAlertButton {
+                    0% {
+                        transform: translateX(100%);
+                        opacity: 0.3;
+                    }
+                    30% {
+                        opacity: 1;
+                    }
+                    80% {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                    100% {
+                        transform: translateX(50%);
+                        opacity: 0;
+                    }
+                }
+                
                 </style>
             </button>
 
