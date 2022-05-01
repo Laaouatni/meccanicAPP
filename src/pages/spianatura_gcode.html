@@ -114,7 +114,6 @@
             </button>
         </div>
 
-
         <div id="spianatura-output">
             <output id="output-gcode">
                 <!-- qui vengono generati i codici gcode -->
@@ -131,7 +130,26 @@
         </div>
     </section>
 
-    <h3>ancora da sviluppare... </h3>
+    <div id="bottom-footer-info">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+            #bottom-footer-info {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            #bottom-footer-info span {
+                transform: translateY(1rem);
+                color: blue;
+                font-weight: 400;
+                font-size: 1.5rem;
+                font-family: 'Pacifico', cursive;
+            }
+        </style>
+        <span>il tuo codice Gcode!</span>
+        <img style="min-width: 2rem; width: 10vw; max-width: 5rem; filter: invert(7%) sepia(92%) saturate(7190%) hue-rotate(244deg) brightness(116%) contrast(148%); transform: rotate(-90deg)" src="./../../utilities/images/arrow/0arrow.png" alt="arrow">
+    </div>
 
     <div id="alert">
         <div id="alert-bg">

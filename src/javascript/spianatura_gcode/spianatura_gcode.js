@@ -11,10 +11,9 @@ let success_alert = document.querySelector('#success-alert');
     input.addEventListener("input", (e) => {
         let inputValue = e.target.value;
         let inputLength = inputValue.length;
-        
-        if (inputLength > 2) {
-            input.style.width = inputLength + 0.5 + "rem";
-        }
+
+        input.style.width = inputLength + 0.5 + "rem";
+
         if (inputLength > 4) {
             showAlert("Errore: numero troppo grande.")
             input.value = inputValue.slice(0, -1);
@@ -23,7 +22,7 @@ let success_alert = document.querySelector('#success-alert');
 });
 
 diametroInput.addEventListener("input", (e) => {
-   
+
     let inputValue = e.target.value;
     let inputLength = inputValue.length;
     if (inputLength > 3) {
@@ -310,7 +309,7 @@ function displayGcode(options, pezzoGrezzo) {
             addLineSmooth(Gline, index, gcodeArray);
         }
 
-function addLineSmooth(Gline, index, gcodeArray) {
+        function addLineSmooth(Gline, index, gcodeArray) {
             let newGcodeLine = document.createElement("div");
             let GcopyTemplate = document.querySelector("#template-g-line").content.cloneNode(true);
 
@@ -321,7 +320,7 @@ function addLineSmooth(Gline, index, gcodeArray) {
             newGcodeLine.querySelector(".gnum-line").textContent = `N${index + 1}`;
 
             newGcodeLine.classList.add("gcode-line");
-            newGcodeLine.scrollIntoView({behaviour: "smooth"});
+            newGcodeLine.scrollIntoView({ behaviour: "smooth" });
             showSuccessAlert(gcodeArray, index);
         }
 
