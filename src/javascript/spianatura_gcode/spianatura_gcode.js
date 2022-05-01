@@ -12,11 +12,14 @@ let success_alert = document.querySelector('#success-alert');
         let inputValue = e.target.value;
         let inputLength = inputValue.length;
 
-        input.style.width = inputLength + 0.5 + "rem";
+        if (inputLength > 1) {
+            input.style.width = inputLength + 0.5 + "rem";
+        }
 
         if (inputLength > 4) {
             showAlert("Errore: numero troppo grande.")
             input.value = inputValue.slice(0, -1);
+            input.style.width = inputLength - 0.5 + "rem";
         }
     });
 });
@@ -378,10 +381,24 @@ function showSuccessAlert(gcodeArray, index) {
 
     let onePercLoading = Math.floor(gcodeArray.length / 100);
 
-
     console.log(onePercLoading);
 
     if (index + 1 == gcodeArray.length) {
         success_alert.classList.remove("success-alltime");
     }
 }
+
+document.querySelector("#copia-buttone").addEventListener("click", () => {
+
+    let textToCopy = gcode.join("\n");
+    // put in clipboard "hello world" using Asynchronous Clipboard API
+    navigator.clipboard
+        .writeText(textToCopy)
+        .then(() => {
+            console.log('copied');
+        })
+        .catch((err) => {
+            console.error(err);
+            showAlert(err);
+        })
+});
