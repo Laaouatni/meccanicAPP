@@ -393,6 +393,8 @@ function showSuccessAlert(gcodeArray, index) {
     }
 }
 
+document.querySelector("#copia-buttone").style.display = "none";
+
 document.querySelector("#copia-buttone").addEventListener("click", () => {
     let textToCopy = gcode.join("\n");
 
