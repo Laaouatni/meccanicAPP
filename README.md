@@ -23,3 +23,22 @@ https://meccanicapp.vercel.app
 3. Generare GCODE automaticamente:
 
 - spianatura FRESA.
+
+esempio generato: 
+```GCODE
+WORKPIECE(,"",, "BOX",64, 1, -0, -80, 0, -20, 20, 20)
+G90
+G54
+T="CUTTER 20"
+M6
+S1592 M3
+G0 X-12 Y-2 Z0
+G0 X-12 Y-2 Z0
+F637
+G1 X22 Y-2 Z0
+G1 X22 Y-14 Z0
+G1 X-12 Y-14 Z0
+G1 X-12 Y-14 Z2
+G0 X-12 Y-14 Z20
+M30
+```
