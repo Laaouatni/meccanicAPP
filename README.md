@@ -8,14 +8,14 @@ https://meccanicapp.vercel.app
 
 ## Funzionalità
 
-1. Trovare da delle Tolleranze, se "albero-foro" è:
+### 1. Trovare da delle Tolleranze, se "albero-foro" è:
    - acc. con Gioco
    - acc. con Interferenza
    - acc. con Incerto
 
 -----
 
-2. Trovare le misure delle tolleranze "h":
+### 2. Trovare le misure delle tolleranze "h":
 
 - da "h1" a "h12"
 - da "ø3" a "ø50"
@@ -24,7 +24,7 @@ https://meccanicapp.vercel.app
 
 -----
 
-3. Generare GCODE automaticamente:
+### 3. Generare GCODE automaticamente:
 
 - spianatura FRESA.
 
