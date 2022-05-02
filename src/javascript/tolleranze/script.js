@@ -91,6 +91,11 @@ function fetchAndDisplay() {
             setTimeout(() => {
                 alert.classList.remove("alert-visible");
             }, 2000);
+
+setTimeout(() => {
+                window.location.reload(true);
+            }, 5000);
+
         }).finally(() => {
             removeLoading();
         });
