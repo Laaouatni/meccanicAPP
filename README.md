@@ -24,7 +24,7 @@ https://meccanicapp.vercel.app
 
 - spianatura FRESA.
 
-esempio generato: 
+###### esempio generato: 
 ```GCODE
 WORKPIECE(,"",, "BOX",64, 1, -0, -80, 0, -20, 20, 20)
 G90
