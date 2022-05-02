@@ -26,10 +26,9 @@ https://meccanicapp.vercel.app
 
 ###### esempio generato: 
 ```GCODE
-WORKPIECE(,"",, "BOX",64, 1, -0, -80, 0, -20, 20, 20)
 G90
 G54
-T="CUTTER 20"
+T10
 M6
 S1592 M3
 G0 X-12 Y-2 Z0
