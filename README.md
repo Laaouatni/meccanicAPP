@@ -44,3 +44,5 @@ G1 X-12 Y-14 Z2
 G0 X-12 Y-14 Z20
 M30
 ```
+
+![](https://visitor-badge.glitch.me/badge?page_id=meccanicAPP)
