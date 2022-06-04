@@ -26,6 +26,17 @@
     width: 5rem;
 }
 
-#form-numero-giri span {
+#form-numero-giri .operator {
     font-size: 2rem;
+}
+
+#form-numero-giri label[for="vt-input"],
+#form-numero-giri label[for="diametro-input"] {
+    display: grid;
+}
+
+#numero-giri-first-container,
+#numero-giri-second-container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
 }

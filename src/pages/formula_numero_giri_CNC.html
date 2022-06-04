@@ -26,15 +26,23 @@
 
     <div class="container-formula">
         <form id="form-numero-giri">
-            <div>
-                <input type="number" name="" id="vt-input" placeholder="Vt (velocità di taglio)">
-                <span> * </span>
+            <div id="numero-giri-first-container">
+                <label for="vt-input">
+                    <input type="range" min="1" max="100" name="" id="vt-input" placeholder="Vt (velocità di taglio)">
+                    <span id="vt-value-span">10 error</span>
+                </label>
+
+                <span class="operator"> * </span>
                 <input type="number" name="" id="" value="1000" disabled>
             </div>
             <hr>
-            <div>
-                <input type="number" name="" id="diametro-input" placeholder="D (diametro pezzo)">
-                <span> * </span>
+            <div id="numero-giri-second-container">
+                <label for="diametro-input">
+                    <input type="range" min="1" max="100" name="" id="diametro-input" placeholder="D (diametro pezzo)">
+                    <span id="diametro-value-span">10 error</span>
+                </label>
+
+                <span class="operator"> * </span>
                 <input type="number" name="" id="" value="3.14" disabled>
             </div>
         </form>
