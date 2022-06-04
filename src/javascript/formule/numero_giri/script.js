@@ -11,9 +11,18 @@ function calcolaGiri(props) {
     vtSpan.textContent = `${props.vt} m/min`;
     diametroSpan.textContent = `Ø ${props.diametro} mm`;
 
-    props.htmlOutput.textContent = formula.toFixed(2);
-}
 
+    let results = {
+        vt: props.vt,
+        diametro: props.diametro,
+        giri: formula.toFixed(2)
+    }
+    props.htmlOutput.textContent = results.giri;
+
+    /*  document.querySelector("#test-json-giri").textContent = JSON.stringify(results); */
+
+    return results;
+}
 
 let props = {
     "vt": vtInput.value ? vtInput.value : "❌",

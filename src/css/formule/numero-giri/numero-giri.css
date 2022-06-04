@@ -75,3 +75,14 @@
 * {
     box-sizing: border-box;
 }
+
+@media (max-width: 60rem) {
+    .container-formula .giri-card {
+        width: 95vw;
+    }
+}
+
+.container-formula .giri-card:hover {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.2rem 1rem rgba(0, 149, 255, 0.274);
+}
