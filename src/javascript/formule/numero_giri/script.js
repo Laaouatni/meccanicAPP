@@ -6,7 +6,6 @@ let vtSpan = document.querySelector('#vt-value-span');
 let diametroSpan = document.querySelector('#diametro-value-span');
 
 function calcolaGiri(props) {
-    console.log(props)
     let formula = (props.vt * 1000) / (props.diametro * Math.PI);
 
     vtSpan.textContent = `${props.vt} m/min`;

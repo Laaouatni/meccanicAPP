@@ -30,7 +30,7 @@
     /*   top: calc((1rem*2 + 1rem*2)*-1); */
     top: calc((1rem*2)*-1);
     /* right: 0; */
-    right: 1rem;
+    right: 0;
     display: grid;
     place-items: center;
     border-radius: 0.5rem 0 0 0;
