@@ -45,4 +45,12 @@ G0 X-12 Y-14 Z20
 M30
 ```
 
+### 4 . calcolatore Velocità rotazione mandrino 
+
+- giri/minuto (con formula)
+
+> (VT * 1000) / (Ø * Math.PI) <br><br> vt= velocità di taglio (m/min) <br> Ø=diametro pezzo (mm) <br> Math.PI = 3.14
+
+
+
 ![](https://visitor-badge.glitch.me/badge?page_id=meccanicAPP)
