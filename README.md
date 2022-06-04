@@ -45,6 +45,8 @@ G0 X-12 Y-14 Z20
 M30
 ```
 
+<hr>
+
 ### 4 . calcolatore Velocità rotazione mandrino 
 
 - giri/minuto (con formula)
