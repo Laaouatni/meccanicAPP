@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numero giri formula Tornitura</title>
+
+    <!-- styles CSS -->
+    <link rel="stylesheet" href="../../style.css">
+
+    <!-- poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- dependecies -->
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+    <h1>Formula numero giri Tornitura</h1>
+
+    <div class="container-formula">
+        <form id="form-numero-giri">
+            <div>
+                <input type="number" name="" id="vt-input" placeholder="Vt (velocità di taglio)">
+                <span> * </span>
+                <input type="number" name="" id="" value="1000" disabled>
+            </div>
+            <hr>
+            <div>
+                <input type="number" name="" id="" placeholder="D (diametro pezzo)">
+                <span> * </span>
+                <input type="number" name="" id="diametro-input" value="3.14" disabled>
+            </div>
+        </form>
+
+        <div id="risultato-giri">
+            <p>Numero giri:</p>
+            <output id="html-output"></output>
+        </div>
+    </div>
+
+    <script src="../javascript/formule/numero_giri/script.js"></script>
+</body>
+
+</html>

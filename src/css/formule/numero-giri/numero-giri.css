@@ -1,0 +1,31 @@
+.container-formula {
+    display: grid;
+    place-items: center;
+}
+
+.container-formula form {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+#form-numero-giri hr {
+    /*   --border-width: 0.2rem;
+    border: var(--border-width) solid rgba(0, 0, 255, 0.7);
+    border-radius: var(--border-width); */
+    margin: 1rem 0;
+}
+
+#form-numero-giri input {
+    height: 3rem;
+    font-family: poppins;
+    font-size: 1.5rem;
+}
+
+#form-numero-giri input[disabled] {
+    width: 5rem;
+}
+
+#form-numero-giri span {
+    font-size: 2rem;
+}
