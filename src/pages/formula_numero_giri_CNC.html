@@ -19,13 +19,14 @@
 <body>
     <h1 style="text-align:center;">numero giri tornitura.</h1>
 
+    <!-- I used this video for the formula https://youtu.be/h1kSgvirtgo -->
     <div class="container-formula">
         <form id="form-numero-giri" class="giri-card">
             <div id="numero-giri-first-container" style="gap: 1rem;">
                 <label for="vt-input">
                     <div class="input-with-title-container">
                         <span class="title-of-label-n-giri">VT</span>
-                        <input type="range" min="1" max="1000" name="" id="vt-input" placeholder="Vt (velocità di taglio)">
+                        <input type="range" min="1" max="1000" value="180" name="" id="vt-input" placeholder="Vt (velocità di taglio)">
                     </div>
                     <span id="vt-value-span">10 error</span>
                 </label>
@@ -38,7 +39,7 @@
                 <label for="diametro-input">
                     <div class="input-with-title-container">
                         <span class="title-of-label-n-giri">Ø</span>
-                        <input type="range" min="1" max="100" name="" id="diametro-input" placeholder="D (diametro pezzo)">
+                        <input type="range" min="1" max="500" value="200" name="" id="diametro-input" placeholder="D (diametro pezzo)">
                     </div>
                     <span id="diametro-value-span">10 error</span>
                 </label>
