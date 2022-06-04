@@ -3,8 +3,8 @@ let diametroInput = document.querySelector('#diametro-input');
 let htmlOutput = document.querySelector('#html-output');
 
 let props = {
-    "vt": vtInput.value,
-    "diametro": diametroInput.value,
+    "vt": vtInput ? vtInput.value && console.log("✅") : "❌",
+    "diametro": diametroInput.value && console.log("✅") ? diametroInput.value : "❌",
     "htmlOutput": htmlOutput,
 }
 
