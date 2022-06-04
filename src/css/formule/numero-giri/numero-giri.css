@@ -1,6 +1,7 @@
 .container-formula {
     display: grid;
     place-items: center;
+    height: min-content;
 }
 
 .container-formula .giri-card {
@@ -79,4 +80,6 @@ body {
     outline: 1px solid red;
     display: grid;
     height: calc(100vh - 1rem);
+    grid-template-rows: auto 1fr;
+    align-items: center;
 }
