@@ -9,6 +9,15 @@ let props = {
 }
 
 function calcolaGiri(props) {
+    console.log(props)
     let formula = Math.round((props.vt * 1000) / (props.diametro * Math.PI));
     props.htmlOutput.textContent = formula;
 }
+
+let arrayInput = [vtInput, diametroInput];
+
+arrayInput.forEach((input) => {
+    input.addEventListener('input', () => {
+        calcolaGiri(props);
+    });
+});
