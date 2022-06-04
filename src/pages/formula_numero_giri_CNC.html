@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="calcolatore di Numero di giri al minuto in tornio CNC (Generator)">
+
+    <title>numero giri — formula di Tornitura — Laaouatni.</title>
+
+    <meta name="theme-color" content="blue">
+
+    <!-- app icon -->
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87947051?v=4">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/87947051?v=4" type="image/jpg">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/87947051?v=4">
+    <meta property="twitter:card" content="summary_large_image">
+
+    <!-- styles CSS -->
+    <link rel="stylesheet" href="../css/formule/numero-giri/numero-giri.css">
+
+    <!-- poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 style="text-align:center;">numero giri tornitura.</h1>
+
+    <!-- I used this video for the formula https://youtu.be/h1kSgvirtgo -->
+    <div class="container-formula">
+        <form id="form-numero-giri" class="giri-card">
+            <div id="numero-giri-first-container" style="gap: 1rem;">
+                <label for="vt-input">
+                    <div class="input-with-title-container">
+                        <span class="title-of-label-n-giri">VT</span>
+                        <input type="range" min="1" max="1000" value="180" name="" id="vt-input" placeholder="Vt (velocità di taglio)">
+                    </div>
+                    <span id="vt-value-span">10 error</span>
+                </label>
+
+                <span class="operator"> * </span>
+                <input type="number" name="" id="" value="1000" disabled>
+            </div>
+            <hr>
+            <div id="numero-giri-second-container" style="gap: 1rem;">
+                <label for="diametro-input">
+                    <div class="input-with-title-container">
+                        <span class="title-of-label-n-giri">Ø</span>
+                        <input type="range" min="1" max="500" value="200" name="" id="diametro-input" placeholder="D (diametro pezzo)">
+                    </div>
+                    <span id="diametro-value-span">10 error</span>
+                </label>
+
+                <span class="operator"> * </span>
+                <input type="number" name="" id="" value="3.14" disabled>
+            </div>
+        </form>
+
+        <div id="risultato-giri" class="giri-card">
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output">errore</output>
+                <span>giri/min</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascript/formule/numero_giri/script.js"></script>
+</body>
+
+</html>
