@@ -2,12 +2,14 @@ let vtInput = document.querySelector('#vt-input');
 let diametroInput = document.querySelector('#diametro-input');
 let htmlOutput = document.querySelector('#html-output');
 
-
+let vtSpan = document.querySelector('#vt-value-span');
+let diametroSpan = document.querySelector('#diametro-value-span');
 
 function calcolaGiri(props) {
     console.log(props)
-    let formula = Math.round((props.vt * 1000) / (props.diametro * Math.PI));
-    props.htmlOutput.textContent = formula;
+    let formula = (props.vt * 1000) / (props.diametro * Math.PI);
+
+    props.htmlOutput.textContent = formula.toFixed(2);
 }
 
 let arrayInput = [vtInput, diametroInput];
@@ -20,6 +22,9 @@ arrayInput.forEach((input) => {
             "htmlOutput": htmlOutput,
         }
 
+        vtSpan.textContent = `${props.vt} m/min`;
+        diametroSpan.textContent = `Ø ${props.diametro} mm`;
+
         calcolaGiri(props);
-    });
+    }, { passive: true });
 });

@@ -3,10 +3,12 @@
     place-items: center;
 }
 
-.container-formula form {
+.container-formula .giri-card {
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 1rem;
+    margin: 0.5rem;
+    width: 80vw;
 }
 
 #form-numero-giri hr {
@@ -39,4 +41,22 @@
 #numero-giri-second-container {
     display: grid;
     grid-template-columns: 1fr auto auto;
+    align-items: center;
+}
+
+.input-with-title-container {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    align-items: center;
+    font-size: 2rem;
+    gap: 1rem;
+    font-weight: bold;
+}
+
+#risultato-giri {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: center;
+    font-size: 1.3rem;
+    gap: 1rem;
 }

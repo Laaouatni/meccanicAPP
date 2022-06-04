@@ -14,21 +14,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- dependecies -->
-    <!-- fontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
 </head>
 
 <body>
     <h1>Formula numero giri Tornitura</h1>
 
     <div class="container-formula">
-        <form id="form-numero-giri">
-            <div id="numero-giri-first-container">
+        <form id="form-numero-giri" class="giri-card">
+            <div id="numero-giri-first-container" style="gap: 1rem;">
                 <label for="vt-input">
-                    <input type="range" min="1" max="100" name="" id="vt-input" placeholder="Vt (velocità di taglio)">
+                    <div class="input-with-title-container">
+                        <span class="title-of-label-n-giri">VT</span>
+                        <input type="range" min="1" max="1000" name="" id="vt-input" placeholder="Vt (velocità di taglio)">
+                    </div>
                     <span id="vt-value-span">10 error</span>
                 </label>
 
@@ -36,9 +34,12 @@
                 <input type="number" name="" id="" value="1000" disabled>
             </div>
             <hr>
-            <div id="numero-giri-second-container">
+            <div id="numero-giri-second-container" style="gap: 1rem;">
                 <label for="diametro-input">
-                    <input type="range" min="1" max="100" name="" id="diametro-input" placeholder="D (diametro pezzo)">
+                    <div class="input-with-title-container">
+                        <span class="title-of-label-n-giri">Ø</span>
+                        <input type="range" min="1" max="100" name="" id="diametro-input" placeholder="D (diametro pezzo)">
+                    </div>
                     <span id="diametro-value-span">10 error</span>
                 </label>
 
@@ -47,9 +48,9 @@
             </div>
         </form>
 
-        <div id="risultato-giri">
+        <div id="risultato-giri" class="giri-card">
             <p>Numero giri:</p>
-            <output id="html-output"></output>
+            <output style="font-size: 3rem;" id="html-output">errore</output>
         </div>
     </div>
 
