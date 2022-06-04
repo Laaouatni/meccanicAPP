@@ -57,29 +57,21 @@
 
 #risultato-giri {
     display: grid;
-    grid-template-columns: auto 1fr;
     place-items: center;
     font-size: 1.3rem;
     gap: 1rem;
 }
 
-@media (min-width:50rem) {
-    .container-formula {
-        grid-template-columns: 1fr 1fr;
-    }
-    .container-formula .giri-card {
-        height: 100%;
-        display: grid;
-        place-content: center;
-    }
-}
-
 body {
     font-family: poppins, sans-serif;
     background-color: rgb(200, 230, 255);
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     display: grid;
     height: calc(100vh - 1rem);
     grid-template-rows: auto 1fr;
     align-items: center;
+}
+
+* {
+    box-sizing: border-box;
 }
