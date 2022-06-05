@@ -118,13 +118,13 @@ function setGargoments(options) {
 
 function G0(x, y, z) {
     let XYZ = checkSolveXYZ(x, y, z);
-    gcode.push(`G0 X${XYZ.x} Y${XYZ.y} Z${XYZ.z}`);
+    gcode.push(`G0 X${XYZ.x.toFixed(1)} Y${XYZ.y.toFixed(1)} Z${XYZ.z.toFixed(1)}`);
     setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
 }
 
 function G1(x, y, z) {
     let XYZ = checkSolveXYZ(x, y, z);
-    gcode.push(`G1 X${XYZ.x} Y${XYZ.y} Z${XYZ.z}`);
+    gcode.push(`G1 X${XYZ.x % 1 == 0 ? XYZ.x : XYZ.x.toFixed(1)} Y${XYZ.y % 1 == 0 ? XYZ.y : XYZ.y.toFixed(1)} Z${XYZ.z % 1 == 0 ? XYZ.z : XYZ.z.toFixed(1)}`);
     setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
 }
 
