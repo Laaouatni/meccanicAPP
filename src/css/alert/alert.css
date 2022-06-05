@@ -87,5 +87,6 @@
 }
 
 .success-alltime {
-    animation: alert-green-simple 0.5s forwards linear infinite reverse;
+    position: fixed;
+    left: 0 !important;
 }
