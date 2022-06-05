@@ -64,6 +64,8 @@
         display: flex;
         cursor: pointer;
         gap: 1rem;
+        justify-content: center;
+        align-items: center;
     }
     #section-index-lista a:hover {
         border-radius: 0.5rem;
@@ -77,14 +79,15 @@
         height: var(--height-img);
         border-radius: 50%;
         object-fit: cover;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in;
     }
     #section-index-lista a:hover img {
         height: 100%;
         max-height: 50vh;
-        width: 100%;
         object-fit: cover;
         margin-bottom: 1rem;
         border-radius: 0.5rem;
+        transition: all 0.5s ease-out;
+        transition-delay: 0.5s;
     }
 }
