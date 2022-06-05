@@ -38,13 +38,20 @@
     display: grid;
 }
 
-#section-index-lista a img {
+#image-spianatura-index {
+    background-image: url("../../../utilities/images/index-images/spianatura-gcode/0.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section-index-lista a img,
+#image-spianatura-index {
     --height-img: 15vw;
     width: var(--height-img);
     height: var(--height-img);
     border-radius: 50%;
     object-fit: cover;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 #section-index-lista a:hover img {
@@ -52,8 +59,18 @@
     max-height: 50vh;
     width: 100%;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 0.5rem;
+}
+
+#section-index-lista a:hover #image-spianatura-index {
+    height: 95vw;
+    max-height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background-image: url("../../../utilities/images/index-images/spianatura-gcode/1.jpg");
 }
 
 @media (min-width: 800px) {
@@ -66,6 +83,7 @@
         gap: 1rem;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
     }
     #section-index-lista a:hover {
         border-radius: 0.5rem;
@@ -73,12 +91,14 @@
         transform: translateY(-0.2rem);
         display: grid;
     }
-    #section-index-lista a img {
+    #section-index-lista a img,
+    #image-spianatura-index {
         --height-img: 5vw;
         width: var(--height-img);
         height: var(--height-img);
         border-radius: 50%;
         object-fit: cover;
+        background-image: url("../../../utilities/images/index-images/numeri-giri-cnc/0.jpg");
         transition: all 0.2s ease-in;
     }
     #section-index-lista a:hover img {
@@ -89,5 +109,16 @@
         border-radius: 0.5rem;
         transition: all 0.5s ease-out;
         transition-delay: 0.5s;
+    }
+    #section-index-lista a:hover #image-spianatura-index {
+        height: 45vw;
+        max-height: 50vh;
+        width: 45vw;
+        object-fit: cover;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.5s ease-out;
+        transition-delay: 0.5s;
+        background-image: url("../../../utilities/images/index-images/spianatura-gcode/1.jpg");
     }
 }
