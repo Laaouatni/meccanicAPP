@@ -262,7 +262,7 @@ function createGcodeProgram(options, pezzoGrezzo) {
     spianaturaGenerator(options);
     stopGprogram();
 
-    // now create a var with the gcode program
+
     let gcodeProgram = gcode;
     return gcodeProgram;
 }
@@ -384,9 +384,11 @@ function showSuccessAlert(gcodeArray, index) {
     success_alert.classList.remove("success-visible");
     success_alert.classList.add("success-alltime");
 
-    let onePercLoading = Math.floor(gcodeArray.length / 100);
+    let onePerc = 100 / gcodeArray.length;
 
-    console.log(onePercLoading);
+    let currentPerc = onePerc * (index + 1);
+
+    console.log("currentPerc: ", currentPerc, " di", gcodeArray.length, " con index", index);
 
     if (index + 1 == gcodeArray.length) {
         success_alert.classList.remove("success-alltime");
