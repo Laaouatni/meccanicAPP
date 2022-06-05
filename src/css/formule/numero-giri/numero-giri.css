@@ -70,7 +70,7 @@
     height: calc(100vh - 1rem);
     grid-template-rows: auto 1fr;
     align-items: center;
-    padding: none;
+    padding: inherit !important;
 }
 
 * {
