@@ -4,5 +4,5 @@ btn.forEach((el) => {
     el.addEventListener("mouseenter", () => {
         el.scrollIntoView({ behavior: "smooth", block: 'center' });
         console.log("entered");
-    },  );
+    });
 });
