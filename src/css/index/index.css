@@ -98,7 +98,7 @@
         height: var(--height-img);
         border-radius: 50%;
         object-fit: cover;
-        background-image: url("../../../utilities/images/index-images/numeri-giri-cnc/0.jpg");
+        background-image: url("../../../utilities/images/index-images/spianatura-gcode/0.jpg");
         transition: all 0.2s ease-in;
     }
     #section-index-lista a:hover img {
