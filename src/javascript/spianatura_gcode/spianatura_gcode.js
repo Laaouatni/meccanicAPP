@@ -196,9 +196,14 @@ function spianaturaGenerator(options) {
 
         for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
             if (lineeY_completed == 1) {
-                if (lineeZ_completed == 0) {
-                    gcode.push(`F${options.feed}`);
-                }
+                // console.log(`❌ ${lineeZ_completed}`)
+                // gcode.push(`hello ${lineeZ_completed}`);
+                gcode.push(`F${options.feed}`);
+
+                // if (lineeZ_completed == 0) {
+                //     // console.log(`✅ ${lineeZ_completed}`)
+                //     gcode.push(`F${options.feed}`);
+                // }
             }
 
             if (isDestra) {
@@ -306,7 +311,6 @@ calcolaBtn.addEventListener("click", () => {
 function displayGcode(options, pezzoGrezzo) {
     document.querySelector("#output-gcode").innerHTML = "";
     let gcodeArray = createGcodeProgram(options, pezzoGrezzo);
-    console.log("gcodeArray: ", gcodeArray);
 
     gcodeArray.forEach((Gline, index) => {
 
