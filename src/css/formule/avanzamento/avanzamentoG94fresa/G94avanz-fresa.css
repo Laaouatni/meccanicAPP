@@ -6,7 +6,7 @@
     place-content: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     #form-avanzamento-fresa>#vt-first-container {
         grid-template-columns: inherit;
         align-items: inherit;
@@ -15,5 +15,8 @@
     #form-avanzamento-fresa>#vt-first-container>label>div {
         display: grid;
         grid-template-columns: 2rem 1fr;
+    }
+    #form-avanzamento-fresa>#vt-first-container .operator {
+        display: none;
     }
 }
