@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="G96 calcolatore di velocità di taglio in un tornio CNC (Generator)">
+    <meta name="description" content="calcolatore di avanzamento in giri/minuto in fresa CNC G94 (Generator)">
 
-    <title>velocità di taglio G96 calculatore Tornio — Laaouatni.</title>
+    <title>avanzamento G94 — formula di Fresatura Calculatore — Laaouatni.</title>
 
     <meta name="theme-color" content="blue">
 
@@ -40,61 +40,56 @@
 </head>
 
 <body id="body-vt">
-    <h1 style="text-align:center;">G96 velocità di taglio (metri/minuto)</h1>
+    <h1 style="text-align:center;">G94 avanzamento fresa mm/min</h1>
 
     <div class="container-formula">
-        <form id="form-velocita-di-taglio" class="giri-card" style="display: grid; gap: 1rem;">
+        <form id="form-avanzamento-fresa" class="giri-card" style="display: grid; gap: 1rem;">
             <!-- 1 -->
             <div id="vt-first-container">
 
-                <label for="vt-giri-input">
+                <label for="avanz-dente-input">
                     <div>
-                        <span>n</span>
-                        <input type="range" name="" min="1" max="5000" value="1200" id="vt-giri-input">
+                        <span>fz</span>
+                        <input type="range" name="" min="1" max="150" value="80" id="avanz-dente-input">
                     </div>
+                    <span id="avanz-dente-span">errore</span>
+                </label>
+
+                <span class="operator" title="moltiplicazione"> * </span>
+
+                <label for="num-denti-input">
+                    <div>
+                        <span>Zn</span>
+                        <input type="range" name="" id="num-denti-input" min="1" max="15" value="4">
+                    </div>
+                    <span id="num-denti-span">errore</span>
+                </label>
+
+                <span class="operator" title="moltiplicazione"> * </span>
+
+                <label for="giri-input">
+                    <div>
+                        <span style="font-size: 2rem;">S</span>
+                        <input type="range" name="" id="giri-input" min="1" max="10000" value="1200">
+                    </div>
+
                     <span id="giri-span">errore</span>
                 </label>
-
-                <span class="operator" title="moltiplicazione"> * </span>
-
-                <label for="vt-diam-input">
-                    <div>
-                        <span>D</span>
-                        <input type="range" name="" id="vt-diam-input" min="1" max="500" value="50">
-                    </div>
-                    <span id="diam-span">errore</span>
-                </label>
-
-                <span class="operator" title="moltiplicazione"> * </span>
-
-                <label for="vt-greco">
-                    <div>
-                        <span style="font-size: 2rem;">π</span>
-                        <input type="number" name="" id="vt-pgreco" value="3.14" disabled>
-                    </div>
-                </label>
-
             </div>
 
-            <hr style="margin-left: 0; margin-right: 0;">
-
-            <!-- 2 -->
-            <div id="vt-second-container">
-                <input type="number" name="" id="" value="1000" disabled>
-            </div>
         </form>
 
         <div class="giri-card" style="display: grid; place-items: center;">
             <div style="display: flex; gap: 1rem; align-items: center;">
                 <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output">errore</output>
-                <span>metri/minuto</span>
+                <span>mm/min</span>
             </div>
         </div>
 
         <div class="suggerimento-card">
             <i class="fa-solid fa-circle-info"></i>
             <div>
-                utilizzare con <b>G96</b> tornio (velocita costante)
+                utilizzare con <b>G94</b> una fresa
             </div>
         </div>
     </div>
@@ -121,7 +116,7 @@
         </a>
     </footer>
 
-    <script src="../javascript/formule/velocita_di_taglio/script.js"></script>
+    <script src="../javascript/formule/avanzamento-fresa/G94-avanz-fresa.js"></script>
 </body>
 
 </html>

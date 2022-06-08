@@ -8,7 +8,7 @@ function calcolaRaggio(props) {
     let formulaAvanzMax = (1 / 2) * props.raggio;
     let formulaAvanzMin = (1 / 4) * props.raggio;
 
-    raggioSpan.textContent = `${props.raggio} mm raggio utensile`;
+    raggioSpan.textContent = `${props.raggio}mm (raggio utensile)`;
 
     let results = {
         raggio: props.raggio,
