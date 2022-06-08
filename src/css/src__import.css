@@ -11,4 +11,5 @@
 @import url("./btn-calcola/btn-calcola.css");
 @import url("./body/body.css");
 @import url("./spianatura_gcode/altri-parametri.css");
-@import url("./formule/numero-giri/numero-giri.css")
+@import url("./formule/numero-giri/numero-giri.css");
+@import url("./formule/velocita-di-taglio/vt.css");

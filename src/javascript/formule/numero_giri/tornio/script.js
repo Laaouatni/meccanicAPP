@@ -25,8 +25,8 @@ function calcolaGiri(props) {
 }
 
 let props = {
-    "vt": vtInput.value ? vtInput.value : "❌",
-    "diametro": diametroInput.value ? diametroInput.value : "❌",
+    "vt": vtInput.value ? vtInput.value : "❌ errore, l'input ha qualche problema",
+    "diametro": diametroInput.value ? diametroInput.value : "❌ errore, l'input ha qualche problema'",
     "htmlOutput": htmlOutput,
 }
 

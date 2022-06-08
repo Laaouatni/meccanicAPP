@@ -22,18 +22,10 @@
     <link rel="stylesheet" href="../../style.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXK2TTRVN8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+    <!-- insert this ⬆️ -->
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
 
-        gtag('config', 'G-WXK2TTRVN8');
-    </script>
-
+    <!-- delete this -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062" crossorigin="anonymous"></script> -->
 
     <!-- poppins font -->
@@ -47,46 +39,56 @@
     />
 </head>
 
-<body id="body-giri-cnc">
-    <h1 style="text-align:center;">velocità mandrino tornitura.</h1>
+<body id="body-vt">
+    <h1 style="text-align:center;">velocità di taglio (metri/minuto)</h1>
 
-    <!-- I used this video for the formula https://youtu.be/h1kSgvirtgo -->
     <div class="container-formula">
-        <form id="form-numero-giri" class="giri-card">
-            <div id="numero-giri-first-container" style="gap: 1rem;">
-                <label for="vt-input">
-                    <div class="input-with-title-container">
-                        <span class="title-of-label-n-giri" title="velocità di taglio">VT</span>
-                        <input type="range" min="1" max="200" value="180" name="" id="vt-input" title="inserisci la velocità di taglio" placeholder="Vt (velocità di taglio)">
+        <form id="form-velocita-di-taglio" class="giri-card">
+            <!-- 1 -->
+            <div id="vt-first-container">
+
+                <label for="vt-giri-input">
+                    <div>
+                        <span>n</span>
+                        <input type="range" name="" id="vt-giri-input">
                     </div>
-                    <span id="vt-value-span" title="velocità di taglio">errore (javascript modificherà questo testo, attendere...)</span>
+                    <span>errore</span>
                 </label>
 
                 <span class="operator" title="moltiplicazione"> * </span>
-                <input type="number" name="" id="" value="1000" title="non modificare, serve per la formula" disabled>
+
+                <label for="vt-diam-input">
+                    <div>
+                        <span>D</span>
+                        <input type="range" name="" id="vt-diam-input">
+                    </div>
+                    <span>errore</span>
+                </label>
+
+                <span class="operator" title="moltiplicazione"> * </span>
+
+                <label for="vt-greco">
+                    <div>
+                        <span style="font-size: 2rem;">π</span>
+                        <input type="number" name="" id="vt-pgreco" value="3.14" disabled>
+                    </div>
+                </label>
+
             </div>
-            <hr>
-            <div id="numero-giri-second-container" style="gap: 1rem;">
-                <label for="diametro-input">
-                    <div class="input-with-title-container">
-                        <span class="title-of-label-n-giri" title="diametro">Ø</span>
-                        <input type="range" min="1" max="500" value="200" name="" id="diametro-input" title="diametro del tuo pezzo grezzo" placeholder="D (diametro pezzo)">
-                    </div>
-                    <span id="diametro-value-span" title="diametro del pezzo grezzo">errore (javascript modificherà questo testo, attendere...)</span>
-                </label>
 
-                <span class="operator" title="moltiplicazione"> * </span>
-                <input type="number" name="" id="" value="3.14" title="pi greco, non modificare" disabled>
+            <hr>
+
+            <!-- 2 -->
+            <div id="vt-second-container">
+                <input type="number" name="" id="" value="1000" disabled>
             </div>
         </form>
 
-        <div id="risultato-giri" class="giri-card">
+        <div class="giri-card" style="display: grid; place-items: center;">
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output" title="numero giri al minuto">errore (javascript modificherà questo testo, attendere...)</output>
-                <span>giri/min</span>
+                <output style="color: blue; font-weight: bold; font-size: 3rem;">errore</output>
+                <span>metri/minuto</span>
             </div>
-
-            <!-- <div id="test-json-giri">errore json</div> -->
         </div>
     </div>
 
@@ -112,7 +114,7 @@
         </a>
     </footer>
 
-    <script src="../javascript/formule/numero_giri/tornio/script.js"></script>
+    <script src="../javascript/formule/velocita_di_taglio/script.js"></script>
 </body>
 
 </html>

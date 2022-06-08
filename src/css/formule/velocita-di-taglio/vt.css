@@ -1,0 +1,62 @@
+#body-vt * {
+    box-sizing: border-box;
+}
+
+#body-vt {
+    font-family: poppins;
+}
+
+#body-vt .operator {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(0, 0, 166);
+}
+
+#vt-first-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    place-content: center;
+}
+
+
+/* #vt-first-container>* {
+    outline: 1px solid red;
+} */
+
+#body-vt input {
+    font-family: poppins;
+}
+
+#vt-first-container label>div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#vt-first-container label>div span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#vt-first-container label input[type="range"] {
+    width: 100%;
+}
+
+#vt-second-container {
+    display: grid;
+    place-items: center;
+}
+
+#vt-pgreco {
+    width: 3rem;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.2rem 0;
+}
+
+#vt-second-container input[disabled] {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.2rem 0;
+}
