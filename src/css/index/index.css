@@ -49,7 +49,7 @@
     --height-img: 15vw;
     width: var(--height-img);
     height: var(--height-img);
-    border-radius: 50%;
+    border-radius: var(--height-img);
     object-fit: cover;
     transition: all 0.3s ease-in-out;
 }
@@ -96,7 +96,7 @@
         --height-img: 5vw;
         width: var(--height-img);
         height: var(--height-img);
-        border-radius: 50%;
+        border-radius: var(--height-img);
         object-fit: cover;
         background-image: url("../../../utilities/images/index-images/spianatura-gcode/0.jpg");
         transition: all 0.2s ease-in;
