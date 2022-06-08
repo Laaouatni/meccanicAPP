@@ -1,0 +1,63 @@
+#form-avanz-tornio {
+    display: grid;
+    gap: 1rem;
+}
+
+#g95-first-container {
+    display: grid;
+    place-items: center;
+}
+
+#form-avanz-tornio #g95-first-container img {
+    max-width: 15rem;
+    width: 100%;
+}
+
+#form-avanz-tornio label>div span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* outline: 1px solid red */
+}
+
+#form-avanz-tornio label>div {
+    /* outline: 1px solid red; */
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 1000px) {
+    #form-avanz-tornio {
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+@media(min-width: 850px) {
+    #avanz-tornio-result-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    #avanz-tornio-result-container>div>span {
+        font-size: 6vw !important;
+    }
+    #avanz-tornio-result-container output {
+        font-size: 10vw !important;
+    }
+    #avanz-tornio-result-container>div>div>span {
+        font-size: 3vw !important;
+    }
+    #avanz-tornio-result-container>div>div {
+        display: grid;
+    }
+    #avanz-tornio-result-container {
+        display: grid;
+        grid-auto-flow: row;
+        gap: 2rem;
+        place-items: center;
+    }
+}

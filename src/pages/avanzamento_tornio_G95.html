@@ -40,61 +40,53 @@
 </head>
 
 <body id="body-vt">
-    <h1 style="text-align:center;">G96 velocità di taglio (metri/minuto)</h1>
+    <h1 style="text-align:center;">G95 avanzamento tornio</h1>
 
     <div class="container-formula">
-        <form id="form-velocita-di-taglio" class="giri-card" style="display: grid; gap: 1rem;">
+        <form id="form-avanz-tornio" class="giri-card" style="display: grid; gap: 1rem;">
             <!-- 1 -->
-            <div id="vt-first-container">
-
-                <label for="vt-giri-input">
-                    <div>
-                        <span>n</span>
-                        <input type="range" name="" min="1" max="5000" value="1200" id="vt-giri-input">
-                    </div>
-                    <span id="giri-span">errore</span>
+            <div id="g95-first-container">
+                <label for="raggio-utensile-input">
+                    <img src="../../utilities/images/pagine/avanzamento/G95-avanzamento-tornio/0.png" alt="utensile CNMG tornio con raggio indicato dalla freccia">
                 </label>
-
-                <span class="operator" title="moltiplicazione"> * </span>
-
-                <label for="vt-diam-input">
-                    <div>
-                        <span>D</span>
-                        <input type="range" name="" id="vt-diam-input" min="1" max="500" value="50">
-                    </div>
-                    <span id="diam-span">errore</span>
-                </label>
-
-                <span class="operator" title="moltiplicazione"> * </span>
-
-                <label for="vt-greco">
-                    <div>
-                        <span style="font-size: 2rem;">π</span>
-                        <input type="number" name="" id="vt-pgreco" value="3.14" disabled>
-                    </div>
-                </label>
-
             </div>
 
-            <hr style="margin-left: 0; margin-right: 0;">
-
             <!-- 2 -->
-            <div id="vt-second-container">
-                <input type="number" name="" id="" value="1000" disabled>
+            <div>
+                <label for="raggio-utensile-input">
+                    <div>
+                        <span>R</span>
+                        <input type="range" name="" min="1" max="15" value="8" id="raggio-utensile-input">
+                    </div>
+                    <span id="raggio-utensile-span">errore</span>
+                </label>
             </div>
         </form>
 
-        <div class="giri-card" style="display: grid; place-items: center;">
+        <div id="avanz-tornio-result-container" class="giri-card" style="display: grid; place-items: center;">
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output">errore</output>
-                <span>metri/minuto</span>
+                <span style="font-size: 2rem; font-weight: bold">MAX: </span>
+
+                <div>
+                    <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-outputMAX">errore</output>
+                    <span>millimetri/giro</span>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <span style="font-size: 2rem; font-weight: bold">MIN: </span>
+
+                <div>
+                    <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-outputMIN">errore</output>
+                    <span>millimetri/giro</span>
+                </div>
             </div>
         </div>
 
         <div class="suggerimento-card">
             <i class="fa-solid fa-circle-info"></i>
             <div>
-                utilizzare con <b>G96</b> tornio (velocita costante)
+                formula G95 TORNIO: <b>(1/2 * r)</b> oppure <b>(1/4 * r)</b>
             </div>
         </div>
     </div>
@@ -121,7 +113,7 @@
         </a>
     </footer>
 
-    <script src="../javascript/formule/velocita_di_taglio/script.js"></script>
+    <script src="../javascript/formule/avanzamento-tornio/g95-avanz-tornio.js"></script>
 </body>
 
 </html>
