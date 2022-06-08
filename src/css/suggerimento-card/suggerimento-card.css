@@ -1,0 +1,40 @@
+.suggerimento-card {
+    margin: 1rem;
+    --height: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(200deg, rgb(34, 0, 255), rgb(0, 186, 248));
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    color: white;
+    width: var(--height);
+    height: var(--height);
+    max-width: max-content;
+    opacity: 0.9;
+    position: fixed;
+    bottom: calc(1.2rem + 1.5rem);
+    left: 0.5rem;
+}
+
+.suggerimento-card>div {
+    width: 0;
+    font-size: 0;
+    opacity: 0;
+}
+
+.suggerimento-card:hover {
+    width: 100%;
+    max-width: max-content;
+    border-radius: 0.5rem;
+    opacity: 1;
+    box-shadow: 0 0.5rem 1rem rgba(0, 102, 255, 0.524);
+}
+
+.suggerimento-card:hover>div {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    opacity: 1;
+}
