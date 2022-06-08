@@ -4,3 +4,6 @@ https://meccanicapp.vercel.app/src/pages/tolleranze_albero_h.html
 https://meccanicapp.vercel.app/src/pages/spianatura_gcode.html
 https://meccanicapp.vercel.app/src/pages/tolleranze.html 
 https://meccanicapp.vercel.app/src/pages/formula_numero_giri_CNC.html
+https://meccanicapp.vercel.app/src/pages/avanzamento_fresa_G94.html
+https://meccanicapp.vercel.app/src/pages/avanzamento_tornio_G95.html
+https://meccanicapp.vercel.app/src/pages/formula_velocita_di_taglio_CNC.html
