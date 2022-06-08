@@ -62,12 +62,13 @@
 }
 
 #body-vt .giri-card {
+    width: 90vw;
     max-width: 100rem;
 }
 
 @media (max-width: 700px) {
     #body-vt .giri-card {
-        width: 80%;
+        width: 100%;
     }
     #body-vt #vt-first-container {
         grid-template-columns: inherit;
