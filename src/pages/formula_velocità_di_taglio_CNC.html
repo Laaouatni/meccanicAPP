@@ -43,16 +43,16 @@
     <h1 style="text-align:center;">velocità di taglio (metri/minuto)</h1>
 
     <div class="container-formula">
-        <form id="form-velocita-di-taglio" class="giri-card">
+        <form id="form-velocita-di-taglio" class="giri-card" style="display: grid; gap: 1rem;">
             <!-- 1 -->
             <div id="vt-first-container">
 
                 <label for="vt-giri-input">
                     <div>
                         <span>n</span>
-                        <input type="range" name="" id="vt-giri-input">
+                        <input type="range" name="" min="1" max="5000" value="1200" id="vt-giri-input">
                     </div>
-                    <span>errore</span>
+                    <span id="giri-span">errore</span>
                 </label>
 
                 <span class="operator" title="moltiplicazione"> * </span>
@@ -60,9 +60,9 @@
                 <label for="vt-diam-input">
                     <div>
                         <span>D</span>
-                        <input type="range" name="" id="vt-diam-input">
+                        <input type="range" name="" id="vt-diam-input" min="1" max="500" value="50">
                     </div>
-                    <span>errore</span>
+                    <span id="diam-span">errore</span>
                 </label>
 
                 <span class="operator" title="moltiplicazione"> * </span>
@@ -76,7 +76,7 @@
 
             </div>
 
-            <hr>
+            <hr style="margin-left: 0; margin-right: 0;">
 
             <!-- 2 -->
             <div id="vt-second-container">
@@ -86,7 +86,7 @@
 
         <div class="giri-card" style="display: grid; place-items: center;">
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <output style="color: blue; font-weight: bold; font-size: 3rem;">errore</output>
+                <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output">errore</output>
                 <span>metri/minuto</span>
             </div>
         </div>

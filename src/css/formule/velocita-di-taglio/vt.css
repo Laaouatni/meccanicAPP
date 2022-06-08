@@ -60,3 +60,27 @@
     font-size: 1.5rem;
     padding: 0.2rem 0;
 }
+
+#body-vt .giri-card {
+    max-width: 100rem;
+}
+
+@media (max-width: 700px) {
+    #body-vt .giri-card {
+        width: 80%;
+    }
+    #body-vt #vt-first-container {
+        grid-template-columns: inherit;
+        place-content: inherit;
+    }
+    #body-vt #vt-first-container label {
+        display: grid;
+        width: 100%;
+    }
+    #body-vt .operator {
+        display: none;
+    }
+    #body-vt #vt-first-container label[for="vt-greco"] {
+        display: none;
+    }
+}
