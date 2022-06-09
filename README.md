@@ -13,6 +13,7 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
   - [table of contents](#table-of-contents)
   - [Funzionalità MeccanicAPP](#funzionalità-meccanicapp)
     - [1. Trovare da delle Tolleranze, se "albero-foro" è](#1-trovare-da-delle-tolleranze-se-albero-foro-è)
+  - [esempi:](#esempi)
     - [2. Trovare le misure delle tolleranze "h"](#2-trovare-le-misure-delle-tolleranze-h)
     - [3. Generare GCODE automaticamente](#3-generare-gcode-automaticamente)
           - [esempio generato](#esempio-generato)
@@ -28,6 +29,47 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
 - [x] acc. con Gioco
 - [x] acc. con Interferenza
 - [x] acc. con Incerto
+
+esempi:
+---
+- esempio **INTERFERENZA**:
+<section style="display: flex; gap: 1rem;">
+
+  | FORO 	    | MAX_FORO	  | MIN_FORO 	  | 
+  |----------	|------------	|------------	|
+  |        	  | 0.021      	| 0.000      	|
+
+  | ALBERO 	| max_albero 	| min_albero 	|
+  |--------	|------------	|------------	|
+  | valore 	| 0.015      	| 0.010      	|
+
+</section>
+
+- esempio **INCERTO**: 
+<section style="display: flex; gap: 1rem;">
+
+  | FORO 	    | MAX_FORO	  | MIN_FORO 	  | 
+  |----------	|------------	|------------	|
+  |        	  | 0.021      	| 0.000      	|
+
+  | ALBERO 	| max_albero 	| min_albero 	|
+  |--------	|------------	|------------	|
+  | valore 	| 0.028      	| 0.015      	|
+
+</section>
+
+- esempio **GIOCO**:
+<section style="display: flex; gap: 1rem;">
+
+  | **FORO** 	| MAX_FORO 	| MIN_FORO 	|
+  |----------	|----------	|----------	|
+  | valore   	| 0.020    	| 0.010    	|
+
+  | ALBERO 	| max_albero 	| min_albero 	|
+  |--------	|------------	|------------	|
+  | valore 	| 0.05       	| 0.000      	|
+
+</section>
 
 -----
 
