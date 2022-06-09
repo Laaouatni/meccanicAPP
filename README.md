@@ -14,13 +14,14 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
   - [Funzionalità MeccanicAPP](#funzionalità-meccanicapp)
     - [1. Generare GCODE automaticamente](#1-generare-gcode-automaticamente)
           - [esempio generato](#esempio-generato)
+  - [come funziona?](#come-funziona)
     - [2. Trovare le misure delle tolleranze "h"](#2-trovare-le-misure-delle-tolleranze-h)
   - [esempi:](#esempi)
     - [3. Tolleranze Albero-Foro -> quale Tipologia? (Calcolatrice)](#3-tolleranze-albero-foro---quale-tipologia-calcolatrice)
   - [esempi:](#esempi-1)
     - [4. Generatore di  avanzamento](#4-generatore-di--avanzamento)
     - [5. velocità rotazione](#5-velocità-rotazione)
-    - [come funziona?](#come-funziona)
+    - [come funziona?](#come-funziona-1)
 
 -----
 
@@ -47,6 +48,10 @@ G1 X-12 Y-14 Z2
 G0 X-12 Y-14 Z20
 M30
 ```
+
+
+## [come funziona?](#come-funziona)
+clicca il [link](#come-funziona) per vedere come funziona
 
 -----
 
