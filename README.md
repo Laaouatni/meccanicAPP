@@ -6,6 +6,21 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
 
 <https://meccanicapp.vercel.app>
 
+-----
+
+## table of contents
+- [meccanicAPP](#meccanicapp)
+  - [table of contents](#table-of-contents)
+  - [Funzionalità MeccanicAPP](#funzionalità-meccanicapp)
+    - [1. Trovare da delle Tolleranze, se "albero-foro" è](#1-trovare-da-delle-tolleranze-se-albero-foro-è)
+    - [2. Trovare le misure delle tolleranze "h"](#2-trovare-le-misure-delle-tolleranze-h)
+    - [3. Generare GCODE automaticamente](#3-generare-gcode-automaticamente)
+          - [esempio generato](#esempio-generato)
+    - [4. Generatore di  avanzamento](#4-generatore-di--avanzamento)
+    - [5. velocità rotazione](#5-velocità-rotazione)
+
+-----
+
 ## Funzionalità MeccanicAPP
 
 ### 1. Trovare da delle Tolleranze, se "albero-foro" è
@@ -25,7 +40,7 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
 
 ### 3. Generare GCODE automaticamente
 
-[x] spianatura FRESA.
+- [x] spianatura FRESA.
 
 ###### esempio generato
 
@@ -45,17 +60,9 @@ G0 X-12 Y-14 Z20
 M30
 ```
 
-<hr>
+-----
 
-### 4 . calcolatore Velocità rotazione mandrino
-
-- giri/minuto (con formula)
-
-> (VT *1000) / (Ø* Math.PI) <br><br> vt= velocità di taglio (m/min) <br> Ø=diametro pezzo (mm) <br> Math.PI = 3.14
-
-<hr>
-
-### 5. Generatore di  avanzamento
+### 4. Generatore di  avanzamento
 
 - [x]  aggiunto generatore di **Avanzamento** `G94` per la fresatura:
 
@@ -95,7 +102,7 @@ M30
 
 -----
 
-### 6. velocità rotazione
+### 5. velocità rotazione
 
 - [x]  aggiunto generatore di **Velocità di Taglio** (VT) `G96` per il tornitura:
 
