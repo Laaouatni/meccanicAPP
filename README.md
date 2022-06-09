@@ -24,54 +24,27 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
 
 ## Funzionalità MeccanicAPP
 
-### 1. Tolleranze Albero-Foro -> quale Tipologia? (Calcolatrice)
-- [x] acc. con Gioco
-- [x] acc. con Interferenza
-- [x] acc. con Incerto
+### 1. Generare GCODE automaticamente
 
-esempi:
----
-- esempio **INTERFERENZA**:
-<section style="display: flex; gap: 1rem;">
+- [x] spianatura FRESA.
 
-  | FORO 	    | MAX_FORO	  | MIN_FORO 	  | 
-  |----------	|------------	|------------	|
-  |        	  | 0.021      	| 0.000      	|
+###### esempio generato
 
-  | ALBERO 	| max_albero 	| min_albero 	|
-  |--------	|------------	|------------	|
-  |       	| 0.015      	| 0.010      	|
-
-</section>
-
-- esempio **INCERTO**: 
-<section style="display: flex; gap: 1rem;">
-
-  | FORO 	    | MAX_FORO	  | MIN_FORO 	  | 
-  |----------	|------------	|------------	|
-  |        	  | 0.021      	| 0.000      	|
-
-  | ALBERO 	| max_albero 	| min_albero 	|
-  |--------	|------------	|------------	|
-  |       	| 0.028      	| 0.015      	|
-
-</section>
-
-- esempio **GIOCO**:
-<section style="display: flex; gap: 1rem;">
-
-  | **FORO** 	| MAX_FORO 	| MIN_FORO 	|
-  |----------	|----------	|----------	|
-  |       	  | 0.020    	| 0.010    	|
-
-  | ALBERO 	| max_albero 	| min_albero 	|
-  |--------	|------------	|------------	|
-  |       	| 0.05       	| 0.000      	|
-
-</section>
-
-> ecc..., <br><br> 
-  in modo semplice: <br> 1. inserisci i dati <br> 2. clicca buttone "calcola"
+```GCODE
+G90
+G54
+T10
+M6
+S1592 M3
+G0 X-12 Y-2 Z0
+F637
+G1 X22 Y-2 Z0
+G1 X22 Y-14 Z0
+G1 X-12 Y-14 Z0
+G1 X-12 Y-14 Z2
+G0 X-12 Y-14 Z20
+M30
+```
 
 -----
 
@@ -119,27 +92,54 @@ esempi:
 
 -----
 
-### 3. Generare GCODE automaticamente
+### 3. Tolleranze Albero-Foro -> quale Tipologia? (Calcolatrice)
+- [x] acc. con Gioco
+- [x] acc. con Interferenza
+- [x] acc. con Incerto
 
-- [x] spianatura FRESA.
+esempi:
+---
+- esempio **INTERFERENZA**:
+<section style="display: flex; gap: 1rem;">
 
-###### esempio generato
+  | FORO 	    | MAX_FORO	  | MIN_FORO 	  | 
+  |----------	|------------	|------------	|
+  |        	  | 0.021      	| 0.000      	|
 
-```GCODE
-G90
-G54
-T10
-M6
-S1592 M3
-G0 X-12 Y-2 Z0
-F637
-G1 X22 Y-2 Z0
-G1 X22 Y-14 Z0
-G1 X-12 Y-14 Z0
-G1 X-12 Y-14 Z2
-G0 X-12 Y-14 Z20
-M30
-```
+  | ALBERO 	| max_albero 	| min_albero 	|
+  |--------	|------------	|------------	|
+  |       	| 0.015      	| 0.010      	|
+
+</section>
+
+- esempio **INCERTO**: 
+<section style="display: flex; gap: 1rem;">
+
+  | FORO 	    | MAX_FORO	  | MIN_FORO 	  | 
+  |----------	|------------	|------------	|
+  |        	  | 0.021      	| 0.000      	|
+
+  | ALBERO 	| max_albero 	| min_albero 	|
+  |--------	|------------	|------------	|
+  |       	| 0.028      	| 0.015      	|
+
+</section>
+
+- esempio **GIOCO**:
+<section style="display: flex; gap: 1rem;">
+
+  | **FORO** 	| MAX_FORO 	| MIN_FORO 	|
+  |----------	|----------	|----------	|
+  |       	  | 0.020    	| 0.010    	|
+
+  | ALBERO 	| max_albero 	| min_albero 	|
+  |--------	|------------	|------------	|
+  |       	| 0.05       	| 0.000      	|
+
+</section>
+
+> ecc..., <br><br> 
+  in modo semplice: <br> 1. inserisci i dati <br> 2. clicca buttone "calcola"
 
 -----
 
