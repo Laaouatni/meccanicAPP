@@ -160,7 +160,7 @@ M30
     - FZ: Avanzamento per dente dell'utensile
     - ZN: numero dei denti dell'utensile
     - S: Velocità in giri/minuto
-  - > **FORMULA:** <br> Fz * Zn * S = avanz_G94 mm/min <br><br> **esempio:** <br> 0.8mm *4n* 1200giri/min = 3840 mm/min
+  - > **FORMULA:** <br> Fz * Zn * S = avanz_G94 mm/min <br><br> **esempio:** <br> 0.8mm * 4n * 1200giri/min = 3840 mm/min
 
 <br>
 
