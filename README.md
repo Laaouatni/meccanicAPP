@@ -71,9 +71,7 @@ esempi:
 </section>
 
 > ecc..., <br><br> 
-  in modo semplice: <br> 
-  1. inserisci i dati <br> 
-  2. clicca buttone "calcola"
+  in modo semplice: <br> 1. inserisci i dati <br> 2. clicca buttone "calcola"
 
 -----
 
