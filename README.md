@@ -24,8 +24,7 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
 
 ## Funzionalità MeccanicAPP
 
-### 1. Trovare da delle Tolleranze, se "albero-foro" è
-
+### 1. Tolleranze Albero-Foro -> quale Tipologia? (Calcolatrice)
 - [x] acc. con Gioco
 - [x] acc. con Interferenza
 - [x] acc. con Incerto
