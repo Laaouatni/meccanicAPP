@@ -236,7 +236,7 @@ esempi:
 
 ### come funziona?
 
-- il generatore di spiantura è formato da un'insieme di funzioni al suo interno!
+- [x] il generatore di spiantura è formato da un'insieme di funzioni al suo interno!
 
   ```javascript
   function createGcodeProgram(options) {
@@ -250,7 +250,7 @@ esempi:
   }
   ```
 
-- il generatore GCODE è **100% personalizzabile**, grazie all'utilizzo di un `JSON` file!
+- [x] il generatore GCODE è **100% personalizzabile**, grazie all'utilizzo di un `JSON` file!
 
   ```json
   utensile = {
@@ -284,7 +284,7 @@ esempi:
   };
   ```
 
-- calcolatore di avanzamento:
+- [x] calcolatore di avanzamento:
 
   ```javascript
   function calcolaFeed(utensile) {
@@ -294,7 +294,7 @@ esempi:
   }
   ```
 
-- calcolatore di velocità:
+- [x] calcolatore di velocità:
 
   ```javascript
   function calcolaSpeed(utensile) {
@@ -304,8 +304,7 @@ esempi:
   }
   ```
 
-- percentuale Loading:
-   
+- [x] percentuale Loading:
   ```javascript
   let onePerc = 100 / gcodeArray.length;
   let currentPerc = onePerc * (index + 1);
@@ -314,12 +313,12 @@ esempi:
   el.textContent = `${currentPerc.toFixed(1)}%`;
   ```
 
-- buttone "copia codice GCODE"
+- [x] buttone "copia codice GCODE"
   ```javascript
   navigator.clipboard.writeText()
   ```
 
-- buttone "ritorna in alto"
+- [x] buttone "ritorna in alto"
   
   ```javascript   
   window.scrollTo({
@@ -328,7 +327,59 @@ esempi:
   });
   ```
 
-- generazione SPIANATURA: 
+- [x] il programma ricorda l'ultima posizione XYZ: 
+```javascript
+// salvare i punti precedenti
+function setLastPosVar(x, y, z) {
+  previusX = x;
+  previusY = y;
+  previusZ = z;
+
+  options.previusX = previusX;
+  options.previusY = previusY;
+  options.previusZ = previusZ;
+}
+
+function checkSolveXYZ(x, y, z) {
+  // se un valore è nullo, verrà scritto 0, 
+  // altrimenti si scriverà il valore precedente
+  x == "" || previusX == "" ? x = 0 : x = previusX;
+  y == "" || previusY == "" ? y = 0 : y = previusY;
+  z == "" || previusZ == "" ? z = 0 : z = previusZ;
+
+  return { x, y, z };
+}
+```
+
+- [x] `G0` GCODE funzione: 
+```javascript
+function G0(x, y, z) {
+  // risolvere prima i possibili errori nei parametri
+  let XYZ = checkSolveXYZ(x, y, z);
+
+  // inserire la linea di codice
+  gcode.push(`G0 X${XYZ.x % 1 == 0 ? XYZ.x : XYZ.x.toFixed(1)} Y${XYZ.y % 1 == 0 ? XYZy : XYZ.y.toFixed(1)} Z${XYZ.z % 1 == 0 ? XYZ.z : XYZ.z.toFixed(1)}`);
+
+  // salvare l'ultima posizione
+  setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
+}
+```
+
+- [x] `G1` GCODE funzione:
+```javascript
+function G0(x, y, z) {
+  // risolvere prima i possibili errori nei parametri
+  let XYZ = checkSolveXYZ(x, y, z);
+
+  // inserire la linea di codice
+  gcode.push(`G1 X${XYZ.x % 1 == 0 ? XYZ.x : XYZ.x.toFixed(1)} Y${XYZ.y % 1 == 0 ? XYZy : XYZ.y.toFixed(1)} Z${XYZ.z % 1 == 0 ? XYZ.z : XYZ.z.toFixed(1)}`);
+
+  // salvare l'ultima posizione
+  setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
+}
+```
+
+- [x] generazione SPIANATURA: 
 
 ```javascript
 function spianaturaGenerator(options) {
@@ -340,7 +391,7 @@ function spianaturaGenerator(options) {
   // Altezza da spianare 
   let lineeZ_totali = options.Z0;
 
-  
+
   for (...) { // cliclo ripetizione Z spianatura
     // G54 punto di origine X (coordinata)
     let startPointX = 0 - (options.D / 2) - 2; 
@@ -409,6 +460,32 @@ function spianaturaGenerator(options) {
         G0("", "", 0 + 20);
     }
   }
+}
+```
+
+- [x] animazioni GCODE generazione linea:
+```javascript
+// inserire codice sullo schermo
+function displayGcode(options, pezzoGrezzo) {
+  document.querySelector("#output-gcode").textContent = "";
+  let gcodeArray = createGcodeProgram(options, pezzoGrezzo); // array completo contutti i codici generati
+
+  // animazione per ognuna linea di codice
+  gcodeArray.forEach((Gline, index) => {
+    setTimeout(() => {
+        addLine(Gline, index, gcodeArray) // aggiungere una linea di codice generatada un'array
+    }, index * 1000 / 30); // 1 secondo diviso per numero volte che vogliamo
+  }
+```
+
+- [x] numerazione linea di codice:
+```javascript
+function addLine(Gline, index, gcodeArray) {
+  ...
+
+  GnumLine.textContent = `N${index + 1}`; // numero linea
+
+  ...
 }
 ```
 
