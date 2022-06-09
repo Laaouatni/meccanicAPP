@@ -41,7 +41,7 @@ esempi:
 
   | ALBERO 	| max_albero 	| min_albero 	|
   |--------	|------------	|------------	|
-  | valore 	| 0.015      	| 0.010      	|
+  |       	| 0.015      	| 0.010      	|
 
 </section>
 
@@ -54,7 +54,7 @@ esempi:
 
   | ALBERO 	| max_albero 	| min_albero 	|
   |--------	|------------	|------------	|
-  | valore 	| 0.028      	| 0.015      	|
+  |       	| 0.028      	| 0.015      	|
 
 </section>
 
@@ -63,11 +63,11 @@ esempi:
 
   | **FORO** 	| MAX_FORO 	| MIN_FORO 	|
   |----------	|----------	|----------	|
-  | valore   	| 0.020    	| 0.010    	|
+  |       	  | 0.020    	| 0.010    	|
 
   | ALBERO 	| max_albero 	| min_albero 	|
   |--------	|------------	|------------	|
-  | valore 	| 0.05       	| 0.000      	|
+  |       	| 0.05       	| 0.000      	|
 
 </section>
 
