@@ -14,7 +14,7 @@ function calcolaG94(props) {
 
     avanzDenteSpan.textContent = `${props.avanzDente}mm (avanzamento per dente)`;
     numDentiSpan.textContent = `${props.numDenti} numero denti`;
-    giriSpan.textContent = `${props.giri} giri`;
+    giriSpan.textContent = `${props.giri} giri/min`;
 
     let results = {
         "g94": formula.toFixed(2),
