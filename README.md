@@ -74,8 +74,44 @@ esempi:
 
 ### 2. Trovare le misure delle tolleranze "h"
 
-- [x] da "h1" a "h12"
-- [x] da "ø3" a "ø50"
+- [x] da **"h1"** a **"h12"**
+- [x] da **"ø3"** a **"ø50"**
+
+esempi:
+---
+
+- ⬇️ h7 D10, qual è il valore? ⬇️
+
+```json
+{ 
+  max: 0, 
+  min: -0.018 
+}
+```
+
+<br>
+
+- ⬇️ h3 D20, qual è il valore? ⬇️
+
+```json
+{ 
+  max: 0, 
+  min: -0.004
+}
+```
+
+<br>
+
+- ⬇️ h12 D50, qual è il valore? ⬇️
+
+```json
+{ 
+  max: 0, 
+  min: -0.250 
+}
+```
+
+> ecc..., <br><br> in modo semplice: <br> 1. inserisci i dati <br> 2. clicca buttone "calcola"
 
 -----
 
