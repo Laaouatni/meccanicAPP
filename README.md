@@ -70,6 +70,11 @@ esempi:
 
 </section>
 
+> ecc..., <br><br> 
+  in modo semplice: <br> 
+  1. inserisci i dati <br> 
+  2. clicca buttone "calcola"
+
 -----
 
 ### 2. Trovare le misure delle tolleranze "h"
@@ -111,7 +116,8 @@ esempi:
 }
 ```
 
-> ecc..., <br><br> in modo semplice: <br> 1. inserisci i dati <br> 2. clicca buttone "calcola"
+> il risultato è calcolato in diretta: <br>
+  cioè appena viene modificato un `value=""` dei `<input>`, il risultato velocemente in meno di 1 secondo.
 
 -----
 
