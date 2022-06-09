@@ -160,7 +160,7 @@ M30
     - FZ: Avanzamento per dente dell'utensile
     - ZN: numero dei denti dell'utensile
     - S: Velocità in giri/minuto
-  - > **FORMULA:** <br> Fz *Zn* S = avanz_G94 mm/min <br><br> **esempio:** <br> 0.8mm *4n* 1200giri/min = 3840 mm/min
+  - > **FORMULA:** <br> Fz * Zn * S = avanz_G94 mm/min <br><br> **esempio:** <br> 0.8mm *4n* 1200giri/min = 3840 mm/min
 
 <br>
 
@@ -179,7 +179,7 @@ M30
     - l'app suggerisce 2 valori, il valore minimo possibile, e il valore massimo possibile...
   - parametri richiesti dai input:
     - R: raggio utensile (mm)
-  - > **FORMULA:** <br> MIN_avanz = R *(1/4) <br><br> **esempio:** <br> 0.8mm*  0.25 = 0.2mm/giro <hr> **FORMULA:** <br> MAX_avanz = R *(1/2) <br><br> **esempio:** <br> 0.8mm*  0.5 = 0.4mm/giro
+  - > **FORMULA:** <br> MIN_avanz = R * (1/4) <br><br> **esempio:** <br> 0.8mm * 0.25 = 0.2mm/giro <hr> **FORMULA:** <br> MAX_avanz = R * (1/2) <br><br> **esempio:** <br> 0.8mm * 0.5 = 0.4mm/giro
 
 -----
 
@@ -204,7 +204,7 @@ M30
     - fisse, non modificabili:
       - π: piGreco, cioè 3.141592653589793 (`Math.PI`)
       - 1000: valore che divide la moltiplicazione dei parametri precedenti
-  - > **FORMULA:** <br> (S *D* π) / 1000 = Vt_G96 m/min <br><br> **esempio:** <br> 1200 *50* 3.14 = 188.5 m/min (metri/minuto)
+  - > **FORMULA:** <br> (S * D * π) / 1000 = Vt_G96 m/min <br><br> **esempio:** <br> 1200 * 50 * 3.14 = 188.5 m/min (metri/minuto)
 
 <br>
 
@@ -227,6 +227,6 @@ M30
     - fisse, non modificabili:
       - 1000: valore moltiplicato per VT
       - π: piGreco, cioè 3.141592653589793 (`Math.PI`)
-  - > **FORMULA:** <br> (VT *1000) / (Ømm*  π) = G97 giri/min <br><br> **esempio:** <br> (180m/min *1000) / (200* 3.14) = 286.48giri/min (giri/minuto)
+  - > **FORMULA:** <br> (VT * 1000) / (Ømm *  π) = G97 giri/min <br><br> **esempio:** <br> (180m/min * 1000) / (200 * 3.14) = 286.48giri/min (giri/minuto)
 
 ![](https://visitor-badge.glitch.me/badge?page_id=meccanicAPP)
