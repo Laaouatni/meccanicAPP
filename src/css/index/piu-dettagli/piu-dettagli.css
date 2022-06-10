@@ -1,0 +1,51 @@
+#piu-dettagli table * {
+    border: 1px solid blue;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+}
+
+#piu-dettagli pre {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 149, 255, 0.5);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#piu-dettagli {
+    margin-top: 10rem;
+    width: calc(100vw - 5rem);
+}
+
+#piu-dettagli * {
+    box-sizing: initial;
+}
+
+#piu-dettagli blockquote {
+    border: 1px solid rgba(0, 0, 255, 0.29);
+    border-left: 0.5rem solid rgba(0, 0, 255, 0.763);
+    padding: 0.5rem;
+    padding-left: 2rem;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.5rem 0;
+    width: calc(100% - 1rem);
+}
+
+#piu-dettagli .section-tables {
+    display: grid;
+    gap: 1rem;
+}
+
+#piu-dettagli li>code {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media (min-width: 800px) {
+    #piu-dettagli .section-tables {
+        display: flex;
+        gap: 1rem;
+    }
+}
