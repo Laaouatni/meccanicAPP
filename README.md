@@ -50,8 +50,8 @@ M30
 ```
 
 
-## [come funziona?](#come-funziona)
-clicca il [link](#come-funziona) per vedere come funziona
+## [come funziona?](#come-funziona-1)
+clicca il [link](#come-funziona-1) per vedere come funziona
 
 -----
 
