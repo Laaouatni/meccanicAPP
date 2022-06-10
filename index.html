@@ -226,20 +226,20 @@
         <ul>
             <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;spianatura FRESA.</li>
         </ul>
-        <h6 id="esempio-generato">esempio generato</h6>
-        <pre><code class="language-gcode">G90
-G54
-T10
-M6
-S1592 M3
-G0 X-12 Y-2 Z0
-F637
-G1 X22 Y-2 Z0
-G1 X22 Y-14 Z0
-G1 X-12 Y-14 Z0
-G1 X-12 Y-14 Z2
-G0 X-12 Y-14 Z20
-M30
+        <h4 id="esempio-generato">esempio GCODE generato da "meccanicapp"</h4>
+        <pre><code class="language-gcode">G90                 // programmazione ASSOLUTA
+G54                 // Origine Zero Pezzo
+T10                 // Utensile
+M6                  // Prendere Utensile
+S1592 M3            // Velocità Fresa (ancora da Sviluppare G96/G97)
+G0 X-12 Y-2 Z0      // Spostamento Rapido
+F637                // Avanzamento Fresa (ancora da Sviluppare G94/G95)
+G1 X22 Y-2 Z0       // Spostamento Lineare
+G1 X22 Y-14 Z0      // Spostamento Lineare
+G1 X-12 Y-14 Z0     // Spostamento Lineare
+G1 X-12 Y-14 Z2     // Distanza di Sicurezza 2MM
+G0 X-12 Y-14 Z20    // Ritornare in posizione con una distanza di sicurezza maggiore
+M30                 // Spegnimento Programma
 </code></pre>
         <h2 id="come-funziona"><a href="#come-funziona-1">come funziona?</a></h2>
         <p>clicca il <a href="#come-funziona-1">link</a> per vedere come funziona</p>
