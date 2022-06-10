@@ -73,6 +73,15 @@
     background-image: url("../../../utilities/images/index-images/spianatura-gcode/1.jpg");
 }
 
+#content-lista {
+    padding: 0 1rem;
+}
+
+#index-body {
+    margin: 0;
+    padding: 0;
+}
+
 @media (min-width: 800px) {
     #section-index-lista .section-list-child-container {
         grid-template-columns: repeat(2, 1fr);
