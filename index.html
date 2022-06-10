@@ -187,20 +187,45 @@
             table * {
                 border: 1px solid blue;
                 padding: 0.2rem 0.5rem;
+                text-align: center;
             }
             
             pre {
                 width: 100%;
                 overflow-x: auto;
-                padding: 0.5rem;
                 border-radius: 0.3rem;
-                background-color: rgba(255, 255, 255, 0.50);
+                background-color: rgba(255, 255, 255, 0.80);
                 box-shadow: 0 0.2rem 0.5rem rgba(0, 149, 255, 0.5);
+                font-size: 1rem;
+                font-weight: 300;
+                font-family: monospace;
+                padding: 1rem !important;
             }
             
             #piu-dettagli {
                 margin-top: 10rem;
                 width: calc(100vw - 5rem);
+            }
+            
+            blockquote {
+                border: 1px solid rgba(0, 0, 255, 0.29);
+                border-left: 0.5rem solid rgba(0, 0, 255, 0.763);
+                padding: 0.5rem;
+                padding-left: 2rem;
+                border-radius: 0.5rem;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            
+            .section-tables {
+                display: grid;
+                gap: 1rem;
+            }
+            
+            @media (min-width: 800px) {
+                .section-tables {
+                    display: flex;
+                    gap: 1rem;
+                }
             }
         </style>
 
@@ -249,7 +274,7 @@
             <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;spianatura FRESA.</li>
         </ul>
         <h6 id="esempio-generato">esempio generato</h6>
-        <pre><code class="language-GCODE">G90
+        <pre class="prettyprint"><code class="language-GCODE">G90
 G54
 T10
 M6
@@ -275,7 +300,7 @@ M30
         <ul>
             <li>⬇️ h7 D10, qual è il valore? ⬇️</li>
         </ul>
-        <pre><code class="language-json">{ 
+        <pre class="prettyprint"><code class="language-json">{ 
   max: 0, 
   min: -0.018 
 }
@@ -284,7 +309,7 @@ M30
         <ul>
             <li>⬇️ h3 D20, qual è il valore? ⬇️</li>
         </ul>
-        <pre><code class="language-json">{ 
+        <pre class="prettyprint"><code class="language-json">{ 
   max: 0, 
   min: -0.004
 }
@@ -293,7 +318,7 @@ M30
         <ul>
             <li>⬇️ h12 D50, qual è il valore? ⬇️</li>
         </ul>
-        <pre><code class="language-json">{ 
+        <pre class="prettyprint"><code class="language-json">{ 
   max: 0, 
   min: -0.250 
 }
@@ -312,7 +337,7 @@ M30
         <ul>
             <li>esempio <strong>INTERFERENZA</strong>:</li>
         </ul>
-        <section style="display: flex; gap: 1rem;">
+        <section class="section-tables">
             <table>
                 <thead>
                     <tr>
@@ -349,7 +374,7 @@ M30
         <ul>
             <li>esempio <strong>INCERTO</strong>:</li>
         </ul>
-        <section style="display: flex; gap: 1rem;">
+        <section class="section-tables">
             <table>
                 <thead>
                     <tr>
@@ -619,7 +644,7 @@ M30
         <ul>
             <li class="task-list-item">
                 <p><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;il generatore di spiantura è formato da un&rsquo;insieme di funzioni al suo interno!
-                    <pre><code class="language-javascript">function createGcodeProgram(options) {
+                    <pre class="prettyprint"><code class="language-javascript">function createGcodeProgram(options) {
   initGcode();
   setGargoments();
   startGsicurezza();
@@ -633,7 +658,7 @@ M30
             </li>
             <li class="task-list-item">
                 <p><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;il generatore GCODE è <strong>100% personalizzabile</strong>, grazie all&rsquo;utilizzo di un <code>JSON</code> file!
-                    <pre><code class="language-json">utensile = {
+                    <pre class="prettyprint"><code class="language-json">utensile = {
   &quot;vt&quot;: calcolaVelocitaDiTaglio(),  // 230
   &quot;fz&quot;: calcolateAvanzPerDente(),   // 0.8
   &quot;nDenti&quot;: calcolateNumDenti(),    // 4
@@ -667,7 +692,7 @@ options = {
             </li>
             <li class="task-list-item">
                 <p><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;calcolatore di avanzamento:
-                    <pre><code class="language-javascript">function calcolaFeed(utensile) {
+                    <pre class="prettyprint"><code class="language-javascript">function calcolaFeed(utensile) {
   let FeedFormula = Math.round((utensile.Fz() * n_denti) * utensile.speed);
 
   return FeedFormula;
@@ -677,7 +702,7 @@ options = {
             </li>
             <li class="task-list-item">
                 <p><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;calcolatore di velocità:
-                    <pre><code class="language-javascript">function calcolaSpeed(utensile) {
+                    <pre class="prettyprint"><code class="language-javascript">function calcolaSpeed(utensile) {
     let SpeedFormula = Math.round((vc * 1000) / (utensile.diametro * Math.PI));
 
     return SpeedFormula;
@@ -687,7 +712,7 @@ options = {
             </li>
             <li class="task-list-item">
                 <p><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;percentuale Loading:
-                    <pre><code class="language-javascript">let onePerc = 100 / gcodeArray.length;
+                    <pre class="prettyprint"><code class="language-javascript">let onePerc = 100 / gcodeArray.length;
 let currentPerc = onePerc * (index + 1);
 
 el.style.width = `${currentPerc}%`;
@@ -697,13 +722,13 @@ el.textContent = `${currentPerc.toFixed(1)}%`;
             </li>
             <li class="task-list-item">
                 <p><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;buttone &ldquo;copia codice GCODE&rdquo;
-                    <pre><code class="language-javascript">navigator.clipboard.writeText()
+                    <pre class="prettyprint"><code class="language-javascript">navigator.clipboard.writeText()
 </code></pre>
                 </p>
             </li>
             <li class="task-list-item">
                 <p><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;buttone &ldquo;ritorna in alto&rdquo;
-                    <pre><code class="language-javascript">window.scrollTo({
+                    <pre class="prettyprint"><code class="language-javascript">window.scrollTo({
   top: 0,
   behavior: &quot;smooth&quot;,
 });
@@ -714,7 +739,7 @@ el.textContent = `${currentPerc.toFixed(1)}%`;
                 <p><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;il programma ricorda l&rsquo;ultima posizione XYZ:</p>
             </li>
         </ul>
-        <pre><code class="language-javascript">// salvare i punti precedenti
+        <pre class="prettyprint"><code class="language-javascript">// salvare i punti precedenti
 function setLastPosVar(x, y, z) {
   previusX = x;
   previusY = y;
@@ -738,7 +763,7 @@ function checkSolveXYZ(x, y, z) {
         <ul>
             <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;<code>G0</code> GCODE funzione:</li>
         </ul>
-        <pre><code class="language-javascript">function G0(x, y, z) {
+        <pre class="prettyprint"><code class="language-javascript">function G0(x, y, z) {
   // risolvere prima i possibili errori nei parametri
   let XYZ = checkSolveXYZ(x, y, z);
 
@@ -752,7 +777,7 @@ function checkSolveXYZ(x, y, z) {
         <ul>
             <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;<code>G1</code> GCODE funzione:</li>
         </ul>
-        <pre><code class="language-javascript">function G0(x, y, z) {
+        <pre class="prettyprint"><code class="language-javascript">function G0(x, y, z) {
   // risolvere prima i possibili errori nei parametri
   let XYZ = checkSolveXYZ(x, y, z);
 
@@ -766,7 +791,7 @@ function checkSolveXYZ(x, y, z) {
         <ul>
             <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="checked" disabled="disabled" readonly="readonly" />&nbsp;generazione SPIANATURA:</li>
         </ul>
-        <pre><code class="language-javascript">function spianaturaGenerator(options) {
+        <pre class="prettyprint"><code class="language-javascript">function spianaturaGenerator(options) {
   let isDestra = false; // iniziare da sinistra
   
   // calcolare il numero di spianatura necessarie
@@ -881,6 +906,7 @@ function displayGcode(options, pezzoGrezzo) {
     </footer>
 
     <script src="./src/javascript/index/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </body>
 
 </html>
