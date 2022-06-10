@@ -82,6 +82,10 @@
     padding: 0;
 }
 
+#index-body h1 {
+    margin: 1rem;
+}
+
 @media (min-width: 800px) {
     #section-index-lista .section-list-child-container {
         grid-template-columns: repeat(2, 1fr);
