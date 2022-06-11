@@ -87,3 +87,16 @@
     transform: translateY(-0.1rem);
     box-shadow: 0 0.2rem 1rem rgba(0, 149, 255, 0.274);
 }
+
+@media(max-width:550px) {
+    #body-giri-cnc input[disabled] {
+        display: none;
+    }
+    #body-giri-cnc .operator {
+        display: none;
+    }
+    #numero-giri-first-container,
+    #numero-giri-second-container {
+        grid-template-columns: 1fr;
+    }
+}
