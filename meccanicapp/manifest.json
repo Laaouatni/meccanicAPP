@@ -3,7 +3,7 @@
     "name": "meccanicAPP — Laaouatni",
     "lang": "it",
     "description": "meccanicAPP è una web-app per la meccanica, genera spianatura in GCODE, calcola la Tolleranza, l'avanzamento G94 e G95, la velocità G96 e G97 di Fresa e Tornio.",
-    "start_url": "/meccanicapp",
+    "start_url": "/",
     "background_color": "#0000ff",
     "theme_color": "#0000ff",
     "dir": "ltr",
