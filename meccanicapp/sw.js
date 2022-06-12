@@ -68,29 +68,32 @@ const assetsArray = [
     ] // other images
 ]
 
-//the array multidimensional to one array
-const assets = assetsArray.reduce((acc, cur) => acc.concat(cur), []);
+const precacheResources = assetsArray.reduce((acc, cur) => acc.concat(cur), []);
 
-const cacheName = "v1-files"
+// Choose a cache name
+const cacheName = 'cache-v1';
+// List the files to precache
+const precacheResources = ['/', '/index.html', '/css/style.css', '/js/main.js', '/js/app/editor.js', '/js/lib/actions.js'];
 
-self.addEventListener("install", installEvent => {
-    installEvent.waitUntil(
-        caches.open(cacheName).then(cache => {
-            cache.addAll(assets)
-        })
-    )
+// When the service worker is installing, open the cache and add the precache resources to it
+self.addEventListener('install', (event) => {
+  console.log('Service worker install event!');
+  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
 });
 
+self.addEventListener('activate', (event) => {
+  console.log('Service worker activate event!');
+});
 
-self.addEventListener('fetch', (e) => {
-  e.respondWith((async () => {
-    const r = await caches.match(e.request);
-    console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
-    if (r) { return r; }
-    const response = await fetch(e.request);
-    const cache = await caches.open(cacheName);
-    console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
-    cache.put(e.request, response.clone());
-    return response;
-  })());
+// When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network
+self.addEventListener('fetch', (event) => {
+  console.log('Fetch intercepted for:', event.request.url);
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(event.request);
+    }),
+  );
 });
