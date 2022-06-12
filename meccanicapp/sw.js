@@ -1,5 +1,24 @@
 const assetsArray = [
-    ["./import/import.css"], // css
+["./manifest.json"],
+    ["./import/import.css","./src/css/form/form.css",
+"./src/css/outputs/output.css",
+"./src/css/alert/alert.css",
+"./src/css/preview_tolleranza/preview_tolleranza.css",
+"./src/css/tolleranze_range/tolleranze_range.css",
+"./src/css/index/index.css",
+"./src/css/footer/footer.css",
+"./src/css/spianatura_gcode/preview-spianatura.css",
+"./src/css/loading/loading.css",
+"./src/css/spianatura_gcode/spianatura_output.css",
+"./src/css/btn-calcola/btn-calcola.css",
+"./src/css/body/body.css",
+"./src/css/spianatura_gcode/altri-parametri.css",
+"./src/css/formule/numero-giri/numero-giri.css",
+"./src/css/formule/velocita-di-taglio/vt.css",
+"./src/css/suggerimento-card/suggerimento-card.css",
+"./src/css/formule/avanzamento/avanzamentoG95tornio/G95avanz-tornio.css",
+"./src/css/formule/avanzamento/avanzamentoG94fresa/G94avanz-fresa.css",
+"./src/css/index/piu-dettagli/piu-dettagli.css"], // css
     [
         "./src/javascript/page-js/formule/avanzamento-fresa/G94-avanz-fresa.js",
         "./src/javascript/page-js/formule/avanzamento-tornio/G95-avanz-tornio.js",
@@ -11,6 +30,7 @@ const assetsArray = [
         "./src/javascript/page-js/index/script.js",
         "./src/javascript/page-js/spianatura_gcode/spianatura_gcode.js",
         "./src/javascript/page-js/tolleranze/script.js"
+"./sw.js"
     ], //  other js
     [
         "./src/pages/avanzamento_fresa_G94.html",
@@ -22,6 +42,7 @@ const assetsArray = [
         "./src/pages/tolleranze_albero_h.html"
     ], // pages html
     [
+"/"
         "./index.html",
         "./style.css",
         "./404.html"
