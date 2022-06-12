@@ -1,0 +1,128 @@
+{
+    "short_name": "meccanicAPP",
+    "name": "meccanicAPP — Laaouatni",
+    "lang": "it",
+    "description": "meccanicAPP è una web-app per la meccanica, genera spianatura in GCODE, calcola la Tolleranza, l'avanzamento G94 e G95, la velocità G96 e G97 di Fresa e Tornio.",
+    "start_url": "/",
+    "background_color": "#0000ff",
+    "theme_color": "#0000ff",
+    "dir": "ltr",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [{
+            "src": "./utilities/manifest/icon/android-icon-192x192-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-180x180-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "180x180"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-152x152-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-144x144-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-120x120-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "120x120"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-114x114-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "114x114"
+        },
+        {
+            "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-76x76-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "76x76"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-72x72-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-60x60-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "60x60"
+        },
+        {
+            "src": "./utilities/manifest/icon/apple-icon-57x57-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "57x57"
+        },
+        {
+            "src": "./utilities/manifest/icon/favicon-32x32-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "32x32"
+        },
+        {
+            "src": "./utilities/manifest/icon/favicon-16x16-seochecker-manifest-112.jpg",
+            "type": "image/png",
+            "sizes": "16x16"
+        }
+    ],
+    "prefer_related_applications": false,
+    "shortcuts": [{
+            "name": "interferenza, gioco, albero? — Laaouatni",
+            "short_name": "interferenza, gioco, albero? — Laaouatni",
+            "description": "interferenza, gioco, albero? — Laaouatni",
+            "url": "./../../src/pages/interferenza_gioco_albero.html"
+        },
+        {
+            "name": "tolleranze albero h1~h12 — Laaouatni",
+            "short_name": "tolleranze albero h1~h12 — Laaouatni",
+            "description": "tolleranze albero h1~h12 — Laaouatni",
+            "url": "../../src/pages/tolleranze_albero_h.html"
+        },
+        {
+            "name": "generatore di Spianatura GCODE — Laaouatni",
+            "short_name": "spianatura gcode — Laaouatni",
+            "description": "generatore di Spianatura GCODE — Laaouatni",
+            "url": "../../src/pages/spianatura_gcode.html"
+        },
+        {
+            "name": "G94 avanzamento (mm/min) FRESA — Laaouatni",
+            "short_name": "avanzamento fresa — Laaouatni",
+            "description": "G94 avanzamento (mm/min) FRESA — Laaouatni",
+            "url": "../../src/pages/avanzamento_fresa_G94.html"
+        },
+        {
+            "name": "G95 avanzamento (mm/giro) TORNIO — Laaouatni",
+            "short_name": "avanzamento TORNIO — Laaouatni",
+            "description": "G95 avanzamento (mm/giro) TORNIO — Laaouatni",
+            "url": "../../src/pages/avanzamento_tornio_G95.html"
+        },
+        {
+            "name": "G96 velocità di taglio (metri/minuto) TORNIO — Laaouatni",
+            "short_name": "G96 velocità di taglio (metri/minuto) TORNIO — Laaouatni",
+            "description": "G96 velocità di taglio (metri/minuto) TORNIO — Laaouatni",
+            "url": "../../src/pages/formula_velocita_di_taglio_CNC.html"
+        },
+        {
+            "name": "G97 velocità mandrino (giri/minuto) FRESA — Laaouatni",
+            "short_name": "G97 velocità mandrino (giri/minuto) FRESA",
+            "description": "G97 velocità mandrino (giri/minuto) FRESA",
+            "url": "../../src/pages/formula_numero_giri_CNC.html"
+        },
+        {
+            "name": "funzionalità meccanicAPP — Laaouatni",
+            "short_name": "funzionalità meccanicAPP — Laaouatni",
+            "description": "funzionalità meccanicAPP — Laaouatni",
+            "url": "../../index.html/#funzionalità-meccanicapp"
+        }
+    ]
+}

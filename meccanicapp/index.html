@@ -79,10 +79,10 @@
         gtag('config', 'G-Q3J4MS1H2H');
     </script>
 
-
-
     <!-- styles CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="./manifest.json">
 </head>
 
 <body id="index-body">
@@ -860,7 +860,7 @@ function displayGcode(options, pezzoGrezzo) {
         <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
     </footer>
 
-    <script src="./src/javascript/index/script.js"></script>
+    <script src="./src/javascript/page-js/index/script.js"></script>
 
     <link rel="stylesheet" href="./utilities/colorazione-codice/css/tokyo-night-dark-mod.css">
 
@@ -870,6 +870,12 @@ function displayGcode(options, pezzoGrezzo) {
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.5.1/languages/gcode.min.js"></script>
     <script>
         hljs.highlightAll();
+    </script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./service-worker.js");
+        }
     </script>
 </body>
 
