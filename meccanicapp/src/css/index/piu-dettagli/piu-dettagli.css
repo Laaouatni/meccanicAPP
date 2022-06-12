@@ -41,7 +41,7 @@
     margin-top: 15rem;
     padding: 0 1rem;
     padding-top: 5rem;
-    width: 100vw;
+    width: 100%;
     background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 1) 1%, rgba(255, 255, 255, 0.2) 20%, transparent 85%);
 }
 
@@ -58,7 +58,7 @@
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0.2);
     margin: 0.5rem 0;
-    width: calc(100% - 1rem);
+    width: 100%;
 }
 
 #piu-dettagli .section-tables {
