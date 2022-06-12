@@ -81,21 +81,16 @@ self.addEventListener("install", installEvent => {
     )
 });
 
-self.addEventListener('fetch', function(event) {
-  console.log('Fetch event for ', event.request.url);
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) {
-        console.log('Found ', event.request.url, ' in cache');
-        return response;
-      }
-      console.log('Network request for ', event.request.url);
-      return fetch(event.request)
 
-    }).catch(function(error) {
-
-      return caches.match('index.html');
-
-    })
-  );
+self.addEventListener('fetch', (e) => {
+  e.respondWith((async () => {
+    const r = await caches.match(e.request);
+    console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
+    if (r) { return r; }
+    const response = await fetch(e.request);
+    const cache = await caches.open(cacheName);
+    console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
+    cache.put(e.request, response.clone());
+    return response;
+  })());
 });
