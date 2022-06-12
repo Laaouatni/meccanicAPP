@@ -21,6 +21,6 @@ btn.forEach((el) => {
 
 window.addEventListener("load", () => {
     if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("./../../extra/service-worker/service-worker.js");
+        navigator.serviceWorker.register("./../src/javascript/extra/service-worker/service-worker.js");
     }
 });
