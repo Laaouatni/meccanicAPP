@@ -78,7 +78,16 @@ const precacheResources = ['/', '/index.html', '/css/style.css', '/js/main.js', 
 // When the service worker is installing, open the cache and add the precache resources to it
 self.addEventListener('install', (event) => {
   console.log('Service worker install event!');
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
+  event.waitUntil(
+caches.open(cacheName)
+  .then(
+     (cache) => {
+        return cache.addAll(precacheResources)
+      })
+  .then(() => {
+        return self.skipWaiting();
+      })
+   );
 });
 
 self.addEventListener('activate', (event) => {
