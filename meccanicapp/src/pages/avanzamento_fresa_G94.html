@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="calcolatore di Numero di giri al minuto in tornio CNC (Generator)">
+    <meta name="description" content="calcolatore di avanzamento in giri/minuto in fresa CNC G94 (Generator) - MeccanicAPP">
 
-    <title>numero giri — formula di Tornitura — Laaouatni.</title>
+    <title>avanzamento G94 — formula di Fresatura Calculatore — meccanicAPP by Laaouatni.</title>
 
     <meta name="theme-color" content="blue">
 
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../../style.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXK2TTRVN8"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-779WVV1QLL"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -31,9 +31,11 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-WXK2TTRVN8');
+        gtag('config', 'G-779WVV1QLL');
     </script>
 
+
+    <!-- delete this -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062" crossorigin="anonymous"></script> -->
 
     <!-- poppins font -->
@@ -47,46 +49,58 @@
     />
 </head>
 
-<body id="body-giri-cnc">
-    <h1 style="text-align:center;">velocità mandrino tornitura.</h1>
+<body id="body-vt">
+    <h1 style="text-align:center;">G94 avanzamento fresa mm/min</h1>
 
-    <!-- I used this video for the formula https://youtu.be/h1kSgvirtgo -->
     <div class="container-formula">
-        <form id="form-numero-giri" class="giri-card">
-            <div id="numero-giri-first-container" style="gap: 1rem;">
-                <label for="vt-input">
-                    <div class="input-with-title-container">
-                        <span class="title-of-label-n-giri" title="velocità di taglio">VT</span>
-                        <input type="range" min="1" max="200" value="180" name="" id="vt-input" title="inserisci la velocità di taglio" placeholder="Vt (velocità di taglio)">
+        <form id="form-avanzamento-fresa" class="giri-card" style="display: grid; gap: 1rem;">
+            <!-- 1 -->
+            <div id="vt-first-container">
+
+                <label for="avanz-dente-input">
+                    <div>
+                        <span>fz</span>
+                        <input type="range" name="" min="1" max="150" value="80" id="avanz-dente-input">
                     </div>
-                    <span id="vt-value-span" title="velocità di taglio">errore (javascript modificherà questo testo, attendere...)</span>
+                    <span id="avanz-dente-span">errore</span>
                 </label>
 
                 <span class="operator" title="moltiplicazione"> * </span>
-                <input type="number" name="" id="" value="1000" title="non modificare, serve per la formula" disabled>
-            </div>
-            <hr>
-            <div id="numero-giri-second-container" style="gap: 1rem;">
-                <label for="diametro-input">
-                    <div class="input-with-title-container">
-                        <span class="title-of-label-n-giri" title="diametro">Ø</span>
-                        <input type="range" min="1" max="500" value="200" name="" id="diametro-input" title="diametro del tuo pezzo grezzo" placeholder="D (diametro pezzo)">
+
+                <label for="num-denti-input">
+                    <div>
+                        <span>Zn</span>
+                        <input type="range" name="" id="num-denti-input" min="1" max="15" value="4">
                     </div>
-                    <span id="diametro-value-span" title="diametro del pezzo grezzo">errore (javascript modificherà questo testo, attendere...)</span>
+                    <span id="num-denti-span">errore</span>
                 </label>
 
                 <span class="operator" title="moltiplicazione"> * </span>
-                <input type="number" name="" id="" value="3.14" title="pi greco, non modificare" disabled>
+
+                <label for="giri-input">
+                    <div>
+                        <span style="font-size: 2rem;">S</span>
+                        <input type="range" name="" id="giri-input" min="1" max="10000" value="1200">
+                    </div>
+
+                    <span id="giri-span">errore</span>
+                </label>
             </div>
+
         </form>
 
-        <div id="risultato-giri" class="giri-card">
+        <div class="giri-card" style="display: grid; place-items: center;">
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output" title="numero giri al minuto">errore (javascript modificherà questo testo, attendere...)</output>
-                <span>giri/min</span>
+                <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output">errore</output>
+                <span>mm/min</span>
             </div>
+        </div>
 
-            <!-- <div id="test-json-giri">errore json</div> -->
+        <div class="suggerimento-card">
+            <i class="fa-solid fa-circle-info"></i>
+            <div>
+                <b>fresa G94</b>... calcola prima la velocita G97 giri/min.
+            </div>
         </div>
     </div>
 
@@ -112,7 +126,7 @@
         </a>
     </footer>
 
-    <script src="../javascript/formule/numero_giri/tornio/script.js"></script>
+    <script src="../javascript/page-js/formule/avanzamento-fresa/G94-avanz-fresa.js"></script>
 </body>
 
 </html>

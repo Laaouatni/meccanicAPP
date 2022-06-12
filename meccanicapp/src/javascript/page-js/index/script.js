@@ -11,7 +11,7 @@ btn.forEach((el) => {
                 console.log("pc, 1 second after, started scrolling");
             }, 1500);
 
-            el.addEventListener('mouseleave', e => {
+            el.addEventListener('mouseleave', () => {
                 clearTimeout(scrollAfterTime);
                 console.log("leave on pc, before the 1500")
             });
