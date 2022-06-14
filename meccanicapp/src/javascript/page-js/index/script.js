@@ -28,3 +28,18 @@ if ("serviceWorker" in navigator) {
             .catch(err => console.log("service worker not registered", err))
     })
 }
+
+window.addEventListener("offline", () => {
+    function showAlert(text) {
+        let alert = document.querySelector('#alert');
+    
+        alert.classList.add("alert-visible");
+        alert.querySelector("#testo-errore").textContent = text;
+    
+        setTimeout(() => {
+            alert.classList.remove("alert-visible");
+        }, 2000);
+    }    
+
+    showAlert("OFFLINE - no internet");
+});
