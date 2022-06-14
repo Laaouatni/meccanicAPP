@@ -135,4 +135,6 @@ function calcolaTolleranza() {
             /* console.log("error") */
         }
     });
+
+    navigator.vibrate(10);
 }

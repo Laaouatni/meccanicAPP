@@ -43,5 +43,7 @@ arrayInput.forEach((input) => {
         }
 
         calcolaGiri(props);
+
+        navigator.vibrate(10);
     }, { passive: true });
 });
