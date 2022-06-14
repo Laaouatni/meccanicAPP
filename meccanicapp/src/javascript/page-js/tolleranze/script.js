@@ -136,5 +136,5 @@ function calcolaTolleranza() {
         }
     });
 
-    navigator.vibrate(30);
+    navigator.vibrate(10);
 }

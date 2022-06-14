@@ -44,6 +44,6 @@ arrayInput.forEach((input) => {
 
         calcolaVT(props);
 
-        navigator.vibrate(30);
+        navigator.vibrate(10);
     }, { passive: true });
 });

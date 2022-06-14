@@ -42,6 +42,6 @@ arrayInput.forEach((input) => {
 
         calcolaRaggio(props);
 
-        navigator.vibrate(30);
+        navigator.vibrate(10);
     }, { passive: true });
 });
