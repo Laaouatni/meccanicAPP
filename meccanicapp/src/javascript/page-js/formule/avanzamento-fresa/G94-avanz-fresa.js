@@ -49,5 +49,7 @@ arrayInput.forEach((input) => {
         }
 
         calcolaG94(props);
+
+        navigator.vibrate(50);
     }, { passive: true });
 });
