@@ -3,7 +3,8 @@ const assetsArray = [
         "./manifest.json"
     ], // manifest
     [
-    "./import/import.css","./src/css/form/form.css",
+        "./import/import.css",
+        "./src/css/form/form.css",
         "./src/css/outputs/output.css",
         "./src/css/alert/alert.css",
         "./src/css/preview_tolleranza/preview_tolleranza.css",
@@ -34,7 +35,7 @@ const assetsArray = [
         "./src/javascript/page-js/index/script.js",
         "./src/javascript/page-js/spianatura_gcode/spianatura_gcode.js",
         "./src/javascript/page-js/tolleranze/script.js",
-"./sw.js"
+        "./sw.js"
     ], //  other js
     [
         "./src/pages/avanzamento_fresa_G94.html",
@@ -46,7 +47,7 @@ const assetsArray = [
         "./src/pages/tolleranze_albero_h.html"
     ], // pages html
     [
-"/",
+        "/",
         "./index.html",
         "./style.css",
         "./404.html"
