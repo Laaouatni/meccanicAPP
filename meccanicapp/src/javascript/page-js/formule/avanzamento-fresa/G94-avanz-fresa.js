@@ -50,6 +50,6 @@ arrayInput.forEach((input) => {
 
         calcolaG94(props);
 
-        navigator.vibrate(10);
+        navigator.vibrate(30);
     }, { passive: true });
 });
