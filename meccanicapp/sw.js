@@ -29,7 +29,7 @@ const assetsArray = [
         "./src/javascript/page-js/gioco_interferenza_albero/script.js",
         "./src/javascript/page-js/index/script.js",
         "./src/javascript/page-js/spianatura_gcode/spianatura_gcode.js",
-        "./src/javascript/page-js/tolleranze/script.js"
+        "./src/javascript/page-js/tolleranze/script.js",
 "./sw.js"
     ], //  other js
     [
@@ -42,7 +42,7 @@ const assetsArray = [
         "./src/pages/tolleranze_albero_h.html"
     ], // pages html
     [
-"/"
+"/",
         "./index.html",
         "./style.css",
         "./404.html"
