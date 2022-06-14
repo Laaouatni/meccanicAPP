@@ -71,7 +71,8 @@ const assetsArray = [
         "./utilities/images/loading/loading.gif",
         "./utilities/images/arrow/0arrow.png",
     ] // other images
-]
+];
+
 const cacheName = "v0.1";
 const contentToCache = assetsArray.reduce((acc, cur) => acc.concat(cur), []);
 
