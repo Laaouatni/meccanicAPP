@@ -3,75 +3,81 @@
     "name": "meccanicAPP — Laaouatni",
     "lang": "it",
     "description": "meccanicAPP è una web-app per la meccanica, genera spianatura in GCODE, calcola la Tolleranza, l'avanzamento G94 e G95, la velocità G96 e G97 di Fresa e Tornio.",
-    "start_url": "/",
+    "start_url": "https://meccanicapp.vercel.app/",
     "background_color": "#0000ff",
     "theme_color": "#0000ff",
     "dir": "ltr",
     "display": "standalone",
     "orientation": "portrait",
     "icons": [{
+            "src": "./utilities/manifest/icon/512anas.png",
+            "type": "image/jpg",
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+        {
             "src": "./utilities/manifest/icon/android-icon-192x192-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "192x192"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-180x180-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "180x180"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-152x152-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "152x152"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-144x144-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "144x144"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-120x120-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "120x120"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-114x114-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "114x114"
         },
         {
             "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "96x96"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-76x76-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "76x76"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-72x72-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "72x72"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-60x60-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "60x60"
         },
         {
             "src": "./utilities/manifest/icon/apple-icon-57x57-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "57x57"
         },
         {
             "src": "./utilities/manifest/icon/favicon-32x32-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "32x32"
         },
         {
             "src": "./utilities/manifest/icon/favicon-16x16-seochecker-manifest-112.jpg",
-            "type": "image/png",
+            "type": "image/jpg",
             "sizes": "16x16"
         }
     ],
@@ -83,7 +89,7 @@
             "url": "./../../src/pages/interferenza_gioco_albero.html",
             "icons": [{
                 "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-                "type": "image/png",
+                "type": "image/jpg",
                 "sizes": "96x96"
             }]
         },
@@ -94,7 +100,7 @@
             "url": "../../src/pages/tolleranze_albero_h.html",
             "icons": [{
                 "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-                "type": "image/png",
+                "type": "image/jpg",
                 "sizes": "96x96"
             }]
         },
@@ -105,7 +111,7 @@
             "url": "../../src/pages/spianatura_gcode.html",
             "icons": [{
                 "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-                "type": "image/png",
+                "type": "image/jpg",
                 "sizes": "96x96"
             }]
         },
@@ -116,7 +122,7 @@
             "url": "../../src/pages/avanzamento_fresa_G94.html",
             "icons": [{
                 "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-                "type": "image/png",
+                "type": "image/jpg",
                 "sizes": "96x96"
             }]
         },
@@ -127,7 +133,7 @@
             "url": "../../src/pages/avanzamento_tornio_G95.html",
             "icons": [{
                 "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-                "type": "image/png",
+                "type": "image/jpg",
                 "sizes": "96x96"
             }]
         },
@@ -138,7 +144,7 @@
             "url": "../../src/pages/formula_velocita_di_taglio_CNC.html",
             "icons": [{
                 "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-                "type": "image/png",
+                "type": "image/jpg",
                 "sizes": "96x96"
             }]
         },
@@ -149,7 +155,7 @@
             "url": "../../src/pages/formula_numero_giri_CNC.html",
             "icons": [{
                 "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-                "type": "image/png",
+                "type": "image/jpg",
                 "sizes": "96x96"
             }]
         },
@@ -160,7 +166,7 @@
             "url": "../../index.html/#funzionalità-meccanicapp",
             "icons": [{
                 "src": "./utilities/manifest/icon/favicon-96x96-seochecker-manifest-112.jpg",
-                "type": "image/png",
+                "type": "image/jpg",
                 "sizes": "96x96"
             }]
         }
