@@ -92,7 +92,7 @@ function fetchAndDisplay() {
                 alert.classList.remove("alert-visible");
             }, 2000);
 
-setTimeout(() => {
+            setTimeout(() => {
                 window.location.reload(true);
             }, 5000);
 
@@ -140,11 +140,11 @@ function calcolaTolleranza() {
 }
 
 
-if ("serviceWorker" in navigator) {
+/* if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
         navigator.serviceWorker
             .register("../../../../sw.js")
             .then(res => console.log("service worker registered", res))
-            .catch(err => console.log("service worker not registered", err))
-    })
-}
+            .catch(err => console.log("service worker not registered", err)) 
+})
+} */

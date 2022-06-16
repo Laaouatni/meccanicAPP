@@ -1,6 +1,10 @@
 let lunghezzaInput = document.getElementById("lunghezza-pezzo-input");
 let larghezzaInput = document.getElementById("larghezza-pezzo-input");
 let altezzaInput = document.getElementById("altezza-pezzo-input");
+let avanzPerDenteInput = document.getElementById("avanzamento-per-dente-input");
+let vtInput = document.getElementById("velocita-di-taglio-input");
+let nDentiInput = document.getElementById("numero-denti-fresa-input");
+let percLavorazInput = document.getElementById("percentuale-lavorazione-input");
 
 let isAnimatoInput = document.getElementById("isAnimato-input");
 let diametroInput = document.getElementById("diametro-utensile-input");
@@ -101,7 +105,6 @@ function setGargoments(options) {
         }
 
         function utensileFunctions(options) {
-            countDiamPercentuale(options);
             gcode.push(`T="CUTTER ${options.diametro}"`);
             gcode.push(`M6`);
         }
@@ -155,14 +158,11 @@ function checkSolveXYZ(x, y, z) {
     return { x, y, z };
 }
 
-
-
-function countDiamPercentuale(options) {
-    diamPercMisura = options.diametro / 100 * options.diamPercentLavorazione;
-    // add this to json string
+/* function countDiamPercentuale(options) {
+    diamPercMisura = options.diametro / 100 * options.percLavorazUtensile;
     options.diamPercMisura = diamPercMisura;
     return diamPercMisura;
-}
+} */
 
 function startGsicurezza(options) {
     let startPointX = 0 - (options.diametro / 2) - 2;
@@ -196,14 +196,7 @@ function spianaturaGenerator(options) {
 
         for (let lineeY_completed = 1; lineeY_completed <= lineeY_totali; lineeY_completed++) {
             if (lineeY_completed == 1) {
-                // console.log(`❌ ${lineeZ_completed}`)
-                // gcode.push(`hello ${lineeZ_completed}`);
                 gcode.push(`F${options.feed}`);
-
-                // if (lineeZ_completed == 0) {
-                //     // console.log(`✅ ${lineeZ_completed}`)
-                //     gcode.push(`F${options.feed}`);
-                // }
             }
 
             if (isDestra) {
@@ -281,26 +274,26 @@ calcolaBtn.addEventListener("click", () => {
     }
 
     utensile = {
-        "vc": 100,
-        "Fz": 0.1,
-        "n_denti": 4,
-        "feed": "",
-        "speed": "",
+        "vt": parseInt(vtInput.value),
+        "Fz": parseFloat(avanzPerDenteInput.value),
+        "n_denti": parseInt(nDentiInput.value),
+        "feed": ,
+        "speed": parseInt(calcolateSpeed(utensile)),
         "diametro": parseInt(diametroInput.value),
-        "diametroPercentLavorazione": 60
+        "percLavorazUtensile": parseInt(percLavorazInput.value)
     }
 
     options = {
         "absolute": true,
-        "feed": parseInt(calcolateFeed(utensile)),
-        "speed": parseInt(calcolateSpeed(utensile)),
+        "feed": utensile.feed,
+        "speed": utensile.speed,
         "diametro": utensile.diametro,
-        "diamPercentLavorazione": utensile.diametroPercentLavorazione,
-        "diamPercMisura": "",
+        "percLavorazUtensile": utensile.percLavorazUtensile,
+        "diamPercMisura": (utensile.diametro / 100) * utensile.percLavorazUtensile,
         "X0": pezzoGrezzo.X0,
         "Y0": pezzoGrezzo.Y0,
         "Z0": pezzoGrezzo.Z0,
-        "nameGprogram": "",
+        "nameGprogram": "undefined, there isn't a name (this functionality isn't working now)",
     };
     displayGcode(options, pezzoGrezzo);
 
@@ -355,9 +348,9 @@ function displayGcode(options, pezzoGrezzo) {
 }
 
 function calcolateSpeed(utensile) {
-    let vc = utensile.vc; // velocita di taglio
+    let vt = utensile.vt; // velocita di taglio
 
-    let SpeedFormula = Math.round((vc * 1000) / (utensile.diametro * Math.PI));
+    let SpeedFormula = Math.round((vt * 1000) / (utensile.diametro * Math.PI));
     utensile.speed = SpeedFormula;
 
     return SpeedFormula;
@@ -445,11 +438,12 @@ window.addEventListener("scroll", () => {
     }
 });
 
-if ("serviceWorker" in navigator) {
+/* if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
         navigator.serviceWorker
             .register("../../../../sw.js")
             .then(res => console.log("service worker registered", res))
             .catch(err => console.log("service worker not registered", err))
-    })
+})
 }
+*/

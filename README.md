@@ -297,7 +297,7 @@ esempi:
     "X0": pezzoGrezzo.X0,         // 50
     "Y0": pezzoGrezzo.Y0,         // 100
     "Z0": pezzoGrezzo.Z0,         // 1
-    "diamPercentLavorazione": 60, // 60%
+    "percLavorazUtensile": 60, // 60%
     "diamPercMisura": calcolaPercOfUtensile(), // 12
   };
   ```
@@ -316,7 +316,7 @@ esempi:
 
   ```javascript
   function calcolaSpeed(utensile) {
-      let SpeedFormula = Math.round((vc * 1000) / (utensile.diametro * Math.PI));
+      let SpeedFormula = Math.round((vt * 1000) / (utensile.diametro * Math.PI));
 
       return SpeedFormula;
   }

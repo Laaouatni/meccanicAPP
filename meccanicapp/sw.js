@@ -73,7 +73,7 @@ const assetsArray = [
     ] // other images
 ];
 
-const cacheName = "v0.1";
+/* const cacheName = "v0.1";
 const contentToCache = assetsArray.reduce((acc, cur) => acc.concat(cur), []);
 
 self.addEventListener('install', (e) => {
@@ -98,3 +98,4 @@ self.addEventListener('install', (e) => {
     })());
   });
 
+ */

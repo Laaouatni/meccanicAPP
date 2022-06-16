@@ -91,20 +91,41 @@
                     <span style="opacity: 0.5; font-size: 0.6rem;">Clicca per Aprire</span>
                 </summary>
 
+
                 <form id="altri-parametri-form">
-                    <label for="diametro-utensile-input">
-                        <span>Diametro Utensile:</span>
-                        <input type="number" id="diametro-utensile-input" value="20">
-                    </label>
-
-                    <label for="altezza-pezzo-input">
-                        <span>Quanti "mm" vuoi Spianare?</span>
-                        <input type="number" id="altezza-pezzo-input" value="1">
-                    </label>
-
                     <label for="isAnimato-input">
                         <span>animazione Generazione Gcode? <span style="opacity: 0.9; font-size: 0.6rem;">per velocità, disattiva questa funzionalità.</span></span>
                         <input type="checkbox" id="isAnimato-input" checked>
+                    </label>
+
+                    <label for="altezza-pezzo-input">
+                        <span>Quanti "mm" Z vuoi Spianare?</span>
+                        <input type="number" id="altezza-pezzo-input" min="1" value="1">
+                    </label>
+
+                    <label for="diametro-utensile-input">
+                        <span>Diametro Utensile:</span>
+                        <input type="number" id="diametro-utensile-input" min="2" value="20">
+                    </label>
+
+                    <label for="velocita-di-taglio-input">
+                        <span>velocita di taglio (m/min)</span>
+                        <input type="number" id="velocita-di-taglio-input" min="1" value="180">
+                    </label>
+
+                    <label for="numero-denti-fresa-input">
+                        <span>numero denti dell'utensile</span>
+                        <input type="number" id="numero-denti-fresa-input" min="1" value="4">
+                    </label>
+
+                    <label for="avanzamento-per-dente-input">
+                        <span>avanzamento per dente</span>
+                        <input type="number" id="avanzamento-per-dente-input" min="0.01" value="0.2" step=".01">
+                    </label>
+
+                    <label for="percentuale-lavorazione-input">
+                        <span>percentuale di lavorazione (es. 60%)</span>
+                        <input type="number" id="percentuale-lavorazione-input" min="1" value="60">
                     </label>
                 </form>
             </details>
