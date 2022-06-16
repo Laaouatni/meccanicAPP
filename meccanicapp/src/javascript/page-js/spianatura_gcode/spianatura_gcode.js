@@ -54,7 +54,7 @@ let previusX;
 let previusY;
 let previusZ;
 
-let diamPercMisura;
+
 
 let calcolaBtn = document.querySelector("#btn-form");
 
@@ -127,6 +127,8 @@ function G0(x, y, z) {
 
 function G1(x, y, z) {
     let XYZ = checkSolveXYZ(x, y, z);
+
+    console.log(`parametro entrato: ${y}, solved: ${XYZ.y}, withFixed: ${XYZ.y.toFixed(1)}`);
     gcode.push(`G1 X${XYZ.x % 1 == 0 ? XYZ.x : XYZ.x.toFixed(1)} Y${XYZ.y % 1 == 0 ? XYZ.y : XYZ.y.toFixed(1)} Z${XYZ.z % 1 == 0 ? XYZ.z : XYZ.z.toFixed(1)}`);
     setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
 }
@@ -224,7 +226,7 @@ function spianaturaGenerator(options) {
     }
 
     function GtoDown() {
-        G1("", previusY - diamPercMisura, "");
+        G1("", previusY - options.diamPercMisura, "");
     }
 
     function lastGspianatura(options, isDestra) {
@@ -261,7 +263,6 @@ function createGcodeProgram(options, pezzoGrezzo) {
     spianaturaGenerator(options);
     stopGprogram();
 
-
     let gcodeProgram = gcode;
     return gcodeProgram;
 }
@@ -277,16 +278,16 @@ calcolaBtn.addEventListener("click", () => {
         "vt": parseInt(vtInput.value),
         "Fz": parseFloat(avanzPerDenteInput.value),
         "n_denti": parseInt(nDentiInput.value),
-        "feed": ,
-        "speed": parseInt(calcolateSpeed(utensile)),
+        "feed": options.feed,
+        "speed": options.speed,
         "diametro": parseInt(diametroInput.value),
         "percLavorazUtensile": parseInt(percLavorazInput.value)
     }
 
     options = {
         "absolute": true,
-        "feed": utensile.feed,
-        "speed": utensile.speed,
+        "feed": parseInt(calcolateFeed(utensile)),
+        "speed": parseInt(calcolateSpeed(utensile)),
         "diametro": utensile.diametro,
         "percLavorazUtensile": utensile.percLavorazUtensile,
         "diamPercMisura": (utensile.diametro / 100) * utensile.percLavorazUtensile,
@@ -348,21 +349,13 @@ function displayGcode(options, pezzoGrezzo) {
 }
 
 function calcolateSpeed(utensile) {
-    let vt = utensile.vt; // velocita di taglio
-
-    let SpeedFormula = Math.round((vt * 1000) / (utensile.diametro * Math.PI));
-    utensile.speed = SpeedFormula;
+    let SpeedFormula = Math.round((utensile.vt * 1000) / (utensile.diametro * Math.PI));
 
     return SpeedFormula;
 }
 
 function calcolateFeed(utensile) {
-    let speed = calcolateSpeed(utensile);
-    let n_denti = utensile.n_denti;
-    let Fz = utensile.Fz;
-
-    let FeedFormula = Math.round((Fz * n_denti) * speed);
-    utensile.feed = FeedFormula;
+    let FeedFormula = Math.round((utensile.Fz * utensile.n_denti) * calcolateSpeed(utensile));
 
     return FeedFormula;
 }
