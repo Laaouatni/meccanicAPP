@@ -1,14 +1,26 @@
 # meccanicAPP
 
-L'App che ti aiuta se sei un Disegnatore Tecnico, oppure operatore CNC!
+⚙️ Open Source Web App for CNC, which include 5+ Mechanical Calculators and some GCODE generators!
 
-Questa App è attualmente in versione "Web-Edition", così più persone avranno la possibilità di utilizzarla!
-
-<https://meccanicapp.vercel.app>
+## functionalità (meccanicapp):
+1. genera codice GCODE per spianature
+2. calcola le tolleranze (h7, ecc...)
+3. calcola l'avanzamento in fresa (G94)
+4. calcola l'avanzamento in tornio (G95)
+5. calcola la velocita di taglio (VT)
+6. calcola la velocità mandrino FRESA (G97)
+7. calcola se un acc. albero-foro è interferenza / gioco oppure incerto?
 
 -----
 
-## table of contents
+**website:** <https://meccanicapp.vercel.app>
+
+**Github:** <https://github.com/Laaouatni/meccanicAPP>
+
+-----
+-----
+
+### table of contents
 - [meccanicAPP](#meccanicapp)
   - [table of contents](#table-of-contents)
   - [Funzionalità MeccanicAPP](#funzionalità-meccanicapp)
@@ -23,6 +35,7 @@ Questa App è attualmente in versione "Web-Edition", così più persone avranno 
     - [5. velocità rotazione](#5-velocità-rotazione)
     - [come funziona?](#come-funziona-1)
 
+-----
 -----
 
 ## Funzionalità MeccanicAPP
@@ -50,7 +63,7 @@ M30
 ```
 
 
-## [come funziona?](#come-funziona-1)
+### [come funziona?](#come-funziona-1)
 clicca il [link](#come-funziona-1) per vedere come funziona
 
 -----
