@@ -12,6 +12,12 @@ let diametroInput = document.getElementById("diametro-utensile-input");
 let success_alert = document.querySelector('#success-alert');
 let percent_span = document.querySelector('#perc-gcode');
 
+let alertChanges = document.querySelector('#changes-alert');
+let parentContainerOutput = document.querySelector("#spianatura-output");
+let codeContainerOutput = document.querySelector("#output-gcode");
+
+let numInputAfterClick = 0;
+
 document.querySelector("#copia-buttone").style.display = "none";
 
 [larghezzaInput, lunghezzaInput].forEach((input) => {
@@ -20,13 +26,13 @@ document.querySelector("#copia-buttone").style.display = "none";
         let inputLength = inputValue.length;
 
         if (inputLength > 1) {
-            input.style.width = inputLength + 0.5 + "rem";
+            input.style.width = inputLength + 1.3 + "rem";
         }
 
         if (inputLength > 4) {
             showAlert("Errore: numero troppo grande.")
             input.value = inputValue.slice(0, -1);
-            input.style.width = inputLength - 0.5 + "rem";
+            input.style.width = inputLength + 0.5 + "rem";
         }
     });
 });
@@ -128,8 +134,8 @@ function G0(x, y, z) {
 function G1(x, y, z) {
     let XYZ = checkSolveXYZ(x, y, z);
 
-    console.log(`parametro entrato: ${y}, solved: ${XYZ.y}, withFixed: ${XYZ.y.toFixed(1)}`);
     gcode.push(`G1 X${XYZ.x % 1 == 0 ? XYZ.x : XYZ.x.toFixed(1)} Y${XYZ.y % 1 == 0 ? XYZ.y : XYZ.y.toFixed(1)} Z${XYZ.z % 1 == 0 ? XYZ.z : XYZ.z.toFixed(1)}`);
+
     setLastPosVar(XYZ.x, XYZ.y, XYZ.z);
 }
 
@@ -296,6 +302,9 @@ calcolaBtn.addEventListener("click", () => {
         "Z0": pezzoGrezzo.Z0,
         "nameGprogram": "undefined, there isn't a name (this functionality isn't working now)",
     };
+
+    removeAlertChanges();
+
     displayGcode(options, pezzoGrezzo);
 
     document.querySelector("#copia-buttone").style.display = "grid";
@@ -304,6 +313,8 @@ calcolaBtn.addEventListener("click", () => {
 
 function displayGcode(options, pezzoGrezzo) {
     document.querySelector("#output-gcode").innerHTML = "";
+    document.querySelector("#spianatura-output").classList.add("withCodeInside");
+
     let gcodeArray = createGcodeProgram(options, pezzoGrezzo);
 
     gcodeArray.forEach((Gline, index) => {
@@ -341,7 +352,8 @@ function displayGcode(options, pezzoGrezzo) {
             newGcodeLine.querySelector(".gcode-line").textContent = Gline;
             newGcodeLine.querySelector(".gnum-line").textContent = `N${index + 1}`;
 
-            newGcodeLine.classList.add("gcode-line");
+            hljs.highlightElement(newGcodeLine.querySelector(".gcode-line"));
+
             newGcodeLine.scrollIntoView({});
             showSuccessAlert(gcodeArray, index);
         }
@@ -440,3 +452,35 @@ window.addEventListener("scroll", () => {
 })
 }
 */
+
+
+document.querySelectorAll("input")
+    .forEach((el) => {
+        el.addEventListener("input", (e) => {
+            let hasCode = document.querySelector("#spianatura-output").classList.contains("withCodeInside");
+
+            if (hasCode) {
+                numInputAfterClick++;
+                if (numInputAfterClick <= 1) {
+                    console.log("✅ there is some modifications after last save");
+                    addAlertChanges();
+                }
+            }
+        })
+    });
+
+
+function addAlertChanges() {
+    alertChanges.style.display = "flex";
+    parentContainerOutput.style.padding = "0px";
+    codeContainerOutput.style.display = `grid`;
+    codeContainerOutput.style.padding = "0.5rem 1rem";
+}
+
+function removeAlertChanges() {
+    numInputAfterClick = 0;
+    console.log("removed")
+    alertChanges.style.display = "none";
+    parentContainerOutput.style.padding = "";
+    codeContainerOutput.style.padding = "";
+}

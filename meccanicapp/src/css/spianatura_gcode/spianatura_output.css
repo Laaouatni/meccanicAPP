@@ -1,18 +1,25 @@
 #spianatura-output {
     max-width: 95vw;
     width: 95%;
-    padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    border: 3px solid white;
-    background: rgba(255, 255, 255, 0.4);
+    padding: 1rem;
+    border: 3px solid rgb(255, 255, 255);
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.25);
     overflow: hidden;
+}
+
+#spianatura-output.withCodeInside {
+    background-color: #0d1117;
+    transition: all 1s ease-in-out;
 }
 
 @media (max-width: 729px) {
     #spianatura-output {
         max-width: 90vw;
         width: 90%;
+    }
+    #output-gcode>div:first-of-type * {
+        font-size: 2.2vw !important;
     }
 }
 
@@ -26,7 +33,7 @@
 
 .gnum-line {
     font-weight: bold;
-    color: rgba(0, 0, 255, 0.9);
+    color: rgb(193, 193, 255);
     font-size: 1.2rem;
 }
 
@@ -35,6 +42,13 @@
     font-family: monospace;
     color: blue;
     font-size: 1.2rem;
+}
+
+.g-line-container pre {
+    background: initial;
+    padding: initial;
+    display: flex;
+    margin: initial;
 }
 
 @keyframes gcode-line {

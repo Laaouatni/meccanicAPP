@@ -22,7 +22,8 @@ const assetsArray = [
         "./src/css/suggerimento-card/suggerimento-card.css",
         "./src/css/formule/avanzamento/avanzamentoG95tornio/G95avanz-tornio.css",
         "./src/css/formule/avanzamento/avanzamentoG94fresa/G94avanz-fresa.css",
-        "./src/css/index/piu-dettagli/piu-dettagli.css"
+        "./src/css/index/piu-dettagli/piu-dettagli.css",
+        "./src/css/spianatura_gcode/changes-alert.css"
     ], // css
     [
         "./src/javascript/page-js/formule/avanzamento-fresa/G94-avanz-fresa.js",
