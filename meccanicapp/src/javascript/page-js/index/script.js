@@ -27,8 +27,12 @@ let apiInfo = {
 
 let gitApiUrl = `https://api.codetabs.com/v1/loc/?github=${apiInfo.nameUser}/${apiInfo.nameRepo}`;
 
+apiInfo.htmlEl.textContent = `caricamento...`;
+
 fetch(gitApiUrl)
-    .then(response => response.json())
+    .then(response => {
+        return response.json()
+    })
     .then((data) => {
         let repoLinesJson = {
             "CSS": `${data[0].linesOfCode}`,
@@ -40,4 +44,6 @@ fetch(gitApiUrl)
         apiInfo.htmlEl.textContent = `let numOfLines = ${JSON.stringify(repoLinesJson, null, 2) ? JSON.stringify(repoLinesJson, null, 2) : "errore, riprovare a ricaricare la pagina"}`;
 
         hljs.highlightElement(apiInfo.htmlEl);
+    }).catch(err => {
+        apiInfo.htmlEl.textContent = `errore, riprovare a ricaricare la pagina... ${err}`;
     })
