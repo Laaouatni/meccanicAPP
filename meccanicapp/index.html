@@ -55,11 +55,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meccanicapp.vercel.app/">
 
-    <!-- dependecies -->
-    <!-- fontAwesome -->
-    <!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    /> -->
-
     <!-- poppins font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,10 +116,7 @@
                         <div id="image-spianatura-index"></div>
                         <span>Spianatura</span>
                     </a>
-                    <!-- 
-                    <a href=".\src\pages\tolleranze.html">
-                        <span>GCODE test 2</span>
-                    </a> -->
+
                 </div>
             </section>
 
@@ -199,11 +191,12 @@
             <li>calcola la velocità mandrino FRESA (G97)</li>
             <li>calcola se un acc. albero-foro è interferenza / gioco oppure incerto?</li>
         </ul>
-        <hr>
+
         <hr>
         <p><strong>website:</strong> <a href="https://meccanicapp.vercel.app">https://meccanicapp.vercel.app</a></p>
         <p><strong>Github:</strong> <a href="https://github.com/Laaouatni/meccanicAPP">https://github.com/Laaouatni/meccanicAPP</a></p>
         <hr>
+
         <hr>
         <h2 id="table-of-contents">table of contents</h2>
 
@@ -276,8 +269,7 @@ G1 X22 Y-14 Z0      // Spostamento Lineare
 G1 X-12 Y-14 Z0     // Spostamento Lineare
 G1 X-12 Y-14 Z2     // Distanza di Sicurezza 2MM
 G0 X-12 Y-14 Z20    // Ritornare in posizione con una distanza di sicurezza maggiore
-M30                 // Spegnimento Programma
-</code>
+M30                 // Spegnimento Programma</code>
 </pre>
         <h2 id="come-funziona"><a href="#come-funziona-1">come funziona?</a></h2>
         <p>clicca il <a href="#come-funziona-1">link</a> per vedere come funziona</p>
@@ -901,6 +893,18 @@ function displayGcode(options, pezzoGrezzo) {
     ...
 }
 </code></pre>
+
+
+        <hr>
+        <hr>
+        <hr>
+        <div id="json-info-repo">
+            <pre>
+                <code class="language-json">
+                    <!-- there it will be the lines of code -->
+                </code>
+            </pre>
+        </div>
     </section>
 
     <footer id="footer-made">
@@ -917,15 +921,6 @@ function displayGcode(options, pezzoGrezzo) {
     <script>
         hljs.highlightAll();
     </script>
-
-    <!--
-    <script>
-        window.addEventListener('load', () => {
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("./sw.js");
-            }
-        });
-    </script>-->
 </body>
 
 </html>

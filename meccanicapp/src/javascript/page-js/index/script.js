@@ -19,27 +19,25 @@ btn.forEach((el) => {
     });
 });
 
-/* 
-/* if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-        navigator.serviceWorker
-            .register("../../../../sw.js")
-            .then(res => console.log("service worker registered", res))
-            .catch(err => console.log("service worker not registered", err)) 
-})
-} */
+let apiInfo = {
+    "nameUser": "laaouatni",
+    "nameRepo": "meccanicAPP",
+    "htmlEl": document.getElementById("json-info-repo").querySelector("pre code")
+}
 
-window.addEventListener("offline", () => {
-    function showAlert(text) {
-        let alert = document.querySelector('#alert');
+let gitApiUrl = `https://api.codetabs.com/v1/loc/?github=${apiInfo.nameUser}/${apiInfo.nameRepo}`;
 
-        alert.classList.add("alert-visible");
-        alert.querySelector("#testo-errore").textContent = text;
+fetch(gitApiUrl)
+    .then(response => response.json())
+    .then((data) => {
+        let repoLinesJson = {
+            "CSS": `${data[0].linesOfCode}`,
+            "HTML": `${data[1].linesOfCode}`,
+            "JS": `${data[2].linesOfCode}`,
+            "linesOfCodeTotal": `${data[7].linesOfCode}`
+        };
 
-        setTimeout(() => {
-            alert.classList.remove("alert-visible");
-        }, 2000);
-    }
+        apiInfo.htmlEl.textContent = `let numOfLines = ${JSON.stringify(repoLinesJson, null, 2) ? JSON.stringify(repoLinesJson, null, 2) : "errore, riprovare a ricaricare la pagina"}`;
 
-    showAlert("OFFLINE - no internet");
-}); * /
+        hljs.highlightElement(apiInfo.htmlEl);
+    })

@@ -15,7 +15,7 @@ function getData() {
     let FORO_data = {};
     let albero_data = {};
 
-    FORO_inputs.forEach((item, index) => {
+    FORO_inputs.forEach((item) => {
         if (item.value.length != 0) {
             FORO_data[item.name] = item.value.replace(",", ".");
             showSuccessAlert();
@@ -24,7 +24,7 @@ function getData() {
         }
     });
 
-    albero_inputs.forEach((item, index) => {
+    albero_inputs.forEach((item) => {
         if (item.value.length != 0) {
             albero_data[item.name] = item.value.replace(",", ".");
             showSuccessAlert()
@@ -109,7 +109,6 @@ function checkModalita() {
         console.log("incerto");
     } else {
         output.textContent = "questa non lo hai programmata, ma potrebbe essere incerto";
-        console.log("questa non lo hai programmata hahahah");
     }
 }
 
@@ -130,13 +129,3 @@ window
             submitForm();
         }
     });
-
-
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function() {
-            navigator.serviceWorker
-                .register("../../../../sw.js")
-                .then(res => console.log("service worker registered", res))
-                .catch(err => console.log("service worker not registered", err))
-        })
-    }

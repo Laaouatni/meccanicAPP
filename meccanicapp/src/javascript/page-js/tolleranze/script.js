@@ -12,7 +12,6 @@ let diametroSpan = document.getElementById("diametro_span");
 
 let preview_max = document.getElementById("preview-max");
 let preview_min = document.getElementById("preview-min");
-/* console.log(h_albero_dati_URL); */
 
 let loading = document.getElementById("loading-container");
 
@@ -33,7 +32,6 @@ function fetchAndDisplay() {
         })
         .then((data) => {
             jsonData = data;
-            /* document.getElementById("output-json").textContent += JSON.stringify(data); */
         })
         .then(() => {
             let diametro_value = diametroRangeInput.value;
@@ -110,41 +108,21 @@ function calcolaTolleranza() {
     let h_value = hRangeInput.value;
 
     previewDiametro.textContent = diametro_value;
-    /* jsonData.columns to array */
+
     let columnsNumber = Object.keys(jsonData.columns);
     let columnsContent = Object.values(jsonData.columns);
-    /* delete the last item from the array */
-    columnsNumber.pop();
-    /* get the diametro_value and check to find the number before it from array */
-    /* console.log(columnsNumber); */
 
+    columnsNumber.pop();
 
     columnsNumber.forEach((item, index) => {
         if (item <= diametro_value) {
-            /*  console.log(item);
-             console.log(index); */
-            /* stop the loop */
-
             let selected_array = columnsContent[index];
-
             let selectedString = selected_array[h_value - 1];
-            /*  console.log('selected_array:', selected_array[h_value - 1]); */
+
             preview_max.textContent = selectedString.split(";")[0];
             preview_min.textContent = selectedString.split(";")[1];
-        } else {
-            /* console.log("error") */
         }
     });
 
     navigator.vibrate(10);
 }
-
-
-/* if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-        navigator.serviceWorker
-            .register("../../../../sw.js")
-            .then(res => console.log("service worker registered", res))
-            .catch(err => console.log("service worker not registered", err)) 
-})
-} */

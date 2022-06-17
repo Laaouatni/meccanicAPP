@@ -443,20 +443,9 @@ window.addEventListener("scroll", () => {
     }
 });
 
-/* if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-        navigator.serviceWorker
-            .register("../../../../sw.js")
-            .then(res => console.log("service worker registered", res))
-            .catch(err => console.log("service worker not registered", err))
-})
-}
-*/
-
-
 document.querySelectorAll("input")
     .forEach((el) => {
-        el.addEventListener("input", (e) => {
+        el.addEventListener("input", () => {
             let hasCode = document.querySelector("#spianatura-output").classList.contains("withCodeInside");
 
             if (hasCode) {

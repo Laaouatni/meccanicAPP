@@ -11,7 +11,6 @@ function calcolaGiri(props) {
     vtSpan.textContent = `${props.vt} m/min`;
     diametroSpan.textContent = `Ø ${props.diametro} mm`;
 
-
     let results = {
         vt: props.vt,
         diametro: props.diametro,
@@ -19,14 +18,12 @@ function calcolaGiri(props) {
     }
     props.htmlOutput.textContent = results.giri;
 
-    /*  document.querySelector("#test-json-giri").textContent = JSON.stringify(results); */
-
     return results;
 }
 
 let props = {
-    "vt": vtInput.value ? vtInput.value : "❌ errore, l'input ha qualche problema",
-    "diametro": diametroInput.value ? diametroInput.value : "❌ errore, l'input ha qualche problema'",
+    "vt": vtInput.value,
+    "diametro": diametroInput.value,
     "htmlOutput": htmlOutput,
 }
 
@@ -37,8 +34,8 @@ let arrayInput = [vtInput, diametroInput];
 arrayInput.forEach((input) => {
     input.addEventListener('input', () => {
         props = {
-            "vt": vtInput.value ? vtInput.value : "❌",
-            "diametro": diametroInput.value ? diametroInput.value : "❌",
+            "vt": vtInput.value,
+            "diametro": diametroInput.value,
             "htmlOutput": htmlOutput,
         }
 
@@ -47,12 +44,3 @@ arrayInput.forEach((input) => {
         navigator.vibrate(10);
     }, { passive: true });
 });
-
-/* if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-        navigator.serviceWorker
-            .register("../../../../sw.js")
-            .then(res => console.log("service worker registered", res))
-            .catch(err => console.log("service worker not registered", err)) 
-})
-} */
