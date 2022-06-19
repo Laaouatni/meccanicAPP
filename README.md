@@ -2,7 +2,7 @@
 
 ⚙️ Open Source Web App for CNC, which include 5+ Mechanical Calculators and some GCODE generators!
 
-## functionalità (meccanicapp):
+## funzionalità (meccanicapp):
 1. genera codice GCODE per spianature
 2. calcola le tolleranze (h7, ecc...)
 3. calcola l'avanzamento in fresa (G94)
