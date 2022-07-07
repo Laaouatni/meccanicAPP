@@ -394,7 +394,6 @@ function showSuccessAlert(gcodeArray, index) {
     success_alert.style.width = `${currentPerc}%`;
     percent_span.textContent = `${currentPerc.toFixed(1)}%`;
     percent_span.style = `font-size: 1.5rem; font-weight: bold; position: absolute; left: calc(${currentPerc}vw - 3rem); background: var(--alert-green); padding: 0.1rem 0.5rem; border-radius: 0 0 0.5rem 0.5rem; opacity: 1;`;
-    // console.log("currentPerc: ", currentPerc, " di", gcodeArray.length, " con index", index);
 
     if (index + 1 == gcodeArray.length) {
         success_alert.classList.remove("success-alltime");
@@ -451,7 +450,7 @@ document.querySelectorAll("input")
             if (hasCode) {
                 numInputAfterClick++;
                 if (numInputAfterClick <= 1) {
-                    console.log("✅ there is some modifications after last save");
+                 
                     addAlertChanges();
                 }
             }
@@ -468,7 +467,7 @@ function addAlertChanges() {
 
 function removeAlertChanges() {
     numInputAfterClick = 0;
-    console.log("removed")
+
     alertChanges.style.display = "none";
     parentContainerOutput.style.padding = "";
     codeContainerOutput.style.padding = "";
