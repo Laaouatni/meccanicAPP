@@ -2,6 +2,9 @@
 
 ⚙️ Open Source Web App for CNC, which include 5+ Mechanical Calculators and some GCODE generators!
 
+> ⚠️ **THIS IS THE OLD VERSION OF THE APP!**
+<BR> I am recreating a better version of this app https://github.com/Laaouatni/gcode.js/ by refactoring all the code.
+
 ## funzionalità (meccanicapp):
 1. genera codice GCODE per spianature
 2. calcola le tolleranze (h7, ecc...)
