@@ -7,3 +7,6 @@ https://meccanicapp.vercel.app/src/pages/formula_numero_giri_CNC.html
 https://meccanicapp.vercel.app/src/pages/avanzamento_fresa_G94.html
 https://meccanicapp.vercel.app/src/pages/avanzamento_tornio_G95.html
 https://meccanicapp.vercel.app/src/pages/formula_velocita_di_taglio_CNC.html
+https://meccanicapp.vercel.app/src/pages/volt_calcolator.html
+https://meccanicapp.vercel.app/src/pages/ampere_calculator.html
+https://meccanicapp.vercel.app/src/pages/resistenza_calculator.html
