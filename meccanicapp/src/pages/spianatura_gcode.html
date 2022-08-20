@@ -1,334 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="genera codice GCODE per eseguire una SPIANATURA in una Fresa CNC!, Generatore Automatico Online Gratis, creato da Laaouatni"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="genera codice GCODE per eseguire una SPIANATURA in una Fresa CNC!, Generatore Automatico Online Gratis, creato da Laaouatni">
-
-    <meta name="theme-color" content="blue">
-    <title>CNC GCODE Fresa Spianatura Generator, meccanicAPP by Laaouatni.</title>
+    <meta name="theme-color" content="blue" />
+    <title>
+      CNC GCODE Fresa Spianatura Generator, meccanicAPP by Laaouatni.
+    </title>
 
     <!-- app icon -->
-    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87947051?v=4">
-    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/87947051?v=4" type="image/jpg">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/87947051?v=4">
-    <meta property="twitter:card" content="summary_large_image">
+    <link
+      rel="apple-touch-icon"
+      href="https://avatars.githubusercontent.com/u/87947051?v=4"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://avatars.githubusercontent.com/u/87947051?v=4"
+      type="image/jpg"
+    />
+    <meta
+      property="og:image"
+      content="https://avatars.githubusercontent.com/u/87947051?v=4"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
 
     <!-- poppins font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- styles CSS -->
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../style.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EWLX8V2126"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-EWLX8V2126"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-EWLX8V2126');
+      gtag("config", "G-EWLX8V2126");
     </script>
-
 
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062" crossorigin="anonymous"></script> -->
 
     <!-- dependecies -->
     <!-- fontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-</head>
+  </head>
 
-<body style="padding: 0; display: grid; place-items: center;">
+  <body style="padding: 0; display: grid; place-items: center">
     <h1>Spianatura GCODE.</h1>
 
     <section id="section-spianatura">
-        <div id="preview-spianatura-container">
+      <div id="preview-spianatura-container">
+        <div id="spianatura-preview-first-container">
+          <div id="pezzo-grezzo">
+            <!-- qui ci sono dei background-image (NON cancellare, NON aggiungere all'interno dei elementi) -->
+          </div>
 
-            <div id="spianatura-preview-first-container">
-                <div id="pezzo-grezzo">
-                    <!-- qui ci sono dei background-image (NON cancellare, NON aggiungere all'interno dei elementi) -->
+          <form id="form-spianatura">
+            <label id="larghezza-container" for="larghezza-pezzo-input">
+              <div>
+                <div id="freccie-larghezza-container">
+                  <i class="fa-solid fa-up-long"></i>
+                  <span>larghezza <strong>Y</strong></span>
+                  <i class="fa-solid fa-down-long"></i>
                 </div>
+              </div>
 
-                <form id="form-spianatura">
-                    <label id="larghezza-container" for="larghezza-pezzo-input">
-                            <div>
-                                <div id="freccie-larghezza-container">
-                                    <i class="fa-solid fa-up-long"></i>
-                                    <span>larghezza <strong>Y</strong></span>
-                                    <i class="fa-solid fa-down-long"></i>
-                                </div>
-                            </div>
-                        
-                            <input form="form-spianatura" type="number" value="100" id="larghezza-pezzo-input">
-                        </label>
-                </form>
+              <input
+                form="form-spianatura"
+                type="number"
+                value="100"
+                id="larghezza-pezzo-input"
+              />
+            </label>
+          </form>
+        </div>
+
+        <label id="lunghezza-container" for="lunghezza-pezzo-input">
+          <div>
+            <div id="freccie-lunghezza-container">
+              <i class="fa-solid fa-left-long"></i>
+              <span>lunghezza <strong>X</strong></span>
+              <i class="fa-solid fa-right-long"></i>
             </div>
+          </div>
 
-            <label id="lunghezza-container" for="lunghezza-pezzo-input">
-                <div>
-                    <div id="freccie-lunghezza-container">
-                        <i class="fa-solid fa-left-long"></i>
-                        <span>lunghezza <strong>X</strong></span>
-                        <i class="fa-solid fa-right-long"></i>
-                    </div>
-                </div>
+          <input
+            form="form-spianatura"
+            type="number"
+            value="50"
+            id="lunghezza-pezzo-input"
+          />
+        </label>
 
-                <input form="form-spianatura" type="number"  value="50" id="lunghezza-pezzo-input">        
+        <details id="dettagli-parametri-container">
+          <summary>
+            Altri Parametri
+            <span style="opacity: 0.9; font-size: 0.9rem">(Opzionale)</span>
+            <span style="opacity: 0.5; font-size: 0.6rem"
+              >Clicca per Aprire</span
+            >
+          </summary>
+
+          <form id="altri-parametri-form">
+            <label for="isAnimato-input">
+              <span
+                >animazione Generazione Gcode?
+                <span style="opacity: 0.9; font-size: 0.6rem"
+                  >per velocità, disattiva questa funzionalità.</span
+                ></span
+              >
+              <input type="checkbox" id="isAnimato-input" checked />
             </label>
 
+            <label for="altezza-pezzo-input">
+              <span>Quanti "mm" Z vuoi Spianare?</span>
+              <input type="number" id="altezza-pezzo-input" min="1" value="1" />
+            </label>
 
-            <details id="dettagli-parametri-container">
-                <summary>Altri Parametri
-                    <span style="opacity: 0.9; font-size: 0.9rem;">(Opzionale)</span>
-                    <span style="opacity: 0.5; font-size: 0.6rem;">Clicca per Aprire</span>
-                </summary>
+            <label for="diametro-utensile-input">
+              <span>Diametro Utensile:</span>
+              <input
+                type="number"
+                id="diametro-utensile-input"
+                min="2"
+                value="20"
+              />
+            </label>
 
+            <label for="velocita-di-taglio-input">
+              <span>velocita di taglio (m/min)</span>
+              <input
+                type="number"
+                id="velocita-di-taglio-input"
+                min="1"
+                value="180"
+              />
+            </label>
 
-                <form id="altri-parametri-form">
-                    <label for="isAnimato-input">
-                        <span>animazione Generazione Gcode? <span style="opacity: 0.9; font-size: 0.6rem;">per velocità, disattiva questa funzionalità.</span></span>
-                        <input type="checkbox" id="isAnimato-input" checked>
-                    </label>
+            <label for="numero-denti-fresa-input">
+              <span>numero denti dell'utensile</span>
+              <input
+                type="number"
+                id="numero-denti-fresa-input"
+                min="1"
+                value="4"
+              />
+            </label>
 
-                    <label for="altezza-pezzo-input">
-                        <span>Quanti "mm" Z vuoi Spianare?</span>
-                        <input type="number" id="altezza-pezzo-input" min="1" value="1">
-                    </label>
+            <label for="avanzamento-per-dente-input">
+              <span>avanzamento per dente</span>
+              <input
+                type="number"
+                id="avanzamento-per-dente-input"
+                min="0.01"
+                value="0.2"
+                step=".01"
+              />
+            </label>
 
-                    <label for="diametro-utensile-input">
-                        <span>Diametro Utensile:</span>
-                        <input type="number" id="diametro-utensile-input" min="2" value="20">
-                    </label>
+            <label for="percentuale-lavorazione-input">
+              <span>percentuale di lavorazione (es. 60%)</span>
+              <input
+                type="number"
+                id="percentuale-lavorazione-input"
+                min="1"
+                value="60"
+              />
+            </label>
+          </form>
+        </details>
+      </div>
 
-                    <label for="velocita-di-taglio-input">
-                        <span>velocita di taglio (m/min)</span>
-                        <input type="number" id="velocita-di-taglio-input" min="1" value="180">
-                    </label>
+      <div id="btn-container-bottom">
+        <button id="btn-form">calcola</button>
+      </div>
 
-                    <label for="numero-denti-fresa-input">
-                        <span>numero denti dell'utensile</span>
-                        <input type="number" id="numero-denti-fresa-input" min="1" value="4">
-                    </label>
+      <div id="spianatura-output">
+        <div id="changes-alert" class="changes-alert-visible">
+          <div>
+            <i class="fa-solid fa-exclamation-triangle"></i>
+            <span>Cambiamenti non salvati, <b>"clicca calcola"</b></span>
+          </div>
+        </div>
+        <output id="output-gcode">
+          <!-- qui vengono generati i codici gcode -->
+          <!-- e cancellati automaticamente ciò che scritto qua sotto -->
+          clicca <code style="font-size: 1.3rem">`calcola`</code> per far
+          partire il generatore <br />
+          ricordati di modificare la <em>lunghezza</em> e la
+          <em>larghezza</em> se vuoi <br />
+          puoi anche aumentare <em>l'altezza</em> nella sezione
+          <em>"Altri Parametri"</em>
+        </output>
 
-                    <label for="avanzamento-per-dente-input">
-                        <span>avanzamento per dente</span>
-                        <input type="number" id="avanzamento-per-dente-input" min="0.01" value="0.2" step=".01">
-                    </label>
+        <div id="copia-buttone-container">
+          <button id="copia-buttone">
+            <i class="fa fa-copy"></i>
+            copiare programma
+            <style>
+              #spianatura-output:hover #copia-buttone {
+                display: grid;
+                margin-top: 1rem;
+                font-family: poppins;
+                padding: 0.7rem 1.2rem;
+                font-weight: bold;
+                font-size: 1.2rem;
+                min-height: 3rem;
+                width: 100%;
+              }
 
-                    <label for="percentuale-lavorazione-input">
-                        <span>percentuale di lavorazione (es. 60%)</span>
-                        <input type="number" id="percentuale-lavorazione-input" min="1" value="60">
-                    </label>
-                </form>
-            </details>
+              #copia-buttone {
+                display: grid;
+                transition: all 0.2s ease-in-out;
+                font-size: 0;
+                padding: 0;
+                margin: 0;
+                min-height: 0;
+                position: relative;
+                grid-template-columns: auto 1fr;
+                place-items: center;
+                width: 2.2rem;
+              }
+
+              #copia-buttone i {
+                font-size: 1rem;
+                padding: 0.5rem;
+              }
+
+              #spianatura-output:hover #copia-buttone i {
+                font-size: 2rem;
+              }
+
+              #copia-buttone.copia-success::after {
+                content: "GCODE copiato!";
+                position: absolute;
+                top: 0;
+                font-size: clamp(0.8rem, 2vw, 2rem);
+                width: max-content;
+                padding: 0.5rem;
+                background: rgb(0, 255, 100);
+                border-radius: 0.5rem;
+                box-shadow: 0 0 1rem rgb(0, 255, 100);
+                margin: 4% 5%;
+                color: rgb(219, 255, 233);
+                text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.5);
+                pointer-events: none;
+                animation: copyAlertButton 1s ease-in-out forwards;
+              }
+
+              #copia-buttone-container {
+                display: flex;
+                justify-content: flex-end;
+              }
+
+              @keyframes copyAlertButton {
+                0% {
+                  transform: translateY(200%);
+                  opacity: 0.3;
+                }
+                30% {
+                  opacity: 1;
+                  transform: translateY(-100%);
+                }
+                80% {
+                  transform: translateY(-100%);
+                  opacity: 1;
+                }
+                100% {
+                  transform: translateY(200%);
+                  opacity: 0;
+                }
+              }
+            </style>
+          </button>
         </div>
 
-
-        <div id="btn-container-bottom">
-            <button id="btn-form">
-                calcola
-            </button>
-        </div>
-
-        <div id="spianatura-output">
-
-            <div id="changes-alert" class="changes-alert-visible">
-                <div>
-                    <i class="fa-solid fa-exclamation-triangle"></i>
-                    <span>Cambiamenti non salvati, <b>"clicca calcola"</b></span>
-                </div>
-            </div>
-            <output id="output-gcode">
-                <!-- qui vengono generati i codici gcode -->
-                <!-- e cancellati automaticamente ciò che scritto qua sotto -->
-                clicca <code style="font-size:1.3rem;">`calcola`</code> per far partire il generatore <br> 
-                ricordati di modificare la <em>lunghezza</em> e la <em>larghezza</em> se vuoi 
-                <br> puoi anche aumentare <em>l'altezza</em> nella sezione <em>"Altri Parametri"</em> 
-            </output>
-
-            <div id="copia-buttone-container">
-                <button id="copia-buttone">
-                   <i class="fa fa-copy"></i>
-                    copiare programma
-                    <style>
-    
-                    #spianatura-output:hover #copia-buttone {
-                        display: grid;
-                        margin-top: 1rem;
-                        font-family: poppins;
-                        padding: 0.7rem 1.2rem;
-                        font-weight: bold;
-                        font-size: 1.2rem;
-                        min-height: 3rem;
-                        width: 100%;
-                    }
-    
-                    #copia-buttone {
-                        display: grid;
-                        transition: all 0.2s ease-in-out;
-                        font-size: 0;
-                        padding: 0;
-                        margin: 0;
-                        min-height: 0;
-                        position: relative;
-                        grid-template-columns: auto 1fr;
-                        place-items: center;
-                        width: 2.2rem;
-                    }
-    
-                    #copia-buttone i {
-                        font-size: 1rem;
-                        padding: 0.5rem;
-                    }
-    
-                    #spianatura-output:hover #copia-buttone i {
-                        font-size: 2rem;
-                    }
-
-                    #copia-buttone.copia-success::after {
-                        content: "GCODE copiato!";
-                        position: absolute;
-                        top: 0;
-                        font-size: clamp(0.8rem, 2vw, 2rem);
-                        width: max-content;
-                        padding: 0.5rem;
-                        background: rgb(0, 255, 100);
-                        border-radius: 0.5rem;
-                        box-shadow: 0 0 1rem rgb(0,255,100);
-                        margin: 4% 5%;
-                        color: rgb(219, 255, 233);
-                        text-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.5);
-                        pointer-events: none;
-                        animation: copyAlertButton 1s ease-in-out forwards;
-                    }
-
-                    #copia-buttone-container {
-                        display: flex;
-                        justify-content: flex-end;
-                    }
-    
-                    @keyframes copyAlertButton {
-                        0% {
-                            transform: translateY(200%);
-                            opacity: 0.3;
-                        }
-                        30% {
-                            opacity: 1;
-                            transform: translateY(-100%);
-                        }
-                        80% {
-                            transform: translateY(-100%);
-                            opacity: 1;
-                        }
-                        100% {
-                            transform: translateY(200%);
-                            opacity: 0;
-                        }
-                    }
-                    </style>
-                </button>
-            </div>
-
-            <template id="template-g-line">
-                <div class="g-line-container">
-                    <div class="gnum-line">1</div>
-                    <pre>
+        <template id="template-g-line">
+          <div class="g-line-container">
+            <div class="gnum-line">1</div>
+            <pre>
                         <code class="gcode-line language-gcode">test testtstststs</code>
                     </pre>
-                </div>
-            </template>
-        </div>
+          </div>
+        </template>
+      </div>
     </section>
 
     <div id="bottom-footer-info">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-            #bottom-footer-info {
-                display: none;
-                /* flex need to be in javascript */
-                align-items: center;
-                gap: 0.5rem;
-            }
-            
-            #bottom-footer-info span {
-                transform: translateY(1rem);
-                color: blue;
-                font-weight: 400;
-                font-size: 1.5rem;
-                font-family: 'Pacifico', cursive;
-            }
-        </style>
-        <span>il tuo codice Gcode!</span>
-        <img style="min-width: 2rem; width: 10vw; max-width: 5rem; filter: invert(7%) sepia(92%) saturate(7190%) hue-rotate(244deg) brightness(116%) contrast(148%); transform: rotate(-90deg)" src="./../../utilities/images/arrow/0arrow.png" alt="arrow">
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+        #bottom-footer-info {
+          display: none;
+          /* flex need to be in javascript */
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        #bottom-footer-info span {
+          transform: translateY(1rem);
+          color: blue;
+          font-weight: 400;
+          font-size: 1.5rem;
+          font-family: "Pacifico", cursive;
+        }
+      </style>
+      <span>il tuo codice Gcode!</span>
+      <img
+        style="
+          min-width: 2rem;
+          width: 10vw;
+          max-width: 5rem;
+          filter: invert(7%) sepia(92%) saturate(7190%) hue-rotate(244deg)
+            brightness(116%) contrast(148%);
+          transform: rotate(-90deg);
+        "
+        src="./../../utilities/images/arrow/0arrow.png"
+        alt="arrow"
+      />
     </div>
 
     <button id="go-to-top">
-        <!-- up arrow fontawesome -->
-        <i class="fa-solid fa-arrow-up"></i>    
+      <!-- up arrow fontawesome -->
+      <i class="fa-solid fa-arrow-up"></i>
 
-        <style>
-
-
+      <style>
         #go-to-top {
-            display: none;
-            font-size: 2rem;
-            position: fixed;
-            bottom: 6rem;
-            right: 1rem;
-            z-index: 100;
-            color: blue;
-            cursor: pointer;
-            transform: translateY(1rem);
-            opacity: 0.8;
-            width: 4rem;
-            height: 4rem;
-            place-items: center;
-            border-radius: 50%;
+          display: none;
+          font-size: 2rem;
+          position: fixed;
+          bottom: 6rem;
+          right: 1rem;
+          z-index: 100;
+          color: blue;
+          cursor: pointer;
+          transform: translateY(1rem);
+          opacity: 0.8;
+          width: 4rem;
+          height: 4rem;
+          place-items: center;
+          border-radius: 50%;
         }
-        </style>
+      </style>
     </button>
 
     <div id="alert">
-        <div id="alert-bg">
-            <div id="alert-content">
-                ERRORE, RIPROVA!!!
-            </div>
-            <div id="testo-errore">
-                devi inserire tutti i dati!
-            </div>
-        </div>
+      <div id="alert-bg">
+        <div id="alert-content">ERRORE, RIPROVA!!!</div>
+        <div id="testo-errore">devi inserire tutti i dati!</div>
+      </div>
     </div>
 
     <div id="success-alert">
-        <span id="perc-gcode">errore</span>
+      <span id="perc-gcode">errore</span>
     </div>
 
     <footer id="footer-made">
-        <span>Made by</span>
-        <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
+      <span>Made by</span>
+      <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
 
-        <a href="./../../index.html" class="btn-homepage">
-            <i class="fa-solid fa-house"></i>
-        </a>
+      <a href="./../../index.html" class="btn-homepage">
+        <i class="fa-solid fa-house"></i>
+      </a>
     </footer>
 
     <script src="./../javascript/page-js/spianatura_gcode/spianatura_gcode.js"></script>
 
-    <link rel="stylesheet" href="../../utilities/colorazione-codice/css/gcode-light.css">
+    <link
+      rel="stylesheet"
+      href="../../utilities/colorazione-codice/css/gcode-light.css"
+    />
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.5.1/languages/gcode.min.js"></script>
 
     <script>
-        hljs.highlightAll();
+      hljs.highlightAll();
     </script>
-</body>
-
+  </body>
 </html>

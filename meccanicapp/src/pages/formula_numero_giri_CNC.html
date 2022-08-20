@@ -1,101 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="G97 calcolatore di Numero di giri al minuto in della fresa CNC (Generator) - MeccanicAPP"
+    />
 
-    <meta name="description" content="G97 calcolatore di Numero di giri al minuto in della fresa CNC (Generator) - MeccanicAPP">
+    <title>
+      G97 velocità giri al minuto (fresa e tornio) calculator — meccanicAPP by
+      Laaouatni.
+    </title>
 
-    <title>G97 velocità giri al minuto (fresa e tornio) calculator — meccanicAPP by Laaouatni.</title>
-
-    <meta name="theme-color" content="blue">
+    <meta name="theme-color" content="blue" />
 
     <!-- app icon -->
-    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87947051?v=4">
-    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/87947051?v=4" type="image/jpg">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/87947051?v=4">
-    <meta property="twitter:card" content="summary_large_image">
+    <link
+      rel="apple-touch-icon"
+      href="https://avatars.githubusercontent.com/u/87947051?v=4"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://avatars.githubusercontent.com/u/87947051?v=4"
+      type="image/jpg"
+    />
+    <meta
+      property="og:image"
+      content="https://avatars.githubusercontent.com/u/87947051?v=4"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
 
     <!-- styles CSS -->
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../style.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXK2TTRVN8"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WXK2TTRVN8"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-WXK2TTRVN8');
+      gtag("config", "G-WXK2TTRVN8");
     </script>
 
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062" crossorigin="anonymous"></script> -->
 
     <!-- poppins font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- dependecies -->
     <!-- fontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-</head>
+  </head>
 
-<body id="body-giri-cnc">
-    <h1 style="text-align:center;">G97 velocità mandrino (giri/minuto)</h1>
+  <body id="body-giri-cnc">
+    <h1 style="text-align: center">G97 velocità mandrino (giri/minuto)</h1>
 
     <!-- I used this video for the formula https://youtu.be/h1kSgvirtgo -->
     <div class="container-formula">
-        <form id="form-numero-giri" class="giri-card">
-            <div id="numero-giri-first-container" style="gap: 1rem;">
-                <label for="vt-input">
-                    <div class="input-with-title-container">
-                        <span class="title-of-label-n-giri" title="velocità di taglio">VT</span>
-                        <input type="range" min="1" max="200" value="180" name="" id="vt-input" title="inserisci la velocità di taglio" placeholder="Vt (velocità di taglio)">
-                    </div>
-                    <span id="vt-value-span" title="velocità di taglio">errore (javascript modificherà questo testo, attendere...)</span>
-                </label>
-
-                <span class="operator" title="moltiplicazione"> * </span>
-                <input type="number" name="" id="" value="1000" title="non modificare, serve per la formula" disabled>
+      <form id="form-numero-giri" class="giri-card">
+        <div id="numero-giri-first-container" style="gap: 1rem">
+          <label for="vt-input">
+            <div class="input-with-title-container">
+              <span class="title-of-label-n-giri" title="velocità di taglio"
+                >VT</span
+              >
+              <input
+                type="range"
+                min="1"
+                max="200"
+                value="180"
+                name=""
+                id="vt-input"
+                title="inserisci la velocità di taglio"
+                placeholder="Vt (velocità di taglio)"
+              />
             </div>
-            <hr>
-            <div id="numero-giri-second-container" style="gap: 1rem;">
-                <label for="diametro-input">
-                    <div class="input-with-title-container">
-                        <span class="title-of-label-n-giri" title="diametro">Ø</span>
-                        <input type="range" min="1" max="500" value="200" name="" id="diametro-input" title="diametro del tuo pezzo grezzo" placeholder="D (diametro pezzo)">
-                    </div>
-                    <span id="diametro-value-span" title="diametro del pezzo grezzo">errore (javascript modificherà questo testo, attendere...)</span>
-                </label>
+            <span id="vt-value-span" title="velocità di taglio"
+              >errore (javascript modificherà questo testo, attendere...)</span
+            >
+          </label>
 
-                <span class="operator" title="moltiplicazione"> * </span>
-                <input type="number" name="" id="" value="3.14" title="pi greco, non modificare" disabled>
-            </div>
-        </form>
-
-        <div id="risultato-giri" class="giri-card">
-            <div style="display: flex; gap: 1rem; align-items: center;">
-                <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output" title="numero giri al minuto">errore (javascript modificherà questo testo, attendere...)</output>
-                <span>giri/min</span>
-            </div>
-
-            <!-- <div id="test-json-giri">errore json</div> -->
+          <span class="operator" title="moltiplicazione"> * </span>
+          <input
+            type="number"
+            name=""
+            id=""
+            value="1000"
+            title="non modificare, serve per la formula"
+            disabled
+          />
         </div>
+        <hr />
+        <div id="numero-giri-second-container" style="gap: 1rem">
+          <label for="diametro-input">
+            <div class="input-with-title-container">
+              <span class="title-of-label-n-giri" title="diametro">Ø</span>
+              <input
+                type="range"
+                min="1"
+                max="500"
+                value="200"
+                name=""
+                id="diametro-input"
+                title="diametro del tuo pezzo grezzo"
+                placeholder="D (diametro pezzo)"
+              />
+            </div>
+            <span id="diametro-value-span" title="diametro del pezzo grezzo"
+              >errore (javascript modificherà questo testo, attendere...)</span
+            >
+          </label>
+
+          <span class="operator" title="moltiplicazione"> * </span>
+          <input
+            type="number"
+            name=""
+            id=""
+            value="3.14"
+            title="pi greco, non modificare"
+            disabled
+          />
+        </div>
+      </form>
+
+      <div id="risultato-giri" class="giri-card">
+        <div style="display: flex; gap: 1rem; align-items: center">
+          <output
+            style="color: blue; font-weight: bold; font-size: 3rem"
+            id="html-output"
+            title="numero giri al minuto"
+            >errore (javascript modificherà questo testo, attendere...)</output
+          >
+          <span>giri/min</span>
+        </div>
+
+        <!-- <div id="test-json-giri">errore json</div> -->
+      </div>
     </div>
 
-
     <div class="suggerimento-card">
-        <i class="fa-solid fa-circle-info"></i>
-        <div>
-            utilizzare con <b>G97</b> fresatrice (ma anche tornio)
-        </div>
+      <i class="fa-solid fa-circle-info"></i>
+      <div>utilizzare con <b>G97</b> fresatrice (ma anche tornio)</div>
     </div>
 
     <!--     <div id="alert">
@@ -112,15 +183,14 @@
     <div id="success-alert"></div> -->
 
     <footer id="footer-made">
-        <span>Made by</span>
-        <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
+      <span>Made by</span>
+      <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
 
-        <a href="./../../index.html" class="btn-homepage">
-            <i class="fa-solid fa-house"></i>
-        </a>
+      <a href="./../../index.html" class="btn-homepage">
+        <i class="fa-solid fa-house"></i>
+      </a>
     </footer>
 
     <script src="../javascript/page-js/formule/numero_giri/tornio/script.js"></script>
-</body>
-
+  </body>
 </html>

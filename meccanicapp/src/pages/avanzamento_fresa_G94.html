@@ -1,107 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="calcolatore di avanzamento in giri/minuto in fresa CNC G94 (Generator) - MeccanicAPP"
+    />
 
-    <meta name="description" content="calcolatore di avanzamento in giri/minuto in fresa CNC G94 (Generator) - MeccanicAPP">
+    <title>
+      avanzamento G94 — formula di Fresatura Calculatore — meccanicAPP by
+      Laaouatni.
+    </title>
 
-    <title>avanzamento G94 — formula di Fresatura Calculatore — meccanicAPP by Laaouatni.</title>
-
-    <meta name="theme-color" content="blue">
+    <meta name="theme-color" content="blue" />
 
     <!-- app icon -->
-    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87947051?v=4">
-    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/87947051?v=4" type="image/jpg">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/87947051?v=4">
-    <meta property="twitter:card" content="summary_large_image">
+    <link
+      rel="apple-touch-icon"
+      href="https://avatars.githubusercontent.com/u/87947051?v=4"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://avatars.githubusercontent.com/u/87947051?v=4"
+      type="image/jpg"
+    />
+    <meta
+      property="og:image"
+      content="https://avatars.githubusercontent.com/u/87947051?v=4"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
 
     <!-- styles CSS -->
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../style.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-779WVV1QLL"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-779WVV1QLL"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'G-779WVV1QLL');
+      gtag("config", "G-779WVV1QLL");
     </script>
-
 
     <!-- delete this -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062" crossorigin="anonymous"></script> -->
 
     <!-- poppins font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- dependecies -->
     <!-- fontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-</head>
+  </head>
 
-<body id="body-vt">
-    <h1 style="text-align:center;">G94 avanzamento fresa mm/min</h1>
+  <body id="body-vt">
+    <h1 style="text-align: center">G94 avanzamento fresa mm/min</h1>
 
     <div class="container-formula">
-        <form id="form-avanzamento-fresa" class="giri-card" style="display: grid; gap: 1rem;">
-            <!-- 1 -->
-            <div id="vt-first-container">
-
-                <label for="avanz-dente-input">
-                    <div>
-                        <span>fz</span>
-                        <input type="range" name="" min="1" max="150" value="80" id="avanz-dente-input">
-                    </div>
-                    <span id="avanz-dente-span">errore</span>
-                </label>
-
-                <span class="operator" title="moltiplicazione"> * </span>
-
-                <label for="num-denti-input">
-                    <div>
-                        <span>Zn</span>
-                        <input type="range" name="" id="num-denti-input" min="1" max="15" value="4">
-                    </div>
-                    <span id="num-denti-span">errore</span>
-                </label>
-
-                <span class="operator" title="moltiplicazione"> * </span>
-
-                <label for="giri-input">
-                    <div>
-                        <span style="font-size: 2rem;">S</span>
-                        <input type="range" name="" id="giri-input" min="1" max="10000" value="1200">
-                    </div>
-
-                    <span id="giri-span">errore</span>
-                </label>
-            </div>
-
-        </form>
-
-        <div class="giri-card" style="display: grid; place-items: center;">
-            <div style="display: flex; gap: 1rem; align-items: center;">
-                <output style="color: blue; font-weight: bold; font-size: 3rem;" id="html-output">errore</output>
-                <span>mm/min</span>
-            </div>
-        </div>
-
-        <div class="suggerimento-card">
-            <i class="fa-solid fa-circle-info"></i>
+      <form
+        id="form-avanzamento-fresa"
+        class="giri-card"
+        style="display: grid; gap: 1rem"
+      >
+        <!-- 1 -->
+        <div id="vt-first-container">
+          <label for="avanz-dente-input">
             <div>
-                <b>fresa G94</b>... calcola prima la velocita G97 giri/min.
+              <span>fz</span>
+              <input
+                type="range"
+                name=""
+                min="1"
+                max="150"
+                value="80"
+                id="avanz-dente-input"
+              />
             </div>
+            <span id="avanz-dente-span">errore</span>
+          </label>
+
+          <span class="operator" title="moltiplicazione"> * </span>
+
+          <label for="num-denti-input">
+            <div>
+              <span>Zn</span>
+              <input
+                type="range"
+                name=""
+                id="num-denti-input"
+                min="1"
+                max="15"
+                value="4"
+              />
+            </div>
+            <span id="num-denti-span">errore</span>
+          </label>
+
+          <span class="operator" title="moltiplicazione"> * </span>
+
+          <label for="giri-input">
+            <div>
+              <span style="font-size: 2rem">S</span>
+              <input
+                type="range"
+                name=""
+                id="giri-input"
+                min="1"
+                max="10000"
+                value="1200"
+              />
+            </div>
+
+            <span id="giri-span">errore</span>
+          </label>
         </div>
+      </form>
+
+      <div class="giri-card" style="display: grid; place-items: center">
+        <div style="display: flex; gap: 1rem; align-items: center">
+          <output
+            style="color: blue; font-weight: bold; font-size: 3rem"
+            id="html-output"
+            >errore</output
+          >
+          <span>mm/min</span>
+        </div>
+      </div>
+
+      <div class="suggerimento-card">
+        <i class="fa-solid fa-circle-info"></i>
+        <div><b>fresa G94</b>... calcola prima la velocita G97 giri/min.</div>
+      </div>
     </div>
 
     <!--     <div id="alert">
@@ -118,15 +173,14 @@
     <div id="success-alert"></div> -->
 
     <footer id="footer-made">
-        <span>Made by</span>
-        <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
+      <span>Made by</span>
+      <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
 
-        <a href="./../../index.html" class="btn-homepage">
-            <i class="fa-solid fa-house"></i>
-        </a>
+      <a href="./../../index.html" class="btn-homepage">
+        <i class="fa-solid fa-house"></i>
+      </a>
     </footer>
 
     <script src="../javascript/page-js/formule/avanzamento-fresa/G94-avanz-fresa.js"></script>
-</body>
-
+  </body>
 </html>
