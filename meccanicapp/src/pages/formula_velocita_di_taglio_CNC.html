@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- <script
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062"
+    crossorigin="anonymous"></script>
+  <!-- <script
       async
       custom-element="amp-auto-ads"
       src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"
@@ -16,163 +19,113 @@
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062"
       crossorigin="anonymous"
     ></script> -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-      name="description"
-      content="G96 calcolatore di velocità di taglio in un tornio CNC (Generator) - MeccanicAPP"
-    />
+  <meta name="description" content="G96 calcolatore di velocità di taglio in un tornio CNC (Generator) - MeccanicAPP" />
 
-    <title>
-      velocità di taglio G96 calculatore Tornio — meccanicAPP by Laaouatni.
-    </title>
+  <title>
+    velocità di taglio G96 calculatore Tornio — meccanicAPP by Laaouatni.
+  </title>
 
-    <meta name="theme-color" content="blue" />
+  <meta name="theme-color" content="blue" />
 
-    <!-- app icon -->
-    <link
-      rel="apple-touch-icon"
-      href="https://avatars.githubusercontent.com/u/87947051?v=4"
-    />
-    <link
-      rel="shortcut icon"
-      href="https://avatars.githubusercontent.com/u/87947051?v=4"
-      type="image/jpg"
-    />
-    <meta
-      property="og:image"
-      content="https://avatars.githubusercontent.com/u/87947051?v=4"
-    />
-    <meta property="twitter:card" content="summary_large_image" />
+  <!-- app icon -->
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87947051?v=4" />
+  <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/87947051?v=4" type="image/jpg" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/87947051?v=4" />
+  <meta property="twitter:card" content="summary_large_image" />
 
-    <!-- styles CSS -->
-    <link rel="stylesheet" href="../../style.css" />
+  <!-- styles CSS -->
+  <link rel="stylesheet" href="../../style.css" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-6HCP1JJTNV"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HCP1JJTNV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-      gtag("config", "G-6HCP1JJTNV");
-    </script>
+    gtag("config", "G-6HCP1JJTNV");
+  </script>
 
-    <!-- delete this -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062" crossorigin="anonymous"></script> -->
+  <!-- delete this -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4336226604922062" crossorigin="anonymous"></script> -->
 
-    <!-- poppins font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- poppins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
-    <!-- dependecies -->
-    <!-- fontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
+  <!-- dependecies -->
+  <!-- fontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-  <body id="body-vt">
-    <h1 style="text-align: center">G96 velocità di taglio (metri/minuto)</h1>
+<body id="body-vt">
+  <h1 style="text-align: center">G96 velocità di taglio (metri/minuto)</h1>
 
-    <div class="container-formula">
-      <form
-        id="form-velocita-di-taglio"
-        class="giri-card"
-        style="display: grid; gap: 1rem"
-      >
-        <!-- 1 -->
-        <div id="vt-first-container">
-          <label for="vt-giri-input">
-            <div>
-              <span>n</span>
-              <input
-                type="range"
-                name=""
-                min="1"
-                max="5000"
-                value="1200"
-                id="vt-giri-input"
-              />
-            </div>
-            <span id="giri-span">errore</span>
-          </label>
+  <div class="container-formula">
+    <form id="form-velocita-di-taglio" class="giri-card" style="display: grid; gap: 1rem">
+      <!-- 1 -->
+      <div id="vt-first-container">
+        <label for="vt-giri-input">
+          <div>
+            <span>n</span>
+            <input type="range" name="" min="1" max="5000" value="1200" id="vt-giri-input" />
+          </div>
+          <span id="giri-span">errore</span>
+        </label>
 
-          <span class="operator" title="moltiplicazione"> * </span>
+        <span class="operator" title="moltiplicazione"> * </span>
 
-          <label for="vt-diam-input">
-            <div>
-              <span>D</span>
-              <input
-                type="range"
-                name=""
-                id="vt-diam-input"
-                min="1"
-                max="500"
-                value="50"
-              />
-            </div>
-            <span id="diam-span">errore</span>
-          </label>
+        <label for="vt-diam-input">
+          <div>
+            <span>D</span>
+            <input type="range" name="" id="vt-diam-input" min="1" max="500" value="50" />
+          </div>
+          <span id="diam-span">errore</span>
+        </label>
 
-          <span class="operator" title="moltiplicazione"> * </span>
+        <span class="operator" title="moltiplicazione"> * </span>
 
-          <label for="vt-greco">
-            <div>
-              <span style="font-size: 2rem">π</span>
-              <input
-                type="number"
-                name=""
-                id="vt-pgreco"
-                value="3.14"
-                disabled
-              />
-            </div>
-          </label>
-        </div>
-
-        <hr style="margin-left: 0; margin-right: 0" />
-
-        <!-- 2 -->
-        <div id="vt-second-container">
-          <input type="number" name="" id="" value="1000" disabled />
-        </div>
-      </form>
-
-      <div class="giri-card" style="display: grid; place-items: center">
-        <div style="display: flex; gap: 1rem; align-items: center">
-          <output
-            style="color: blue; font-weight: bold; font-size: 3rem"
-            id="html-output"
-            >errore</output
-          >
-          <span>metri/minuto</span>
-        </div>
+        <label for="vt-greco">
+          <div>
+            <span style="font-size: 2rem">π</span>
+            <input type="number" name="" id="vt-pgreco" value="3.14" disabled />
+          </div>
+        </label>
       </div>
 
-      <div class="suggerimento-card">
-        <i class="fa-solid fa-circle-info"></i>
-        <div>già scritto dal prod. dell'utensile (velocita costante)</div>
+      <hr style="margin-left: 0; margin-right: 0" />
+
+      <!-- 2 -->
+      <div id="vt-second-container">
+        <input type="number" name="" id="" value="1000" disabled />
+      </div>
+    </form>
+
+    <div class="giri-card" style="display: grid; place-items: center">
+      <div style="display: flex; gap: 1rem; align-items: center">
+        <output style="color: blue; font-weight: bold; font-size: 3rem" id="html-output">errore</output>
+        <span>metri/minuto</span>
       </div>
     </div>
 
-    <!--     <div id="alert">
+    <div class="suggerimento-card">
+      <i class="fa-solid fa-circle-info"></i>
+      <div>già scritto dal prod. dell'utensile (velocita costante)</div>
+    </div>
+  </div>
+
+  <!--     <div id="alert">
         <div id="alert-bg">
             <div id="alert-content">
                 ERRORE, RIPROVA!!!
@@ -185,15 +138,16 @@
 
     <div id="success-alert"></div> -->
 
-    <footer id="footer-made">
-      <span>Made by</span>
-      <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
+  <footer id="footer-made">
+    <span>Made by</span>
+    <a href="https://github.com/Laaouatni/meccanicAPP">Laaouatni.</a>
 
-      <a href="./../../index.html" class="btn-homepage">
-        <i class="fa-solid fa-house"></i>
-      </a>
-    </footer>
+    <a href="./../../index.html" class="btn-homepage">
+      <i class="fa-solid fa-house"></i>
+    </a>
+  </footer>
 
-    <script src="../javascript/page-js/formule/velocita_di_taglio/script.js"></script>
-  </body>
+  <script src="../javascript/page-js/formule/velocita_di_taglio/script.js"></script>
+</body>
+
 </html>
